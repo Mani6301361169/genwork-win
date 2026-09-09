@@ -42,17 +42,17 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile, onCloseMobile })
   ];
 
   const sidebarContent = (
-    <div className="flex flex-col h-full bg-white dark:bg-black border-r border-neutral-200 dark:border-neutral-800 w-64 py-4 px-3">
-      {/* Mobile Close Button */}
-      <div className="md:hidden flex justify-between items-center px-3 mb-4">
+    <div className="flex flex-col h-full bg-white dark:bg-black border-r border-neutral-200 dark:border-neutral-800 w-64 py-6 px-4">
+      {/* Mobile Header */}
+      <div className="md:hidden flex justify-between items-center px-2 mb-4 pb-3 border-b border-neutral-100 dark:border-neutral-900">
         <span className="font-extrabold text-black dark:text-white text-lg">SkillSprint</span>
-        <button onClick={onCloseMobile} className="p-1 rounded-lg text-neutral-500 hover:bg-neutral-100 dark:hover:bg-neutral-900">
+        <button onClick={onCloseMobile} className="p-1.5 rounded-xl text-neutral-500 hover:bg-neutral-100 dark:hover:bg-neutral-900">
           <X className="w-5 h-5" />
         </button>
       </div>
 
       {/* Navigation Links */}
-      <nav className="flex-1 space-y-1 overflow-y-auto pr-1 custom-scrollbar">
+      <nav className="flex-1 space-y-1.5 overflow-y-auto pr-1 custom-scrollbar">
         {navItems.map((item) => {
           const Icon = item.icon;
           return (
@@ -61,7 +61,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile, onCloseMobile })
               to={item.path}
               onClick={onCloseMobile}
               className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold transition-all ${
+                `flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all ${
                   isActive
                     ? 'bg-black text-white dark:bg-white dark:text-black shadow-sm'
                     : 'text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-900'
@@ -76,10 +76,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile, onCloseMobile })
       </nav>
 
       {/* Logout button */}
-      <div className="pt-3 border-t border-neutral-200 dark:border-neutral-800 mt-2">
+      <div className="pt-4 border-t border-neutral-200 dark:border-neutral-800 mt-3">
         <button
           onClick={logout}
-          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 transition-colors"
+          className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 transition-colors"
         >
           <LogOut className="w-4 h-4 shrink-0" />
           <span>Logout</span>
@@ -96,7 +96,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile, onCloseMobile })
 
       {isOpenMobile && (
         <div className="fixed inset-0 z-50 md:hidden flex">
-          <div className="fixed inset-0 bg-black/50 backdrop-blur-xs" onClick={onCloseMobile} />
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-xs" onClick={onCloseMobile} />
           <div className="relative z-10 w-64 h-full animate-in slide-in-from-left duration-200">
             {sidebarContent}
           </div>

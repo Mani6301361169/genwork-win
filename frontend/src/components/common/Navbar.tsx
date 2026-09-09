@@ -16,14 +16,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMobileMenu }) => {
   const streak = profile?.currentStreak || 1;
 
   return (
-    <header className="sticky top-0 z-30 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800 transition-colors">
-      <div className="px-4 sm:px-6 py-3 flex items-center justify-between">
+    <header className="sticky top-0 z-30 bg-white/95 dark:bg-black/95 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800 transition-colors">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
         
         {/* Left: Mobile Menu Toggle & Brand Logo */}
         <div className="flex items-center gap-3">
           <button
             onClick={onOpenMobileMenu}
-            className="md:hidden p-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-900"
+            className="md:hidden p-2 rounded-xl text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
             aria-label="Open Navigation Menu"
           >
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -31,15 +31,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMobileMenu }) => {
             </svg>
           </button>
 
-          <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-black text-white dark:bg-white dark:text-black flex items-center justify-center font-extrabold text-lg shadow-sm">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-black text-white dark:bg-white dark:text-black flex items-center justify-center font-extrabold text-base shadow-sm">
               SS
             </div>
-            <div>
-              <span className="text-xl font-extrabold text-black dark:text-white tracking-tight">
+            <div className="flex items-center gap-2">
+              <span className="text-lg font-extrabold text-black dark:text-white tracking-tight">
                 SkillSprint
               </span>
-              <span className="hidden sm:inline-block text-[10px] uppercase font-extrabold tracking-widest ml-2 px-2 py-0.5 rounded bg-neutral-100 dark:bg-neutral-900 text-black dark:text-white border border-neutral-200 dark:border-neutral-800">
+              <span className="hidden sm:inline-block text-[10px] uppercase font-extrabold tracking-wider px-2 py-0.5 rounded-md bg-neutral-100 dark:bg-neutral-900 text-black dark:text-white border border-neutral-200 dark:border-neutral-800">
                 Placement Ready
               </span>
             </div>
@@ -51,7 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMobileMenu }) => {
           
           {/* Daily Streak Badge */}
           {user?.role === 'STUDENT' && (
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 text-black dark:text-white font-bold text-xs sm:text-sm">
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 text-black dark:text-white font-bold text-xs">
               <Flame className="w-4 h-4 fill-black text-black dark:fill-white dark:text-white" />
               <span>{streak} Day Streak</span>
             </div>
@@ -72,7 +72,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMobileMenu }) => {
             title="Notifications"
           >
             <Bell className="w-5 h-5" />
-            <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-black dark:bg-white"></span>
+            <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-black dark:bg-white"></span>
           </button>
 
           {/* User Profile Dropdown */}
@@ -81,7 +81,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMobileMenu }) => {
               onClick={() => setShowDropdown(!showDropdown)}
               className="flex items-center gap-2.5 p-1 rounded-xl hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors"
             >
-              <div className="w-8 h-8 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center font-bold text-sm shadow-sm">
+              <div className="w-8 h-8 rounded-full bg-black dark:bg-white text-white dark:text-black flex items-center justify-center font-bold text-xs shadow-sm">
                 {profile?.fullName ? profile.fullName.charAt(0) : 'U'}
               </div>
               <div className="hidden md:block text-left">

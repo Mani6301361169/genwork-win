@@ -69,26 +69,26 @@ export const Dashboard: React.FC = () => {
   return (
     <div className="space-y-6">
       
-      {/* 1. High-Contrast Black Banner */}
-      <div className="bg-black text-white dark:bg-white dark:text-black rounded-3xl p-6 sm:p-8 shadow-md">
+      {/* 1. Header Banner - Clean Dark Monochromatic Card in All Modes */}
+      <div className="bg-neutral-900 text-white border border-neutral-800 rounded-2xl p-6 sm:p-8 shadow-sm">
         <div className="space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-800 dark:bg-neutral-200 text-white dark:text-black text-xs font-bold">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-800 text-neutral-200 text-xs font-extrabold border border-neutral-700">
             <Sparkles className="w-3.5 h-3.5" /> SkillSprint Personal Coach
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
             {getGreeting()}, {profile?.fullName || 'Student'} 👋
           </h1>
-          <p className="text-sm font-medium text-neutral-300 dark:text-neutral-700">
+          <p className="text-xs sm:text-sm font-medium text-neutral-400">
             Build your confidence. One practice at a time.
           </p>
 
-          <div className="pt-3 flex flex-wrap gap-4 text-xs font-bold">
-            <div className="bg-neutral-900 dark:bg-neutral-100 border border-neutral-800 dark:border-neutral-300 px-4 py-2 rounded-2xl flex items-center gap-2">
-              <Trophy className="w-4 h-4 text-white dark:text-black" />
+          <div className="pt-2 flex flex-wrap gap-3 text-xs font-bold">
+            <div className="bg-neutral-800 border border-neutral-700 px-4 py-2 rounded-xl flex items-center gap-2">
+              <Trophy className="w-4 h-4 text-white" />
               <span>Current Streak: {profile?.currentStreak || 1} Days</span>
             </div>
-            <div className="bg-neutral-900 dark:bg-neutral-100 border border-neutral-800 dark:border-neutral-300 px-4 py-2 rounded-2xl flex items-center gap-2">
-              <Award className="w-4 h-4 text-white dark:text-black" />
+            <div className="bg-neutral-800 border border-neutral-700 px-4 py-2 rounded-xl flex items-center gap-2">
+              <Award className="w-4 h-4 text-white" />
               <span>Total XP: {profile?.totalXP || 450} Points</span>
             </div>
           </div>
@@ -96,32 +96,32 @@ export const Dashboard: React.FC = () => {
       </div>
 
       {/* 2. TODAY'S PRACTICE */}
-      <div className="bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 rounded-3xl p-6 sm:p-8 shadow-sm">
+      <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 sm:p-8 shadow-sm">
         <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-xl bg-black text-white dark:bg-white dark:text-black flex items-center justify-center font-bold">
               <Mic className="w-4 h-4" />
             </div>
-            <h2 className="text-xs font-extrabold uppercase tracking-widest text-neutral-500">
+            <h2 className="text-xs font-extrabold uppercase tracking-widest text-neutral-500 dark:text-neutral-400">
               Today's Practice Challenge
             </h2>
           </div>
-          <span className="px-3 py-1 rounded-full bg-black text-white dark:bg-white dark:text-black font-extrabold text-xs">
+          <span className="px-3 py-1 rounded-full bg-black text-white dark:bg-white dark:text-black font-extrabold text-[11px]">
             Recommended Daily
           </span>
         </div>
 
         {todayChallenge ? (
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 bg-neutral-50 dark:bg-neutral-900/60 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 bg-neutral-50 dark:bg-neutral-800/60 p-6 rounded-xl border border-neutral-200 dark:border-neutral-700/60">
             <div className="space-y-2 max-w-xl">
               <div className="flex items-center gap-2">
                 <span className="px-2.5 py-0.5 rounded-md bg-black text-white dark:bg-white dark:text-black font-extrabold text-[10px]">
                   {todayChallenge.category}
                 </span>
-                <span className="px-2.5 py-0.5 rounded-md bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 font-extrabold text-[10px]">
+                <span className="px-2.5 py-0.5 rounded-md bg-neutral-200 dark:bg-neutral-700 text-neutral-800 dark:text-neutral-200 font-extrabold text-[10px]">
                   {todayChallenge.difficulty}
                 </span>
-                <span className="flex items-center gap-1 text-[11px] font-bold text-neutral-600 dark:text-neutral-400">
+                <span className="flex items-center gap-1 text-[11px] font-bold text-neutral-500 dark:text-neutral-400">
                   <Clock className="w-3 h-3" /> {todayChallenge.durationSeconds}s
                 </span>
               </div>
@@ -136,7 +136,7 @@ export const Dashboard: React.FC = () => {
 
             <Link
               to={`/student/challenges/${todayChallenge.id}`}
-              className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-black hover:bg-neutral-800 text-white dark:bg-white dark:hover:bg-neutral-200 dark:text-black font-extrabold rounded-2xl text-xs transition-all shadow-sm"
+              className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3 bg-black hover:bg-neutral-800 text-white dark:bg-white dark:hover:bg-neutral-200 dark:text-black font-extrabold rounded-xl text-xs transition-all shadow-sm"
             >
               <Mic className="w-4 h-4" /> Start Practice
             </Link>
@@ -148,62 +148,62 @@ export const Dashboard: React.FC = () => {
 
       {/* 3. MY PERFORMANCE GRID */}
       <div>
-        <h2 className="text-xs font-extrabold uppercase tracking-widest text-neutral-500 mb-3 px-1">
+        <h2 className="text-xs font-extrabold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mb-3 px-1">
           My Performance Breakdown
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
           
-          <div className="bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 rounded-3xl p-5 shadow-sm">
-            <p className="text-[11px] font-extrabold text-neutral-500 uppercase">Overall Score</p>
+          <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-5 shadow-sm">
+            <p className="text-[10px] font-extrabold text-neutral-500 uppercase tracking-wider">Overall Score</p>
             <div className="mt-2 flex items-baseline gap-1">
-              <span className="text-3xl font-extrabold text-black dark:text-white">{overallScore}</span>
+              <span className="text-2xl sm:text-3xl font-extrabold text-black dark:text-white">{overallScore}</span>
               <span className="text-xs font-bold text-neutral-400">/ 100</span>
             </div>
-            <div className="mt-3 w-full h-2 rounded-full bg-neutral-100 dark:bg-neutral-900 overflow-hidden">
+            <div className="mt-3 w-full h-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800 overflow-hidden">
               <div className="h-full bg-black dark:bg-white rounded-full" style={{ width: `${overallScore}%` }} />
             </div>
           </div>
 
-          <div className="bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 rounded-3xl p-5 shadow-sm">
-            <p className="text-[11px] font-extrabold text-neutral-500 uppercase">Speaking Score</p>
+          <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-5 shadow-sm">
+            <p className="text-[10px] font-extrabold text-neutral-500 uppercase tracking-wider">Speaking Score</p>
             <div className="mt-2 flex items-baseline gap-1">
-              <span className="text-3xl font-extrabold text-black dark:text-white">{speakingScore}</span>
+              <span className="text-2xl sm:text-3xl font-extrabold text-black dark:text-white">{speakingScore}</span>
               <span className="text-xs font-bold text-neutral-400">/ 100</span>
             </div>
-            <div className="mt-3 w-full h-2 rounded-full bg-neutral-100 dark:bg-neutral-900 overflow-hidden">
+            <div className="mt-3 w-full h-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800 overflow-hidden">
               <div className="h-full bg-black dark:bg-white rounded-full" style={{ width: `${speakingScore}%` }} />
             </div>
           </div>
 
-          <div className="bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 rounded-3xl p-5 shadow-sm">
-            <p className="text-[11px] font-extrabold text-neutral-500 uppercase">Interview Score</p>
+          <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-5 shadow-sm">
+            <p className="text-[10px] font-extrabold text-neutral-500 uppercase tracking-wider">Interview Score</p>
             <div className="mt-2 flex items-baseline gap-1">
-              <span className="text-3xl font-extrabold text-black dark:text-white">{interviewScore}</span>
+              <span className="text-2xl sm:text-3xl font-extrabold text-black dark:text-white">{interviewScore}</span>
               <span className="text-xs font-bold text-neutral-400">/ 100</span>
             </div>
-            <div className="mt-3 w-full h-2 rounded-full bg-neutral-100 dark:bg-neutral-900 overflow-hidden">
+            <div className="mt-3 w-full h-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800 overflow-hidden">
               <div className="h-full bg-black dark:bg-white rounded-full" style={{ width: `${interviewScore}%` }} />
             </div>
           </div>
 
-          <div className="bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 rounded-3xl p-5 shadow-sm">
-            <p className="text-[11px] font-extrabold text-neutral-500 uppercase">Technical Score</p>
+          <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-5 shadow-sm">
+            <p className="text-[10px] font-extrabold text-neutral-500 uppercase tracking-wider">Technical Score</p>
             <div className="mt-2 flex items-baseline gap-1">
-              <span className="text-3xl font-extrabold text-black dark:text-white">{technicalScore}</span>
+              <span className="text-2xl sm:text-3xl font-extrabold text-black dark:text-white">{technicalScore}</span>
               <span className="text-xs font-bold text-neutral-400">/ 100</span>
             </div>
-            <div className="mt-3 w-full h-2 rounded-full bg-neutral-100 dark:bg-neutral-900 overflow-hidden">
+            <div className="mt-3 w-full h-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800 overflow-hidden">
               <div className="h-full bg-black dark:bg-white rounded-full" style={{ width: `${technicalScore}%` }} />
             </div>
           </div>
 
-          <div className="col-span-2 sm:col-span-1 bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 rounded-3xl p-5 shadow-sm">
-            <p className="text-[11px] font-extrabold text-neutral-500 uppercase">Confidence Score</p>
+          <div className="col-span-2 sm:col-span-1 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-5 shadow-sm">
+            <p className="text-[10px] font-extrabold text-neutral-500 uppercase tracking-wider">Confidence Score</p>
             <div className="mt-2 flex items-baseline gap-1">
-              <span className="text-3xl font-extrabold text-black dark:text-white">{confidenceScore}</span>
+              <span className="text-2xl sm:text-3xl font-extrabold text-black dark:text-white">{confidenceScore}</span>
               <span className="text-xs font-bold text-neutral-400">/ 100</span>
             </div>
-            <div className="mt-3 w-full h-2 rounded-full bg-neutral-100 dark:bg-neutral-900 overflow-hidden">
+            <div className="mt-3 w-full h-1.5 rounded-full bg-neutral-100 dark:bg-neutral-800 overflow-hidden">
               <div className="h-full bg-black dark:bg-white rounded-full" style={{ width: `${confidenceScore}%` }} />
             </div>
           </div>
@@ -215,14 +215,14 @@ export const Dashboard: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Weekly Progress Graph */}
-        <div className="lg:col-span-2 bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 rounded-3xl p-6 shadow-sm flex flex-col justify-between">
+        <div className="lg:col-span-2 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
           <div>
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h3 className="text-sm font-extrabold text-black dark:text-white flex items-center gap-2">
                   <TrendingUp className="w-4 h-4" /> Weekly Progress Trend
                 </h3>
-                <p className="text-[11px] text-neutral-500">
+                <p className="text-[11px] text-neutral-500 dark:text-neutral-400">
                   Tracking speaking & interview performance over the past 7 days
                 </p>
               </div>
@@ -235,24 +235,24 @@ export const Dashboard: React.FC = () => {
               <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={weeklyData}>
                   <defs>
-                    <linearGradient id="blackGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#000000" stopOpacity={0.3} />
-                      <stop offset="95%" stopColor="#000000" stopOpacity={0} />
+                    <linearGradient id="monoGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#737373" stopOpacity={0.2} />
+                      <stop offset="95%" stopColor="#737373" stopOpacity={0} />
                     </linearGradient>
                   </defs>
-                  <XAxis dataKey="day" stroke="#737373" fontSize={11} tickLine={false} />
-                  <YAxis domain={[50, 100]} stroke="#737373" fontSize={11} tickLine={false} />
+                  <XAxis dataKey="day" stroke="#a3a3a3" fontSize={11} tickLine={false} />
+                  <YAxis domain={[50, 100]} stroke="#a3a3a3" fontSize={11} tickLine={false} />
                   <Tooltip
                     contentStyle={{
-                      backgroundColor: '#000000',
-                      borderColor: '#262626',
+                      backgroundColor: '#171717',
+                      borderColor: '#404040',
                       borderRadius: '12px',
                       color: '#ffffff',
                       fontSize: '11px',
                     }}
                   />
-                  <Area type="monotone" dataKey="speakingScore" stroke="#000000" strokeWidth={3} fillOpacity={1} fill="url(#blackGrad)" name="Speaking Score" />
-                  <Area type="monotone" dataKey="interviewScore" stroke="#737373" strokeWidth={2} strokeDasharray="3 3" fill="none" name="Interview Score" />
+                  <Area type="monotone" dataKey="speakingScore" stroke="#171717" strokeWidth={2.5} fillOpacity={1} fill="url(#monoGrad)" name="Speaking Score" />
+                  <Area type="monotone" dataKey="interviewScore" stroke="#a3a3a3" strokeWidth={1.5} strokeDasharray="3 3" fill="none" name="Interview Score" />
                 </AreaChart>
               </ResponsiveContainer>
             </div>
@@ -260,16 +260,16 @@ export const Dashboard: React.FC = () => {
         </div>
 
         {/* Strengths & Areas To Improve */}
-        <div className="bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 rounded-3xl p-6 shadow-sm flex flex-col justify-between space-y-6">
+        <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 shadow-sm flex flex-col justify-between space-y-6">
           
           {/* Strengths */}
           <div>
-            <h3 className="text-xs font-extrabold uppercase tracking-widest text-neutral-500 mb-3 flex items-center gap-1.5">
+            <h3 className="text-xs font-extrabold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mb-3 flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-black dark:text-white" /> Your Strengths
             </h3>
             <div className="space-y-2">
               {['✓ Rich Vocabulary', '✓ Prompt Relevance', '✓ Steady Confidence'].map((str, idx) => (
-                <div key={idx} className="px-3.5 py-2 rounded-xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-black dark:text-white text-xs font-bold">
+                <div key={idx} className="px-3.5 py-2.5 rounded-xl bg-neutral-100 dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 text-black dark:text-white text-xs font-bold">
                   {str}
                 </div>
               ))}
@@ -278,12 +278,12 @@ export const Dashboard: React.FC = () => {
 
           {/* Areas to Improve */}
           <div>
-            <h3 className="text-xs font-extrabold uppercase tracking-widest text-neutral-500 mb-3 flex items-center gap-1.5">
-              <AlertCircle className="w-4 h-4 text-neutral-700 dark:text-neutral-300" /> Areas to Improve
+            <h3 className="text-xs font-extrabold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mb-3 flex items-center gap-1.5">
+              <AlertCircle className="w-4 h-4 text-neutral-500" /> Areas to Improve
             </h3>
             <div className="space-y-2">
               {['• Speaking Fluency & Pace', '• Complex Grammar Structures', '• Answer Structure (STAR)'].map((area, idx) => (
-                <div key={idx} className="px-3.5 py-2 rounded-xl bg-neutral-50 dark:bg-neutral-900/50 border border-neutral-200 dark:border-neutral-800 text-neutral-800 dark:text-neutral-200 text-xs font-bold">
+                <div key={idx} className="px-3.5 py-2.5 rounded-xl bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700 text-neutral-800 dark:text-neutral-200 text-xs font-bold">
                   {area}
                 </div>
               ))}
@@ -294,17 +294,17 @@ export const Dashboard: React.FC = () => {
       </div>
 
       {/* 5. PERSONALIZED RECOMMENDATIONS */}
-      <div className="bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 rounded-3xl p-6 sm:p-8 shadow-sm">
+      <div className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-6 sm:p-8 shadow-sm">
         <div className="flex items-center gap-2 mb-4">
           <Target className="w-5 h-5 text-black dark:text-white" />
-          <h2 className="text-xs font-extrabold uppercase tracking-widest text-neutral-500">
+          <h2 className="text-xs font-extrabold uppercase tracking-widest text-neutral-500 dark:text-neutral-400">
             Personalized Recommendations
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           
-          <div className="p-5 rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex flex-col justify-between">
+          <div className="p-5 rounded-xl bg-neutral-50 dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 flex flex-col justify-between">
             <div>
               <span className="px-2.5 py-0.5 rounded-full bg-black text-white dark:bg-white dark:text-black font-extrabold text-[10px]">
                 Fluency Focus
@@ -322,7 +322,7 @@ export const Dashboard: React.FC = () => {
             </Link>
           </div>
 
-          <div className="p-5 rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex flex-col justify-between">
+          <div className="p-5 rounded-xl bg-neutral-50 dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 flex flex-col justify-between">
             <div>
               <span className="px-2.5 py-0.5 rounded-full bg-black text-white dark:bg-white dark:text-black font-extrabold text-[10px]">
                 HR Prep
@@ -340,7 +340,7 @@ export const Dashboard: React.FC = () => {
             </Link>
           </div>
 
-          <div className="p-5 rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex flex-col justify-between">
+          <div className="p-5 rounded-xl bg-neutral-50 dark:bg-neutral-800/60 border border-neutral-200 dark:border-neutral-700 flex flex-col justify-between">
             <div>
               <span className="px-2.5 py-0.5 rounded-full bg-black text-white dark:bg-white dark:text-black font-extrabold text-[10px]">
                 Answer Structure
