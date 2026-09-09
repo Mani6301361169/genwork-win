@@ -1,0 +1,223 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id           String          @id @default(uuid())
+  email        String          @unique
+  passwordHash String
+  role         String          @default("STUDENT") // STUDENT, ADMIN, SUPER_ADMIN
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+  profile      StudentProfile?
+}
+
+model Department {
+  id               String             @id @default(uuid())
+  code             String             @unique
+  name             String
+  createdAt        DateTime           @default(now())
+  studentProfiles  StudentProfile[]
+  campusChallenges CampusChallenge[]
+  challenges       Challenge[]
+}
+
+model StudentProfile {
+  id                String             @id @default(uuid())
+  userId            String             @unique
+  user              User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  studentId         String             @unique // Roll number / Student ID
+  fullName          String
+  phone             String?
+  college           String             @default("SkillSprint Academy")
+  departmentId      String
+  department        Department         @relation(fields: [departmentId], references: [id])
+  academicYear      String             // 1st Year, 2nd Year, 3rd Year, 4th Year
+  graduationYear    Int
+  totalXP           Int                @default(0)
+  currentStreak     Int                @default(0)
+  bestScore         Int                @default(0)
+  overallScore      Int                @default(70)
+  speakingScore     Int                @default(72)
+  interviewScore    Int                @default(68)
+  technicalScore    Int                @default(71)
+  confidenceScore   Int                @default(70)
+  avatarUrl         String?
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  challengeAttempts ChallengeAttempt[]
+  interviewSessions InterviewSession[]
+  studentProgress   StudentProgress[]
+  leaderboardEntry  LeaderboardEntry?
+  feedbacks         Feedback[]
+}
+
+model Challenge {
+  id              String             @id @default(uuid())
+  title           String
+  description     String
+  category        String             // Daily Life, Technology, Education, Career, Leadership, Opinion, Communication, Current Topics, Personal Experience
+  difficulty      String             // Beginner, Intermediate, Advanced
+  durationSeconds Int                @default(60)
+  topicType       String             @default("DAILY") // DAILY, CAMPUS, TOPICAL
+  targetDeptId    String?
+  targetDepartment Department?       @relation(fields: [targetDeptId], references: [id])
+  isArchived      Boolean            @default(false)
+  createdAt       DateTime           @default(now())
+  attempts        ChallengeAttempt[]
+}
+
+model ChallengeAttempt {
+  id                 String         @id @default(uuid())
+  studentId          String
+  student            StudentProfile @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  challengeId        String
+  challenge          Challenge      @relation(fields: [challengeId], references: [id], onDelete: Cascade)
+  audioUrl           String?
+  transcript         String
+  overallScore       Int
+  fluencyScore       Int
+  grammarScore       Int
+  vocabularyScore    Int
+  pronunciationScore Int
+  relevanceScore     Int
+  confidenceScore    Int
+  structureScore     Int
+  strongestArea      String
+  focusArea          String
+  aiFeedbackJson     String         // Structured JSON string
+  completedAt        DateTime       @default(now())
+}
+
+model InterviewCategory {
+  id          String              @id @default(uuid())
+  name        String              @unique
+  slug        String              @unique
+  description String
+  type        String              // TECHNICAL, HR, BEHAVIORAL, MANAGERIAL, GROUP_DISCUSSION, SELF_INTRO, RESUME
+  questions   InterviewQuestion[]
+}
+
+model InterviewQuestion {
+  id               String             @id @default(uuid())
+  categoryId       String
+  category         InterviewCategory  @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  questionText     String
+  difficulty       String             @default("Intermediate")
+  estimatedMinutes Int                @default(3)
+  sampleAnswer     String
+  keyPointsJson    String             // JSON array of key evaluation points
+  createdAt        DateTime           @default(now())
+  responses        InterviewResponse[]
+}
+
+model InterviewSession {
+  id                   String              @id @default(uuid())
+  studentId            String
+  student              StudentProfile      @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  roleName             String
+  difficulty           String
+  totalQuestions       Int
+  status               String              @default("IN_PROGRESS") // IN_PROGRESS, COMPLETED
+  overallScore         Int                 @default(0)
+  communicationScore   Int                 @default(0)
+  technicalScore       Int                 @default(0)
+  confidenceScore      Int                 @default(0)
+  answerQualityScore   Int                 @default(0)
+  problemSolvingScore  Int                 @default(0)
+  professionalismScore Int                 @default(0)
+  feedbackSummary      String              @default("")
+  createdAt            DateTime            @default(now())
+  updatedAt            DateTime            @updatedAt
+  responses            InterviewResponse[]
+}
+
+model InterviewResponse {
+  id                 String            @id @default(uuid())
+  sessionId          String
+  session            InterviewSession  @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  questionId         String?
+  question           InterviewQuestion? @relation(fields: [questionId], references: [id])
+  questionText       String
+  responseText       String
+  audioUrl           String?
+  score              Int               @default(0)
+  feedbackText       String            @default("")
+  criteriaScoresJson String            @default("{}")
+  createdAt          DateTime          @default(now())
+}
+
+model CampusChallenge {
+  id             String      @id @default(uuid())
+  title          String
+  description    String
+  category       String
+  departmentId   String
+  department     Department  @relation(fields: [departmentId], references: [id], onDelete: Cascade)
+  totalQuestions Int         @default(50)
+  difficulty     String      @default("Intermediate")
+  createdAt      DateTime    @default(now())
+}
+
+model LearningContent {
+  id               String            @id @default(uuid())
+  title            String
+  description      String
+  category         String            // Communication, English, Interview Preparation, Resume Building, Aptitude, Technical Skills, Soft Skills, Placement Preparation
+  estimatedMinutes Int               @default(5)
+  difficulty       String            @default("Beginner")
+  bodyText         String
+  iconName         String            @default("BookOpen")
+  createdAt        DateTime          @default(now())
+  studentProgress  StudentProgress[]
+}
+
+model StudentProgress {
+  id          String          @id @default(uuid())
+  studentId   String
+  student     StudentProfile  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  contentId   String
+  content     LearningContent @relation(fields: [contentId], references: [id], onDelete: Cascade)
+  completedAt DateTime        @default(now())
+
+  @@unique([studentId, contentId])
+}
+
+model LeaderboardEntry {
+  id                 String         @id @default(uuid())
+  studentId          String         @unique
+  student            StudentProfile @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  overallScore       Int            @default(0)
+  speakingScore      Int            @default(0)
+  interviewScore     Int            @default(0)
+  challengesCompleted Int           @default(0)
+  streak             Int            @default(0)
+  period             String         @default("OVERALL") // WEEKLY, MONTHLY, OVERALL
+  updatedAt          DateTime       @updatedAt
+}
+
+model Feedback {
+  id        String         @id @default(uuid())
+  studentId String
+  student   StudentProfile @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  category  String         // Platform, Content, Technical, Mentoring
+  subject   String
+  message   String
+  rating    Int            @default(5)
+  status    String         @default("PENDING") // PENDING, REVIEWED, RESOLVED
+  createdAt DateTime       @default(now())
+}
+
+model Announcement {
+  id          String   @id @default(uuid())
+  title       String
+  content     String
+  author      String   @default("Faculty Admin")
+  isImportant Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}
