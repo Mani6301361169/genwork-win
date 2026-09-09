@@ -8,41 +8,39 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Black and White / Greyscale Palette
         brand: {
-          50: '#f0f3ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1', // Indigo primary
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#1e1b4b', // Dark Navy background/accents
-          950: '#0f0e26',
+          50: '#fafafa',
+          100: '#f4f4f5',
+          200: '#e4e4e7',
+          300: '#d4d4d8',
+          400: '#a1a1aa',
+          500: '#71717a',
+          600: '#52525b',
+          700: '#3f3f46',
+          800: '#27272a',
+          900: '#18181b', // Pure Off-Black
+          950: '#09090b', // Pitch Black
         },
         accent: {
-          50: '#faf5ff',
-          100: '#f3e8ff',
-          200: '#e9d5ff',
-          300: '#d8b4fe',
-          400: '#c084fc',
-          500: '#a855f7', // Vivid Purple
-          600: '#9333ea',
-          700: '#7e22ce',
+          50: '#ffffff',
+          100: '#f5f5f5',
+          500: '#000000', // Pure Black primary accent
+          600: '#171717',
+          700: '#262626',
         },
         navy: {
-          800: '#111827',
-          900: '#0b0f19',
-          950: '#05070c',
+          800: '#171717',
+          900: '#0a0a0a',
+          950: '#000000',
         }
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
       },
       boxShadow: {
-        'soft': '0 10px 30px -10px rgba(99, 102, 241, 0.12)',
-        'glow': '0 0 20px rgba(168, 85, 247, 0.25)',
+        'soft': '0 4px 20px rgba(0, 0, 0, 0.06)',
+        'glow': '0 0 20px rgba(0, 0, 0, 0.15)',
       }
     },
   },
