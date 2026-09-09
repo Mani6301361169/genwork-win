@@ -4,11 +4,28 @@
 
 @layer base {
   body {
-    @apply bg-slate-50 dark:bg-navy-950 text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white;
+    @apply bg-slate-50 dark:bg-neutral-950 text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-emerald-deep selection:text-gold-400;
   }
 }
 
-/* Custom Scrollbars */
+/* Cinematic Pro Metallic Gradients */
+.bg-gradient-cinematic {
+  background: linear-gradient(135deg, #042f2e 0%, #064e3b 50%, #134e4a 100%);
+}
+
+.bg-gradient-gold {
+  background: linear-gradient(135deg, #b45309 0%, #f59e0b 50%, #fbbf24 100%);
+}
+
+.bg-gradient-crimson {
+  background: linear-gradient(135deg, #9f1239 0%, #e11d48 50%, #f43f5e 100%);
+}
+
+.bg-gradient-teal-metallic {
+  background: linear-gradient(135deg, #022c22 0%, #0f766e 50%, #0d9488 100%);
+}
+
+/* Custom Scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -17,9 +34,9 @@
   background: transparent;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #0f766e;
   border-radius: 10px;
 }
 .dark .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #047857;
 }
