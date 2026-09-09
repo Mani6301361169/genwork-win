@@ -42,11 +42,11 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile, onCloseMobile })
   ];
 
   const sidebarContent = (
-    <div className="flex flex-col h-full bg-white dark:bg-neutral-950 border-r border-slate-200 dark:border-teal-dark/40 w-64 py-6 px-4">
+    <div className="flex flex-col h-full bg-white border-r border-slate-200 w-64 py-6 px-4">
       {/* Mobile Header */}
-      <div className="md:hidden flex justify-between items-center px-2 mb-4 pb-3 border-b border-slate-100 dark:border-slate-800">
-        <span className="font-extrabold text-emerald-deep dark:text-gold-400 text-lg">SkillSprint</span>
-        <button onClick={onCloseMobile} className="p-1.5 rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800">
+      <div className="md:hidden flex justify-between items-center px-2 mb-4 pb-3 border-b border-slate-100">
+        <span className="font-extrabold text-[#064e3b] text-lg">SkillSprint</span>
+        <button onClick={onCloseMobile} className="p-1.5 rounded-xl text-slate-500 hover:bg-slate-100">
           <X className="w-5 h-5" />
         </button>
       </div>
@@ -63,8 +63,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile, onCloseMobile })
               className={({ isActive }) =>
                 `flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all ${
                   isActive
-                    ? 'bg-gradient-cinematic text-white dark:text-gold-400 border border-gold-500/30 shadow-soft'
-                    : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-teal-dark/30 hover:text-emerald-deep dark:hover:text-gold-400'
+                    ? 'bg-[#064e3b] text-white shadow-sm font-extrabold'
+                    : 'text-slate-700 hover:bg-slate-100 hover:text-[#064e3b]'
                 }`
               }
             >
@@ -76,10 +76,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile, onCloseMobile })
       </nav>
 
       {/* Logout button */}
-      <div className="pt-4 border-t border-slate-200 dark:border-slate-800 mt-3">
+      <div className="pt-4 border-t border-slate-200 mt-3">
         <button
           onClick={logout}
-          className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold text-crimson-600 dark:text-crimson-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 transition-colors"
+          className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold text-rose-600 hover:bg-rose-50 transition-colors"
         >
           <LogOut className="w-4 h-4 shrink-0" />
           <span>Logout</span>
@@ -90,13 +90,13 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile, onCloseMobile })
 
   return (
     <>
-      <aside className="hidden md:block shrink-0 h-[calc(100vh-61px)] sticky top-[61px]">
+      <aside className="hidden md:block shrink-0 h-[calc(100vh-65px)] sticky top-[65px]">
         {sidebarContent}
       </aside>
 
       {isOpenMobile && (
         <div className="fixed inset-0 z-50 md:hidden flex">
-          <div className="fixed inset-0 bg-black/60 backdrop-blur-xs" onClick={onCloseMobile} />
+          <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-xs" onClick={onCloseMobile} />
           <div className="relative z-10 w-64 h-full animate-in slide-in-from-left duration-200">
             {sidebarContent}
           </div>
