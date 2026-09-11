@@ -39,7 +39,8 @@ export function evaluateSpeakingAttempt(
     'technology', 'development', 'architecture', 'efficiency', 'framework',
     'optimization', 'collaboration', 'continuous', 'learning', 'evolution',
     'innovation', 'strategy', 'perspective', 'implementation', 'system',
-    'engineering', 'solution', 'critical', 'effective', 'scalable', 'process'
+    'engineering', 'solution', 'critical', 'effective', 'scalable', 'process',
+    'performance', 'quality', 'communication', 'leadership', 'management'
   ];
   const matchedAdvancedTerms = Array.from(uniqueWords).filter((w) => advancedTermsList.includes(w));
 
@@ -130,40 +131,39 @@ export function evaluateSpeakingAttempt(
 
   // Real Strengths from Actual Transcript
   if (wordCount >= 30) {
-    strengths.push(`Great speech length! You spoke ${wordCount} words, maintaining a good flow.`);
+    strengths.push(`Great speech length! You spoke ${wordCount} words, maintaining a steady conversational flow.`);
   }
   if (matchedAdvancedTerms.length > 0) {
-    strengths.push(`Strong vocabulary choice! You used technical words such as "${matchedAdvancedTerms.slice(0, 3).join('", "')}".`);
+    strengths.push(`Strong vocabulary choice! You incorporated key terms such as "${matchedAdvancedTerms.slice(0, 3).join('", "')}".`);
   }
   if (foundTransitions.length > 0) {
-    strengths.push(`Effective answer structure! You used transition markers like "${foundTransitions.join('", "')}".`);
+    strengths.push(`Effective answer structure! You used logical transition markers like "${foundTransitions.join('", "')}".`);
   }
   if (relevanceScore >= 75) {
-    strengths.push(`High prompt relevance! Your answer directly addressed the topic "${topicTitle}".`);
+    strengths.push(`High topic alignment! Your response directly addressed "${topicTitle}".`);
   }
   if (strengths.length === 0) {
-    strengths.push('You started your speaking attempt with clear enthusiasm.');
+    strengths.push('You initiated your speaking practice attempt clearly.');
   }
 
   // Real Specific Improvements
   if (fillerCount > 0) {
     const uniqueFillers = Array.from(new Set(fillerMatches.map((f) => f.toLowerCase())));
-    improvements.push(`Reduce filler words: You used "${uniqueFillers.join('", "')}" ${fillerCount} time(s). Practice pausing silently instead.`);
+    improvements.push(`Reduce filler words: Detected "${uniqueFillers.join('", "')}" ${fillerCount} time(s). Replace them with deliberate pauses.`);
   }
   if (wordCount < 30) {
-    improvements.push(`Elaborate further: You spoke ${wordCount} word(s). Aim for at least 40-60 words to fully develop your thoughts.`);
+    improvements.push(`Elaborate further: You spoke ${wordCount} word(s). Aim for 40-60+ words to thoroughly answer the prompt.`);
   }
   if (foundTransitions.length === 0) {
-    improvements.push('Improve structure: Add logical connectors such as "firstly", "for example", or "in conclusion".');
+    improvements.push('Improve structure: Add transition phrases such as "firstly", "for example", or "consequently".');
   }
   if (matchedAdvancedTerms.length === 0 && wordCount >= 20) {
-    improvements.push('Vocabulary boost: Try incorporating domain-specific terms into your response.');
+    improvements.push('Vocabulary boost: Include more industry-specific technical vocabulary.');
   }
   if (improvements.length === 0) {
-    improvements.push('Work on varying your pitch and vocal inflection to project maximum confidence.');
+    improvements.push('Focus on varying your vocal tone and pitch to project maximum confidence.');
   }
 
-  // Real Tailored Next Practice Recommendation
   let nextPracticeRecommendation = 'Try another 60-second challenge focusing on speaking fluency and structure.';
   if (focusArea === 'Fluency') {
     nextPracticeRecommendation = 'Practice speaking continuously for 60 seconds without using filler words like "um" or "like".';
@@ -212,33 +212,46 @@ export function evaluateInterviewResponse(
   const words = cleanedText ? cleanedText.split(/\s+/).filter((w) => w.length > 0) : [];
   const len = words.length;
 
-  let baseScore = 70;
-  if (len < 10) {
-    baseScore = 45;
-  } else if (len >= 10 && len < 30) {
-    baseScore = 65;
-  } else if (len >= 30 && len <= 100) {
-    baseScore = 85;
+  // Real transcript NLP metrics for interview responses
+  const questionKeywords = questionText.toLowerCase().split(/\s+/).filter((w) => w.length > 3);
+  const matchedQuestionKeywords = questionKeywords.filter((kw) => cleanedText.toLowerCase().includes(kw));
+
+  const technicalKeywords = [
+    'code', 'development', 'system', 'database', 'algorithm', 'api', 'architecture',
+    'testing', 'deployment', 'framework', 'optimization', 'debug', 'security', 'cloud',
+    'performance', 'logic', 'workflow', 'agile', 'git', 'refactor'
+  ];
+  const matchedTechTerms = Array.from(new Set(words.map((w) => w.toLowerCase()).filter((w) => technicalKeywords.includes(w))));
+
+  let baseScore = 72;
+  if (len < 15) {
+    baseScore = 50;
+  } else if (len >= 15 && len < 35) {
+    baseScore = 68;
+  } else if (len >= 35 && len <= 120) {
+    baseScore = 86;
   } else {
     baseScore = 80;
   }
 
-  const communicationScore = Math.min(96, Math.max(45, baseScore + (len > 25 ? 5 : -5)));
-  const technicalKnowledgeScore = Math.min(96, Math.max(45, baseScore + (len > 30 ? 6 : -4)));
-  const confidenceScore = Math.min(95, Math.max(50, baseScore));
-  const answerQualityScore = Math.min(96, Math.max(45, baseScore));
-  const problemSolvingScore = Math.min(95, Math.max(45, baseScore));
-  const professionalismScore = Math.min(98, Math.max(60, baseScore + 5));
+  const communicationScore = Math.min(98, Math.max(45, baseScore + (len > 30 ? 6 : -4)));
+  const technicalKnowledgeScore = Math.min(98, Math.max(45, baseScore + matchedTechTerms.length * 4));
+  const confidenceScore = Math.min(96, Math.max(50, baseScore + (len > 40 ? 5 : 0)));
+  const answerQualityScore = Math.min(98, Math.max(45, baseScore + (matchedQuestionKeywords.length > 0 ? 5 : 0)));
+  const problemSolvingScore = Math.min(96, Math.max(45, baseScore + (cleanedText.toLowerCase().includes('solution') || cleanedText.toLowerCase().includes('solve') ? 6 : 0)));
+  const professionalismScore = Math.min(98, Math.max(60, baseScore + 6));
 
   const overallScore = Math.round(
     (communicationScore + technicalKnowledgeScore + confidenceScore + answerQualityScore + problemSolvingScore + professionalismScore) / 6
   );
 
-  let feedbackText = `Good answer! You provided a ${len}-word response addressing the question clearly.`;
+  let feedbackText = `Good response! You spoke ${len} words addressing the interview question.`;
   if (len < 20) {
-    feedbackText = `Your answer was concise (${len} words). Provide more technical context, specific examples, or methodology details.`;
+    feedbackText = `Your answer was brief (${len} words). Elaborate with technical context, project examples, or STAR framework methodology.`;
+  } else if (matchedTechTerms.length > 0) {
+    feedbackText = `Strong answer! Spoke ${len} words using technical concepts like "${matchedTechTerms.slice(0, 3).join('", "')}".`;
   } else if (overallScore >= 82) {
-    feedbackText = `Excellent articulation! Your ${len}-word response demonstrated solid reasoning, clean structure, and professional tone.`;
+    feedbackText = `Excellent articulation! Your ${len}-word answer demonstrated strong reasoning, clear structure, and professional tone.`;
   }
 
   return {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Mic, Square, RotateCcw, AlertTriangle, CheckCircle2, Lock } from 'lucide-react';
+import { Mic, Square, RotateCcw, AlertTriangle, CheckCircle2, Lock, Edit3 } from 'lucide-react';
 
 interface AudioRecorderProps {
   targetDurationSeconds: number;
@@ -20,14 +20,29 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
   const [recordedAudioUrl, setRecordedAudioUrl] = useState<string | null>(null);
   const [micPermissionDenied, setMicPermissionDenied] = useState(false);
   const [transcriptText, setTranscriptText] = useState<string>('');
+  const [isEditingTranscript, setIsEditingTranscript] = useState(false);
   const [audioBlob, setAudioBlob] = useState<Blob | null>(null);
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const timerIntervalRef = useRef<any>(null);
   const speechRecognitionRef = useRef<any>(null);
+  
+  // Refs for race-condition safe checks across callbacks
+  const isRecordingRef = useRef(false);
+  const elapsedSecondsRef = useRef(0);
+  const accumulatedTranscriptRef = useRef('');
 
-  // Initialize Web Speech Recognition
+  // Keep refs in sync with state
+  useEffect(() => {
+    isRecordingRef.current = isRecording;
+  }, [isRecording]);
+
+  useEffect(() => {
+    elapsedSecondsRef.current = elapsedSeconds;
+  }, [elapsedSeconds]);
+
+  // Initialize Continuous Web Speech Recognition with auto-restart on pause/end
   useEffect(() => {
     const SpeechRecognition =
       (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
@@ -39,11 +54,42 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
       recognition.lang = 'en-US';
 
       recognition.onresult = (event: any) => {
-        let currentTranscript = '';
-        for (let i = 0; i < event.results.length; i++) {
-          currentTranscript += event.results[i][0].transcript + ' ';
+        let interimTranscript = '';
+        let finalChunk = '';
+
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+          const trans = event.results[i][0].transcript;
+          if (event.results[i].isFinal) {
+            finalChunk += trans + ' ';
+          } else {
+            interimTranscript += trans;
+          }
         }
-        setTranscriptText(currentTranscript);
+
+        if (finalChunk) {
+          accumulatedTranscriptRef.current += finalChunk;
+        }
+
+        const fullTranscript = (accumulatedTranscriptRef.current + interimTranscript).trim();
+        setTranscriptText(fullTranscript);
+      };
+
+      // Handle browser Web Speech API auto-stop (silence timeout) by restarting while recording
+      recognition.onend = () => {
+        if (isRecordingRef.current) {
+          try {
+            recognition.start();
+          } catch (e) {
+            // Already started or restarting
+          }
+        }
+      };
+
+      recognition.onerror = (event: any) => {
+        console.warn('Speech recognition event:', event.error);
+        if (event.error === 'not-allowed') {
+          setMicPermissionDenied(true);
+        }
       };
 
       speechRecognitionRef.current = recognition;
@@ -57,17 +103,25 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
       if (mediaRecorderRef.current && mediaRecorderRef.current.state === 'recording') {
         mediaRecorderRef.current.stop();
       }
+      if (speechRecognitionRef.current) {
+        try {
+          speechRecognitionRef.current.stop();
+        } catch (e) {}
+      }
     };
   }, []);
 
   const startRecording = async () => {
     setMicPermissionDenied(false);
     setTranscriptText('');
+    accumulatedTranscriptRef.current = '';
     setRecordedAudioUrl(null);
     setAudioBlob(null);
+    setIsEditingTranscript(false);
     audioChunksRef.current = [];
     setTimerSeconds(targetDurationSeconds);
     setElapsedSeconds(0);
+    elapsedSecondsRef.current = 0;
 
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -92,25 +146,31 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
 
       mediaRecorder.start(200);
       setIsRecording(true);
+      isRecordingRef.current = true;
 
       if (speechRecognitionRef.current) {
         try {
           speechRecognitionRef.current.start();
         } catch (e) {
-          console.warn('Speech recognition already active');
+          console.warn('Speech recognition start note:', e);
         }
       }
 
       timerIntervalRef.current = setInterval(() => {
         setElapsedSeconds((prevElapsed) => {
           const newElapsed = prevElapsed + 1;
+          elapsedSecondsRef.current = newElapsed;
+
           setTimerSeconds((prevTimer) => {
             if (prevTimer <= 1) {
-              stopRecording();
+              if (newElapsed >= MIN_RECORDING_SECONDS) {
+                stopRecording(true);
+              }
               return 0;
             }
             return prevTimer - 1;
           });
+
           return newElapsed;
         });
       }, 1000);
@@ -120,10 +180,18 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
     }
   };
 
-  const stopRecording = () => {
+  const stopRecording = (force = false) => {
+    // Strictly prevent stopping before 30 seconds unless forced by timer expiry
+    if (!force && elapsedSecondsRef.current < MIN_RECORDING_SECONDS) {
+      return;
+    }
+
     if (timerIntervalRef.current) {
       clearInterval(timerIntervalRef.current);
     }
+
+    isRecordingRef.current = false;
+    setIsRecording(false);
 
     if (mediaRecorderRef.current && mediaRecorderRef.current.state === 'recording') {
       mediaRecorderRef.current.stop();
@@ -133,19 +201,20 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
       try {
         speechRecognitionRef.current.stop();
       } catch (e) {
-        console.warn('Speech recognition stop error', e);
+        console.warn('Speech recognition stop note', e);
       }
     }
-
-    setIsRecording(false);
   };
 
   const resetRecording = () => {
     setRecordedAudioUrl(null);
     setAudioBlob(null);
     setTranscriptText('');
+    accumulatedTranscriptRef.current = '';
+    setIsEditingTranscript(false);
     setTimerSeconds(targetDurationSeconds);
     setElapsedSeconds(0);
+    elapsedSecondsRef.current = 0;
   };
 
   const handleSubmit = () => {
@@ -175,8 +244,8 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
                 Microphone access is required for speaking practice
               </h4>
               <p className="text-xs text-rose-700 mt-1.5 leading-relaxed">
-                SkillSprint needs permission to record your voice to analyze your speaking performance.
-                Please click the lock icon in your browser address bar and enable Microphone access.
+                SkillSprint needs permission to record your voice to perform real AI analysis.
+                Please click the lock icon in your browser address bar and allow Microphone access.
               </p>
               <button
                 onClick={startRecording}
@@ -210,12 +279,12 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
         {isRecording && (
           <div className="mt-3 text-xs font-bold transition-colors">
             {!canStopRecording ? (
-              <span className="inline-flex items-center gap-1.5 text-amber-700 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
+              <span className="inline-flex items-center gap-1.5 text-amber-700 bg-amber-50 px-3.5 py-1.5 rounded-full border border-amber-200">
                 <Lock className="w-3.5 h-3.5 text-amber-600" />
                 Must record for at least 30s ({remainingMinimum}s remaining)
               </span>
             ) : (
-              <span className="inline-flex items-center gap-1.5 text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+              <span className="inline-flex items-center gap-1.5 text-emerald-700 bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                 Minimum 30s reached! You can now stop recording.
               </span>
@@ -244,21 +313,44 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
       {recordedAudioUrl && !isRecording && (
         <div className="mb-6 p-4 rounded-2xl bg-slate-50 border border-slate-200">
           <div className="flex items-center justify-center gap-2 text-xs font-bold text-emerald-700 mb-3">
-            <CheckCircle2 className="w-4 h-4" /> Voice Recording Complete ({elapsedSeconds} seconds)
+            <CheckCircle2 className="w-4 h-4" /> Voice Recording Captured ({elapsedSeconds} seconds)
           </div>
           <audio src={recordedAudioUrl} controls className="w-full h-10 rounded-lg" />
         </div>
       )}
 
-      {/* Live Transcript Preview */}
-      {transcriptText && (
-        <div className="mb-6 text-left bg-emerald-50/60 border border-emerald-200 rounded-2xl p-4">
-          <p className="text-[11px] font-extrabold uppercase tracking-wider text-[#064e3b] mb-1">
-            Real Spoken Transcript:
-          </p>
-          <p className="text-xs text-slate-800 italic leading-relaxed font-medium">
-            "{transcriptText.trim()}"
-          </p>
+      {/* Real Live Spoken Transcript Display / Editor */}
+      {(transcriptText || isRecording) && (
+        <div className="mb-6 text-left bg-emerald-50/70 border border-emerald-200 rounded-2xl p-4">
+          <div className="flex items-center justify-between mb-2">
+            <p className="text-[11px] font-extrabold uppercase tracking-wider text-[#064e3b] flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping inline-block" />
+              Real Spoken Audio Transcript:
+            </p>
+            {!isRecording && transcriptText && (
+              <button
+                onClick={() => setIsEditingTranscript(!isEditingTranscript)}
+                className="text-[11px] font-bold text-emerald-700 hover:text-emerald-900 inline-flex items-center gap-1"
+              >
+                <Edit3 className="w-3 h-3" />
+                {isEditingTranscript ? 'Done Editing' : 'Edit Transcript'}
+              </button>
+            )}
+          </div>
+
+          {isEditingTranscript ? (
+            <textarea
+              rows={3}
+              value={transcriptText}
+              onChange={(e) => setTranscriptText(e.target.value)}
+              className="w-full p-3 rounded-xl border border-emerald-300 bg-white text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-medium"
+              placeholder="Spoken words will appear here..."
+            />
+          ) : (
+            <p className="text-xs text-slate-800 italic leading-relaxed font-medium">
+              "{transcriptText.trim() || (isRecording ? 'Listening to your voice...' : 'No transcript recorded.')}"
+            </p>
+          )}
         </div>
       )}
 
@@ -275,7 +367,7 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
 
         {isRecording && (
           <button
-            onClick={stopRecording}
+            onClick={() => stopRecording(false)}
             disabled={!canStopRecording}
             className={`flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-2xl font-extrabold text-xs transition-all w-full sm:w-auto ${
               canStopRecording
