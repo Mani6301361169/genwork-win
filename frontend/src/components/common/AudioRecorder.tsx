@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Mic, Square, Play, RotateCcw, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import { Mic, Square, RotateCcw, AlertTriangle, CheckCircle2, Lock } from 'lucide-react';
 
 interface AudioRecorderProps {
   targetDurationSeconds: number;
@@ -12,8 +12,11 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
   onRecordingComplete,
   isSubmitting = false,
 }) => {
+  const MIN_RECORDING_SECONDS = 30;
+
   const [isRecording, setIsRecording] = useState(false);
   const [timerSeconds, setTimerSeconds] = useState(targetDurationSeconds);
+  const [elapsedSeconds, setElapsedSeconds] = useState(0);
   const [recordedAudioUrl, setRecordedAudioUrl] = useState<string | null>(null);
   const [micPermissionDenied, setMicPermissionDenied] = useState(false);
   const [transcriptText, setTranscriptText] = useState<string>('');
@@ -24,7 +27,7 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
   const timerIntervalRef = useRef<any>(null);
   const speechRecognitionRef = useRef<any>(null);
 
-  // Initialize Speech Recognition if supported
+  // Initialize Web Speech Recognition
   useEffect(() => {
     const SpeechRecognition =
       (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
@@ -64,6 +67,7 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
     setAudioBlob(null);
     audioChunksRef.current = [];
     setTimerSeconds(targetDurationSeconds);
+    setElapsedSeconds(0);
 
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -83,14 +87,12 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
         const url = URL.createObjectURL(blob);
         setRecordedAudioUrl(url);
 
-        // Stop all tracks in media stream
         stream.getTracks().forEach((track) => track.stop());
       };
 
       mediaRecorder.start(200);
       setIsRecording(true);
 
-      // Start Web Speech Recognition if available
       if (speechRecognitionRef.current) {
         try {
           speechRecognitionRef.current.start();
@@ -99,14 +101,17 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
         }
       }
 
-      // Start Countdown Timer
       timerIntervalRef.current = setInterval(() => {
-        setTimerSeconds((prev) => {
-          if (prev <= 1) {
-            stopRecording();
-            return 0;
-          }
-          return prev - 1;
+        setElapsedSeconds((prevElapsed) => {
+          const newElapsed = prevElapsed + 1;
+          setTimerSeconds((prevTimer) => {
+            if (prevTimer <= 1) {
+              stopRecording();
+              return 0;
+            }
+            return prevTimer - 1;
+          });
+          return newElapsed;
         });
       }, 1000);
     } catch (err: any) {
@@ -140,12 +145,11 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
     setAudioBlob(null);
     setTranscriptText('');
     setTimerSeconds(targetDurationSeconds);
+    setElapsedSeconds(0);
   };
 
   const handleSubmit = () => {
-    const finalTranscript =
-      transcriptText.trim() ||
-      'I spoke about my favorite technology and explained how it empowers students and professionals through daily productivity and learning.';
+    const finalTranscript = transcriptText.trim() || 'No audio transcript detected.';
     onRecordingComplete(finalTranscript, audioBlob);
   };
 
@@ -155,21 +159,24 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
+  const canStopRecording = elapsedSeconds >= MIN_RECORDING_SECONDS;
+  const remainingMinimum = Math.max(0, MIN_RECORDING_SECONDS - elapsedSeconds);
+
   return (
-    <div className="bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-soft text-center max-w-xl mx-auto">
+    <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm text-center max-w-xl mx-auto">
       
       {/* Microphone Permission Denied Alert */}
-      {micPermissionDenied ? (
-        <div className="bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-800/60 rounded-2xl p-6 text-left mb-6">
+      {micPermissionDenied && (
+        <div className="bg-rose-50 border border-rose-200 rounded-2xl p-6 text-left mb-6">
           <div className="flex items-start gap-3">
-            <AlertTriangle className="w-6 h-6 text-rose-600 dark:text-rose-400 shrink-0 mt-0.5" />
+            <AlertTriangle className="w-6 h-6 text-rose-600 shrink-0 mt-0.5" />
             <div>
-              <h4 className="text-sm font-bold text-rose-900 dark:text-rose-200">
+              <h4 className="text-sm font-bold text-rose-900">
                 Microphone access is required for speaking practice
               </h4>
-              <p className="text-xs text-rose-700 dark:text-rose-300 mt-1.5 leading-relaxed">
-                SkillSprint needs permission to record your voice to evaluate your fluency, grammar, and vocabulary.
-                Please click the lock icon in your browser address bar and set Microphone to "Allow".
+              <p className="text-xs text-rose-700 mt-1.5 leading-relaxed">
+                SkillSprint needs permission to record your voice to analyze your speaking performance.
+                Please click the lock icon in your browser address bar and enable Microphone access.
               </p>
               <button
                 onClick={startRecording}
@@ -180,33 +187,50 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
             </div>
           </div>
         </div>
-      ) : null}
+      )}
 
       {/* Timer Display */}
       <div className="mb-6">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-sm font-bold mb-3">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 font-mono text-xs font-bold mb-3">
           <span>Target Duration: {targetDurationSeconds}s</span>
         </div>
         <div
           className={`text-5xl sm:text-6xl font-extrabold font-mono tracking-tight transition-colors ${
             isRecording
-              ? 'text-accent-500 animate-pulse'
+              ? 'text-amber-500 animate-pulse'
               : timerSeconds === 0
-              ? 'text-emerald-500'
-              : 'text-slate-800 dark:text-slate-100'
+              ? 'text-emerald-600'
+              : 'text-slate-900'
           }`}
         >
           {formatTime(timerSeconds)}
         </div>
+
+        {/* 30-Second Minimum Recording Status Indicator */}
+        {isRecording && (
+          <div className="mt-3 text-xs font-bold transition-colors">
+            {!canStopRecording ? (
+              <span className="inline-flex items-center gap-1.5 text-amber-700 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
+                <Lock className="w-3.5 h-3.5 text-amber-600" />
+                Must record for at least 30s ({remainingMinimum}s remaining)
+              </span>
+            ) : (
+              <span className="inline-flex items-center gap-1.5 text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                Minimum 30s reached! You can now stop recording.
+              </span>
+            )}
+          </div>
+        )}
       </div>
 
-      {/* Audio Wave Visualizer Simulation */}
+      {/* Live Audio Waveform Simulation */}
       {isRecording && (
         <div className="flex items-center justify-center gap-1.5 h-12 mb-6">
           {[40, 70, 30, 90, 50, 80, 45, 95, 60, 35, 75, 50].map((h, i) => (
             <div
               key={i}
-              className="w-1.5 bg-gradient-to-t from-brand-500 to-accent-500 rounded-full animate-pulse"
+              className="w-1.5 bg-[#064e3b] rounded-full animate-pulse"
               style={{
                 height: `${Math.max(15, Math.round(h * Math.random()))}px`,
                 animationDelay: `${i * 0.1}s`,
@@ -216,34 +240,34 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
         </div>
       )}
 
-      {/* Live Audio Playback preview */}
+      {/* Audio Playback preview */}
       {recordedAudioUrl && !isRecording && (
-        <div className="mb-6 p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700">
-          <div className="flex items-center justify-center gap-2 text-xs font-bold text-emerald-600 dark:text-emerald-400 mb-3">
-            <CheckCircle2 className="w-4 h-4" /> Audio Recorded Successfully!
+        <div className="mb-6 p-4 rounded-2xl bg-slate-50 border border-slate-200">
+          <div className="flex items-center justify-center gap-2 text-xs font-bold text-emerald-700 mb-3">
+            <CheckCircle2 className="w-4 h-4" /> Voice Recording Complete ({elapsedSeconds} seconds)
           </div>
           <audio src={recordedAudioUrl} controls className="w-full h-10 rounded-lg" />
         </div>
       )}
 
-      {/* Live Transcript View */}
+      {/* Live Transcript Preview */}
       {transcriptText && (
-        <div className="mb-6 text-left bg-brand-50/50 dark:bg-brand-950/20 border border-brand-100 dark:border-brand-900/40 rounded-2xl p-4">
-          <p className="text-[11px] font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 mb-1">
-            Live Speech Transcript
+        <div className="mb-6 text-left bg-emerald-50/60 border border-emerald-200 rounded-2xl p-4">
+          <p className="text-[11px] font-extrabold uppercase tracking-wider text-[#064e3b] mb-1">
+            Real Spoken Transcript:
           </p>
-          <p className="text-xs text-slate-700 dark:text-slate-300 italic leading-relaxed">
+          <p className="text-xs text-slate-800 italic leading-relaxed font-medium">
             "{transcriptText.trim()}"
           </p>
         </div>
       )}
 
       {/* Action Control Buttons */}
-      <div className="flex flex-wrap items-center justify-center gap-4">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
         {!isRecording && !recordedAudioUrl && (
           <button
             onClick={startRecording}
-            className="flex items-center gap-2.5 px-6 py-3.5 bg-gradient-to-r from-brand-600 to-accent-600 hover:from-brand-700 hover:to-accent-700 text-white rounded-2xl font-bold text-sm shadow-soft hover:shadow-glow transition-all"
+            className="flex items-center justify-center gap-2.5 px-8 py-3.5 bg-[#064e3b] hover:bg-[#047857] text-white rounded-2xl font-extrabold text-xs shadow-sm transition-all w-full sm:w-auto"
           >
             <Mic className="w-5 h-5" /> Start Recording
           </button>
@@ -252,9 +276,15 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
         {isRecording && (
           <button
             onClick={stopRecording}
-            className="flex items-center gap-2.5 px-6 py-3.5 bg-rose-600 hover:bg-rose-700 text-white rounded-2xl font-bold text-sm shadow-md transition-all animate-bounce"
+            disabled={!canStopRecording}
+            className={`flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-2xl font-extrabold text-xs transition-all w-full sm:w-auto ${
+              canStopRecording
+                ? 'bg-rose-600 hover:bg-rose-700 text-white shadow-md cursor-pointer animate-bounce'
+                : 'bg-slate-300 text-slate-500 cursor-not-allowed border border-slate-300'
+            }`}
           >
-            <Square className="w-5 h-5 fill-current" /> Stop Recording
+            <Square className="w-4 h-4 fill-current" />
+            {canStopRecording ? 'Stop Recording' : `Must record for 30s (${remainingMinimum}s left)`}
           </button>
         )}
 
@@ -262,7 +292,7 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
           <>
             <button
               onClick={resetRecording}
-              className="flex items-center gap-2 px-4 py-3 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-2xl font-bold text-xs hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+              className="flex items-center justify-center gap-2 px-5 py-3 bg-slate-100 text-slate-700 rounded-2xl font-extrabold text-xs hover:bg-slate-200 transition-colors w-full sm:w-auto"
             >
               <RotateCcw className="w-4 h-4" /> Record Again
             </button>
@@ -270,9 +300,9 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
             <button
               onClick={handleSubmit}
               disabled={isSubmitting}
-              className="flex items-center gap-2 px-8 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-bold text-sm shadow-lg transition-all disabled:opacity-50"
+              className="flex items-center justify-center gap-2 px-8 py-3.5 bg-[#064e3b] hover:bg-[#047857] text-white rounded-2xl font-extrabold text-xs shadow-sm transition-all disabled:opacity-50 w-full sm:w-auto"
             >
-              {isSubmitting ? 'Analyzing Voice...' : 'Submit for AI Analysis'}
+              {isSubmitting ? 'Performing Real AI Analysis...' : 'Submit for AI Analysis'}
             </button>
           </>
         )}
