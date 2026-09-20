@@ -74,14 +74,12 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
         setTranscriptText(fullTranscript);
       };
 
-      // Handle browser Web Speech API auto-stop (silence timeout) by restarting while recording
+      // Handle browser Web Speech API auto-stop by restarting while recording
       recognition.onend = () => {
         if (isRecordingRef.current) {
           try {
             recognition.start();
-          } catch (e) {
-            // Already started or restarting
-          }
+          } catch (e) {}
         }
       };
 
@@ -232,24 +230,24 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
   const remainingMinimum = Math.max(0, MIN_RECORDING_SECONDS - elapsedSeconds);
 
   return (
-    <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm text-center max-w-xl mx-auto">
+    <div className="bg-white border-2 border-black rounded-3xl p-6 sm:p-8 shadow-xs text-center max-w-xl mx-auto">
       
       {/* Microphone Permission Denied Alert */}
       {micPermissionDenied && (
-        <div className="bg-rose-50 border border-rose-200 rounded-2xl p-6 text-left mb-6">
+        <div className="bg-zinc-100 border-2 border-black rounded-2xl p-6 text-left mb-6">
           <div className="flex items-start gap-3">
-            <AlertTriangle className="w-6 h-6 text-rose-600 shrink-0 mt-0.5" />
+            <AlertTriangle className="w-6 h-6 text-black shrink-0 mt-0.5" />
             <div>
-              <h4 className="text-sm font-bold text-rose-900">
+              <h4 className="text-sm font-extrabold text-black">
                 Microphone access is required for speaking practice
               </h4>
-              <p className="text-xs text-rose-700 mt-1.5 leading-relaxed">
+              <p className="text-xs text-zinc-700 mt-1.5 leading-relaxed font-medium">
                 SkillSprint needs permission to record your voice to perform real AI analysis.
                 Please click the lock icon in your browser address bar and allow Microphone access.
               </p>
               <button
                 onClick={startRecording}
-                className="mt-4 px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white rounded-xl text-xs font-bold transition-colors"
+                className="mt-4 px-4 py-2 bg-black hover:bg-zinc-800 text-white rounded-xl text-xs font-extrabold transition-colors border border-black"
               >
                 Try Again
               </button>
@@ -260,16 +258,12 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
 
       {/* Timer Display */}
       <div className="mb-6">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 text-slate-700 font-mono text-xs font-bold mb-3">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-100 text-black border border-black font-mono text-xs font-extrabold mb-3">
           <span>Target Duration: {targetDurationSeconds}s</span>
         </div>
         <div
           className={`text-5xl sm:text-6xl font-extrabold font-mono tracking-tight transition-colors ${
-            isRecording
-              ? 'text-amber-500 animate-pulse'
-              : timerSeconds === 0
-              ? 'text-emerald-600'
-              : 'text-slate-900'
+            isRecording ? 'text-black animate-pulse' : 'text-black'
           }`}
         >
           {formatTime(timerSeconds)}
@@ -277,15 +271,15 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
 
         {/* 30-Second Minimum Recording Status Indicator */}
         {isRecording && (
-          <div className="mt-3 text-xs font-bold transition-colors">
+          <div className="mt-3 text-xs font-extrabold transition-colors">
             {!canStopRecording ? (
-              <span className="inline-flex items-center gap-1.5 text-amber-700 bg-amber-50 px-3.5 py-1.5 rounded-full border border-amber-200">
-                <Lock className="w-3.5 h-3.5 text-amber-600" />
+              <span className="inline-flex items-center gap-1.5 text-black bg-zinc-100 px-3.5 py-1.5 rounded-full border-2 border-black">
+                <Lock className="w-3.5 h-3.5 text-black" />
                 Must record for at least 30s ({remainingMinimum}s remaining)
               </span>
             ) : (
-              <span className="inline-flex items-center gap-1.5 text-emerald-700 bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+              <span className="inline-flex items-center gap-1.5 text-white bg-black px-3.5 py-1.5 rounded-full border-2 border-black">
+                <CheckCircle2 className="w-3.5 h-3.5 text-white" />
                 Minimum 30s reached! You can now stop recording.
               </span>
             )}
@@ -299,7 +293,7 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
           {[40, 70, 30, 90, 50, 80, 45, 95, 60, 35, 75, 50].map((h, i) => (
             <div
               key={i}
-              className="w-1.5 bg-[#064e3b] rounded-full animate-pulse"
+              className="w-1.5 bg-black rounded-full animate-pulse"
               style={{
                 height: `${Math.max(15, Math.round(h * Math.random()))}px`,
                 animationDelay: `${i * 0.1}s`,
@@ -311,9 +305,9 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
 
       {/* Audio Playback preview */}
       {recordedAudioUrl && !isRecording && (
-        <div className="mb-6 p-4 rounded-2xl bg-slate-50 border border-slate-200">
-          <div className="flex items-center justify-center gap-2 text-xs font-bold text-emerald-700 mb-3">
-            <CheckCircle2 className="w-4 h-4" /> Voice Recording Captured ({elapsedSeconds} seconds)
+        <div className="mb-6 p-4 rounded-2xl bg-zinc-50 border-2 border-black">
+          <div className="flex items-center justify-center gap-2 text-xs font-extrabold text-black mb-3">
+            <CheckCircle2 className="w-4 h-4 text-black" /> Voice Recording Captured ({elapsedSeconds} seconds)
           </div>
           <audio src={recordedAudioUrl} controls className="w-full h-10 rounded-lg" />
         </div>
@@ -321,16 +315,16 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
 
       {/* Real Live Spoken Transcript Display / Editor */}
       {(transcriptText || isRecording) && (
-        <div className="mb-6 text-left bg-emerald-50/70 border border-emerald-200 rounded-2xl p-4">
+        <div className="mb-6 text-left bg-zinc-50 border-2 border-black rounded-2xl p-4">
           <div className="flex items-center justify-between mb-2">
-            <p className="text-[11px] font-extrabold uppercase tracking-wider text-[#064e3b] flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping inline-block" />
+            <p className="text-[11px] font-extrabold uppercase tracking-wider text-black flex items-center gap-1.5">
+              <span className="w-2.5 h-2.5 rounded-full bg-black animate-ping inline-block" />
               Real Spoken Audio Transcript:
             </p>
             {!isRecording && transcriptText && (
               <button
                 onClick={() => setIsEditingTranscript(!isEditingTranscript)}
-                className="text-[11px] font-bold text-emerald-700 hover:text-emerald-900 inline-flex items-center gap-1"
+                className="text-[11px] font-extrabold text-black underline inline-flex items-center gap-1"
               >
                 <Edit3 className="w-3 h-3" />
                 {isEditingTranscript ? 'Done Editing' : 'Edit Transcript'}
@@ -343,11 +337,11 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
               rows={3}
               value={transcriptText}
               onChange={(e) => setTranscriptText(e.target.value)}
-              className="w-full p-3 rounded-xl border border-emerald-300 bg-white text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-medium"
+              className="w-full p-3 rounded-xl border-2 border-black bg-white text-xs text-black focus:outline-none font-medium"
               placeholder="Spoken words will appear here..."
             />
           ) : (
-            <p className="text-xs text-slate-800 italic leading-relaxed font-medium">
+            <p className="text-xs text-black italic leading-relaxed font-semibold">
               "{transcriptText.trim() || (isRecording ? 'Listening to your voice...' : 'No transcript recorded.')}"
             </p>
           )}
@@ -359,7 +353,7 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
         {!isRecording && !recordedAudioUrl && (
           <button
             onClick={startRecording}
-            className="flex items-center justify-center gap-2.5 px-8 py-3.5 bg-[#064e3b] hover:bg-[#047857] text-white rounded-2xl font-extrabold text-xs shadow-sm transition-all w-full sm:w-auto"
+            className="flex items-center justify-center gap-2.5 px-8 py-3.5 bg-black hover:bg-zinc-800 text-white rounded-2xl font-extrabold text-xs shadow-xs transition-all w-full sm:w-auto border-2 border-black"
           >
             <Mic className="w-5 h-5" /> Start Recording
           </button>
@@ -369,10 +363,10 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
           <button
             onClick={() => stopRecording(false)}
             disabled={!canStopRecording}
-            className={`flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-2xl font-extrabold text-xs transition-all w-full sm:w-auto ${
+            className={`flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-2xl font-extrabold text-xs transition-all w-full sm:w-auto border-2 border-black ${
               canStopRecording
-                ? 'bg-rose-600 hover:bg-rose-700 text-white shadow-md cursor-pointer animate-bounce'
-                : 'bg-slate-300 text-slate-500 cursor-not-allowed border border-slate-300'
+                ? 'bg-black hover:bg-zinc-800 text-white shadow-md cursor-pointer animate-bounce'
+                : 'bg-zinc-200 text-zinc-500 cursor-not-allowed border-zinc-300'
             }`}
           >
             <Square className="w-4 h-4 fill-current" />
@@ -384,7 +378,7 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
           <>
             <button
               onClick={resetRecording}
-              className="flex items-center justify-center gap-2 px-5 py-3 bg-slate-100 text-slate-700 rounded-2xl font-extrabold text-xs hover:bg-slate-200 transition-colors w-full sm:w-auto"
+              className="flex items-center justify-center gap-2 px-5 py-3 bg-white text-black rounded-2xl font-extrabold text-xs hover:bg-zinc-100 transition-colors w-full sm:w-auto border-2 border-black"
             >
               <RotateCcw className="w-4 h-4" /> Record Again
             </button>
@@ -392,7 +386,7 @@ export const AudioRecorder: React.FC<AudioRecorderProps> = ({
             <button
               onClick={handleSubmit}
               disabled={isSubmitting}
-              className="flex items-center justify-center gap-2 px-8 py-3.5 bg-[#064e3b] hover:bg-[#047857] text-white rounded-2xl font-extrabold text-xs shadow-sm transition-all disabled:opacity-50 w-full sm:w-auto"
+              className="flex items-center justify-center gap-2 px-8 py-3.5 bg-black hover:bg-zinc-800 text-white rounded-2xl font-extrabold text-xs shadow-xs transition-all disabled:opacity-50 w-full sm:w-auto border-2 border-black"
             >
               {isSubmitting ? 'Performing Real AI Analysis...' : 'Submit for AI Analysis'}
             </button>
