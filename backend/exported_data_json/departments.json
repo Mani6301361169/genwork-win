@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1b78ebcf-1b6e-4481-826e-0c07311f26b1",
+    "code": "CSE",
+    "name": "Computer Science & Engineering",
+    "createdAt": "2026-09-09T07:09:43.805Z"
+  },
+  {
+    "id": "bf2c37a4-402f-43dd-9952-4e4da3446aef",
+    "code": "MECH",
+    "name": "Mechanical Engineering",
+    "createdAt": "2026-09-09T07:09:43.806Z"
+  },
+  {
+    "id": "354b4109-5216-471a-8ca5-c28b29076d0e",
+    "code": "IT",
+    "name": "Information Technology",
+    "createdAt": "2026-09-09T07:09:43.806Z"
+  },
+  {
+    "id": "056d4617-6b78-45ef-86c8-6bbf160a9976",
+    "code": "EEE",
+    "name": "Electrical & Electronics",
+    "createdAt": "2026-09-09T07:09:43.806Z"
+  },
+  {
+    "id": "752b254d-4482-4d09-bd9c-c7ff4364f24c",
+    "code": "ECE",
+    "name": "Electronics & Communication",
+    "createdAt": "2026-09-09T07:09:43.806Z"
+  }
+]

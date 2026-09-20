@@ -1,0 +1,1502 @@
+[
+  {
+    "id": "238577f7-65a3-4c0c-8d92-d3262b70594e",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "Tell me about yourself.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.409Z"
+  },
+  {
+    "id": "b389ab29-08b6-4aa9-9448-967f7b7f68de",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "What are your greatest strengths?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.416Z"
+  },
+  {
+    "id": "6406ffa0-01e3-4f0a-afd1-9f431ee068a9",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "What is your biggest weakness and how do you manage it?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.424Z"
+  },
+  {
+    "id": "1bac8669-424a-46bc-9ea7-71a289ea11fd",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "Where do you see yourself in five years?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.432Z"
+  },
+  {
+    "id": "415ea2b3-826b-4b3e-84ea-446e5da026fa",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "Why do you want to work for our company?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.439Z"
+  },
+  {
+    "id": "788d9321-7529-4f94-be0d-e947907bca8c",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "Describe a time you dealt with a difficult team member.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.446Z"
+  },
+  {
+    "id": "d393a271-79a5-43c6-9795-99bde42a94c8",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "How do you handle high pressure or tight deadlines?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.450Z"
+  },
+  {
+    "id": "06d33518-7888-4133-b92f-b953c17c2998",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "Why should we hire you over other candidate graduates?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.456Z"
+  },
+  {
+    "id": "ef441f86-2544-43c2-b04a-15fc4c58c265",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "What is your expected CTC / Salary expectation?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.459Z"
+  },
+  {
+    "id": "cd0b48f7-0f44-4447-9eda-d4386560aee9",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "Describe a college project you are most proud of.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.465Z"
+  },
+  {
+    "id": "180972b1-83eb-4873-870c-d9844e5afb95",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "How do you handle constructive feedback or criticism?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.468Z"
+  },
+  {
+    "id": "5b5d0a61-fbc6-484e-ac3d-dde86ea42d4f",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "Are you willing to relocate or work in rotational shifts?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.471Z"
+  },
+  {
+    "id": "ff0a714f-3ee1-4b14-8130-b09e9bd49d69",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "What motivates you to perform your best work?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.475Z"
+  },
+  {
+    "id": "ed93380c-53ba-43af-9960-c313194e4575",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "Describe a situation where you made a mistake and how you rectified it.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.478Z"
+  },
+  {
+    "id": "bf3093ad-7402-4f8e-87e6-863f0ae370a4",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "How do you prioritize multiple urgent assignments?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.480Z"
+  },
+  {
+    "id": "e1db1b78-09db-4d70-ab33-22ec6796ad62",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "What do you know about our company values and recent news?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.484Z"
+  },
+  {
+    "id": "91434763-48ab-4432-b9c2-ef04e3f280b4",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "Have you ever taken a leadership role in a college event?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.487Z"
+  },
+  {
+    "id": "0c66e99e-ec23-400e-968b-1602a39c0cec",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "How do you stay updated with industry trends?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.490Z"
+  },
+  {
+    "id": "c85da5e3-16f5-4a2e-b59b-0a3c89389dab",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "What does successful teamwork mean to you?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.492Z"
+  },
+  {
+    "id": "2002f56b-20a5-4bd7-aef7-a5a9eef68eba",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "How do you handle disagreements with team leaders?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.495Z"
+  },
+  {
+    "id": "1ef02ef1-ceaa-4f35-b39b-ffa6e1fa3df7",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "What is your ideal work environment?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.497Z"
+  },
+  {
+    "id": "95f52f2f-fd51-4b70-8854-9ace625846d1",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "What was your favorite subject in college and why?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.500Z"
+  },
+  {
+    "id": "cc2ed191-8c48-4077-9e35-f11b5273d05f",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "How do you balance academic studies with extracurriculars?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.502Z"
+  },
+  {
+    "id": "c3a206de-61fe-4a48-a263-86e4431837fd",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "Describe a situation where you had to learn a skill quickly.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.504Z"
+  },
+  {
+    "id": "bdf7a409-672d-4479-b8b4-cb9c02edc460",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "What are your career goals for the next two years?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.506Z"
+  },
+  {
+    "id": "4d87c8b5-66f0-4d13-af05-2d1e3a8726d6",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "How do you define personal success?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.509Z"
+  },
+  {
+    "id": "a4f59375-e163-46f0-8713-973fdb01bd85",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "Describe a time you failed to meet a goal and what you learned.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.511Z"
+  },
+  {
+    "id": "0670bba0-7625-4c14-97e2-dbcadaf61368",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "What would your college teammates say about working with you?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.513Z"
+  },
+  {
+    "id": "49257cec-81e8-4ec6-b945-046a16c5f1bb",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "How do you maintain enthusiasm during repetitive tasks?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.515Z"
+  },
+  {
+    "id": "fbddf50c-dac1-437e-9c2b-129614950946",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "What steps do you take when you encounter a problem you cannot solve alone?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.517Z"
+  },
+  {
+    "id": "1cccd659-2c72-4d69-b21c-5fc39b1a15b4",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "Explain a complex topic to someone with no technical background.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.522Z"
+  },
+  {
+    "id": "1f9feeb3-97e5-40b1-9ada-91d5cb6ddf71",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "How do you stay organized during multi-project sprints?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.525Z"
+  },
+  {
+    "id": "d3f7666f-a0e2-4b3a-b5e1-915b2e56ac3c",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "What values are most important to you in a employer?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.529Z"
+  },
+  {
+    "id": "2bba5af9-eb9d-4c03-adfe-130922755628",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "Describe your experience participating in hackathons or coding contests.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.531Z"
+  },
+  {
+    "id": "e8d6b3ec-5742-4aa7-9f95-01cd2411984e",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "How do you build trust with new colleagues?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.534Z"
+  },
+  {
+    "id": "05904976-1109-4788-8535-9d7a4c3894fd",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "What is one project feature you wish you built differently?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.537Z"
+  },
+  {
+    "id": "47971578-1c20-495f-8e04-9dd8350f0d88",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "How do you prepare before giving a technical presentation?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.539Z"
+  },
+  {
+    "id": "e74622ea-f557-4b83-bb6e-3655652e0e7c",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "What do you do when requirements change mid-way through a project?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.541Z"
+  },
+  {
+    "id": "b568fcb5-b9a3-410a-9f85-b86b48c64197",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "How do you manage stress outside of work and college?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.545Z"
+  },
+  {
+    "id": "c8a2575b-e066-4d40-9922-897f2aeb8d85",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "Why did you choose your engineering department branch?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.548Z"
+  },
+  {
+    "id": "eb91a3ac-9096-4792-ae93-f38e8d5b82b4",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "Describe a time you mentored or helped a junior student.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.550Z"
+  },
+  {
+    "id": "3985f187-b752-456d-8c98-0b5fe1f3417e",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "How do you verify the quality of your work before submission?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.554Z"
+  },
+  {
+    "id": "c06a5be3-7cb6-4a92-8b0f-90377c8e3a44",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "What would you do if assigned a project using a technology you dislike?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.557Z"
+  },
+  {
+    "id": "e9b4aa63-3e8b-4179-9895-f89a26d7036c",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "What active certifications or online courses have you completed recently?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.560Z"
+  },
+  {
+    "id": "c3ce6c6d-f2ab-4628-b884-e4cff8c1903a",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "How do you approach goal setting at the start of a semester?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.563Z"
+  },
+  {
+    "id": "0d33511b-5b69-4eeb-a974-45b319dc985b",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "What key lesson did you learn from your college internship?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.565Z"
+  },
+  {
+    "id": "8b278e3a-803b-4126-92a4-b618173786f3",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "How do you stay focused when working remotely from home?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.568Z"
+  },
+  {
+    "id": "f1c6456e-056c-4fcf-becb-4b06013cdac4",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "What makes you stand out from other students in your batch?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.573Z"
+  },
+  {
+    "id": "8356fe2c-b229-439a-96c7-eb539c8a87cf",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "Do you have any questions for us regarding the role or company?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.576Z"
+  },
+  {
+    "id": "fc1cb164-3548-4bdd-8d94-cd85af767e68",
+    "categoryId": "fddf8d9f-6db1-4c84-8228-aec2bd42effa",
+    "questionText": "How soon can you join if selected during campus placement?",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 3,
+    "sampleAnswer": "Start with your current background, highlight 2-3 relevant projects or achievements, explain your passion for the domain, and conclude with why this specific role matches your career objectives.",
+    "keyPointsJson": "[\"Clear background summary\",\"Relevant achievements\",\"Positive enthusiastic tone\",\"STAR format\"]",
+    "createdAt": "2026-09-09T07:09:44.580Z"
+  },
+  {
+    "id": "e3da2f75-1cd7-4d10-a002-74aa0890ea6f",
+    "categoryId": "7e410313-6f6e-4157-937e-a6cda6224866",
+    "questionText": "Explain key concept #1 in Python and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Python, concept #1 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.584Z"
+  },
+  {
+    "id": "ff512781-b64f-4364-aed7-26942a786943",
+    "categoryId": "7e410313-6f6e-4157-937e-a6cda6224866",
+    "questionText": "Explain key concept #2 in Python and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Python, concept #2 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.588Z"
+  },
+  {
+    "id": "77361ec6-ad72-4c1f-acf8-c01ce40e10b2",
+    "categoryId": "7e410313-6f6e-4157-937e-a6cda6224866",
+    "questionText": "Explain key concept #3 in Python and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Python, concept #3 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.591Z"
+  },
+  {
+    "id": "0b3fb9b1-2d66-4971-a159-e57aacb90500",
+    "categoryId": "7e410313-6f6e-4157-937e-a6cda6224866",
+    "questionText": "Explain key concept #4 in Python and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Python, concept #4 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.594Z"
+  },
+  {
+    "id": "3306a9bd-0c84-4287-9d61-213737d343d0",
+    "categoryId": "7e410313-6f6e-4157-937e-a6cda6224866",
+    "questionText": "Explain key concept #5 in Python and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Python, concept #5 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.597Z"
+  },
+  {
+    "id": "65529038-09de-4559-ac90-73963b7de7ba",
+    "categoryId": "7e410313-6f6e-4157-937e-a6cda6224866",
+    "questionText": "Explain key concept #6 in Python and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Python, concept #6 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.600Z"
+  },
+  {
+    "id": "6cf6b5f5-d064-4aa6-9178-98a3176c0e9a",
+    "categoryId": "7e410313-6f6e-4157-937e-a6cda6224866",
+    "questionText": "Explain key concept #7 in Python and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Python, concept #7 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.603Z"
+  },
+  {
+    "id": "41cafe48-a495-4b95-b915-e25d42306609",
+    "categoryId": "7e410313-6f6e-4157-937e-a6cda6224866",
+    "questionText": "Explain key concept #8 in Python and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Python, concept #8 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.607Z"
+  },
+  {
+    "id": "0f7f8214-92a2-4ea0-a623-420dfce7bce0",
+    "categoryId": "7e410313-6f6e-4157-937e-a6cda6224866",
+    "questionText": "Explain key concept #9 in Python and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Python, concept #9 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.613Z"
+  },
+  {
+    "id": "173bdbd1-facc-4aea-8d1c-238b046ed820",
+    "categoryId": "7e410313-6f6e-4157-937e-a6cda6224866",
+    "questionText": "Explain key concept #10 in Python and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Python, concept #10 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.615Z"
+  },
+  {
+    "id": "eb89f9fc-f2e7-4d41-87d3-b2ea7eea17b0",
+    "categoryId": "9fefec28-e8e0-4f4d-ba8b-454efe5bed0d",
+    "questionText": "Explain key concept #1 in Java and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Java, concept #1 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.618Z"
+  },
+  {
+    "id": "fe242d75-8a94-48a5-ac81-1249bb461438",
+    "categoryId": "9fefec28-e8e0-4f4d-ba8b-454efe5bed0d",
+    "questionText": "Explain key concept #2 in Java and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Java, concept #2 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.621Z"
+  },
+  {
+    "id": "a77c4969-8365-4e02-890c-f34fd3958b1e",
+    "categoryId": "9fefec28-e8e0-4f4d-ba8b-454efe5bed0d",
+    "questionText": "Explain key concept #3 in Java and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Java, concept #3 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.623Z"
+  },
+  {
+    "id": "66ab2c68-0785-4348-a2e4-f2df43dfb47f",
+    "categoryId": "9fefec28-e8e0-4f4d-ba8b-454efe5bed0d",
+    "questionText": "Explain key concept #4 in Java and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Java, concept #4 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.625Z"
+  },
+  {
+    "id": "c5155bed-ca6b-46f9-878c-6237631f8d53",
+    "categoryId": "9fefec28-e8e0-4f4d-ba8b-454efe5bed0d",
+    "questionText": "Explain key concept #5 in Java and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Java, concept #5 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.628Z"
+  },
+  {
+    "id": "25c70827-3a78-40c0-b599-629662629841",
+    "categoryId": "9fefec28-e8e0-4f4d-ba8b-454efe5bed0d",
+    "questionText": "Explain key concept #6 in Java and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Java, concept #6 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.630Z"
+  },
+  {
+    "id": "51f02e1f-54f5-4898-9966-9add522ac173",
+    "categoryId": "9fefec28-e8e0-4f4d-ba8b-454efe5bed0d",
+    "questionText": "Explain key concept #7 in Java and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Java, concept #7 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.632Z"
+  },
+  {
+    "id": "48b7fd89-7406-4470-967d-b0740bdb9f7e",
+    "categoryId": "9fefec28-e8e0-4f4d-ba8b-454efe5bed0d",
+    "questionText": "Explain key concept #8 in Java and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Java, concept #8 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.635Z"
+  },
+  {
+    "id": "54f5c709-914b-4d51-b150-fb632ab40c9c",
+    "categoryId": "9fefec28-e8e0-4f4d-ba8b-454efe5bed0d",
+    "questionText": "Explain key concept #9 in Java and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Java, concept #9 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.637Z"
+  },
+  {
+    "id": "e59bd569-577b-4d7b-8113-7522b746328b",
+    "categoryId": "9fefec28-e8e0-4f4d-ba8b-454efe5bed0d",
+    "questionText": "Explain key concept #10 in Java and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Java, concept #10 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.640Z"
+  },
+  {
+    "id": "8f47b3d6-899c-4c46-b116-b56c8129f65e",
+    "categoryId": "0b319025-ff3d-470c-afd6-6501797b5475",
+    "questionText": "Explain key concept #1 in C / C++ and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In C / C++, concept #1 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.642Z"
+  },
+  {
+    "id": "212c87b5-aa6d-4445-9c05-9f6b1815bb07",
+    "categoryId": "0b319025-ff3d-470c-afd6-6501797b5475",
+    "questionText": "Explain key concept #2 in C / C++ and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In C / C++, concept #2 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.644Z"
+  },
+  {
+    "id": "2e7b6f8e-61aa-4ee3-8694-f718623223aa",
+    "categoryId": "0b319025-ff3d-470c-afd6-6501797b5475",
+    "questionText": "Explain key concept #3 in C / C++ and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In C / C++, concept #3 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.646Z"
+  },
+  {
+    "id": "f91bb779-605d-4a0e-99bd-71f420d5a0a5",
+    "categoryId": "0b319025-ff3d-470c-afd6-6501797b5475",
+    "questionText": "Explain key concept #4 in C / C++ and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In C / C++, concept #4 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.648Z"
+  },
+  {
+    "id": "e7a7c15d-b638-4bb4-bd9f-836d58e9e8ac",
+    "categoryId": "0b319025-ff3d-470c-afd6-6501797b5475",
+    "questionText": "Explain key concept #5 in C / C++ and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In C / C++, concept #5 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.651Z"
+  },
+  {
+    "id": "8116476d-aa53-4831-8e1a-1aeff180cde2",
+    "categoryId": "0b319025-ff3d-470c-afd6-6501797b5475",
+    "questionText": "Explain key concept #6 in C / C++ and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In C / C++, concept #6 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.653Z"
+  },
+  {
+    "id": "756be05c-21d3-412b-a0cd-130ea96ee1e8",
+    "categoryId": "0b319025-ff3d-470c-afd6-6501797b5475",
+    "questionText": "Explain key concept #7 in C / C++ and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In C / C++, concept #7 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.656Z"
+  },
+  {
+    "id": "9774459b-e671-4e38-8fa4-30586e57e72d",
+    "categoryId": "0b319025-ff3d-470c-afd6-6501797b5475",
+    "questionText": "Explain key concept #8 in C / C++ and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In C / C++, concept #8 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.659Z"
+  },
+  {
+    "id": "9c6d0a38-5c72-44dc-8165-308f5a4c0962",
+    "categoryId": "0b319025-ff3d-470c-afd6-6501797b5475",
+    "questionText": "Explain key concept #9 in C / C++ and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In C / C++, concept #9 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.666Z"
+  },
+  {
+    "id": "4b7b3981-28f7-4549-a757-5a2720a30948",
+    "categoryId": "0b319025-ff3d-470c-afd6-6501797b5475",
+    "questionText": "Explain key concept #10 in C / C++ and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In C / C++, concept #10 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.668Z"
+  },
+  {
+    "id": "23de9853-21ef-4547-8667-442836eceb0c",
+    "categoryId": "c8886179-f51c-425a-ad27-d35767279c5f",
+    "questionText": "Explain key concept #1 in SQL & Databases and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In SQL & Databases, concept #1 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.671Z"
+  },
+  {
+    "id": "feb674ab-5d40-4af4-a389-ea3dd3ea84a0",
+    "categoryId": "c8886179-f51c-425a-ad27-d35767279c5f",
+    "questionText": "Explain key concept #2 in SQL & Databases and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In SQL & Databases, concept #2 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.675Z"
+  },
+  {
+    "id": "69c549d5-80aa-4b4a-84a6-d65d160d1b36",
+    "categoryId": "c8886179-f51c-425a-ad27-d35767279c5f",
+    "questionText": "Explain key concept #3 in SQL & Databases and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In SQL & Databases, concept #3 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.678Z"
+  },
+  {
+    "id": "28c2fff9-2442-40f7-9027-1c9649e9deb6",
+    "categoryId": "c8886179-f51c-425a-ad27-d35767279c5f",
+    "questionText": "Explain key concept #4 in SQL & Databases and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In SQL & Databases, concept #4 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.681Z"
+  },
+  {
+    "id": "d6e4d424-bebe-4e45-b71d-698b68d9d19a",
+    "categoryId": "c8886179-f51c-425a-ad27-d35767279c5f",
+    "questionText": "Explain key concept #5 in SQL & Databases and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In SQL & Databases, concept #5 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.683Z"
+  },
+  {
+    "id": "307ae63d-4f7d-4228-8919-fd23b28856b6",
+    "categoryId": "c8886179-f51c-425a-ad27-d35767279c5f",
+    "questionText": "Explain key concept #6 in SQL & Databases and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In SQL & Databases, concept #6 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.687Z"
+  },
+  {
+    "id": "bcb02463-f7ad-44c4-9dd4-d47c7ccd603d",
+    "categoryId": "c8886179-f51c-425a-ad27-d35767279c5f",
+    "questionText": "Explain key concept #7 in SQL & Databases and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In SQL & Databases, concept #7 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.689Z"
+  },
+  {
+    "id": "afbcf5fe-edbd-421d-8ba7-aa9f7b2012cc",
+    "categoryId": "c8886179-f51c-425a-ad27-d35767279c5f",
+    "questionText": "Explain key concept #8 in SQL & Databases and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In SQL & Databases, concept #8 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.692Z"
+  },
+  {
+    "id": "7f479ccb-7a20-468c-93f4-3b56b39defb7",
+    "categoryId": "c8886179-f51c-425a-ad27-d35767279c5f",
+    "questionText": "Explain key concept #9 in SQL & Databases and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In SQL & Databases, concept #9 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.697Z"
+  },
+  {
+    "id": "b51e3bce-83d1-4366-ac86-3f5f7efd0e43",
+    "categoryId": "c8886179-f51c-425a-ad27-d35767279c5f",
+    "questionText": "Explain key concept #10 in SQL & Databases and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In SQL & Databases, concept #10 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.700Z"
+  },
+  {
+    "id": "e632482a-360b-4583-b734-ede9f4e7233c",
+    "categoryId": "d66010a7-b870-40f3-a205-fc96b9265e2a",
+    "questionText": "Explain key concept #1 in Data Structures & Algorithms and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Data Structures & Algorithms, concept #1 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.704Z"
+  },
+  {
+    "id": "42c15502-bfcc-47df-a1f5-05088f7c7513",
+    "categoryId": "d66010a7-b870-40f3-a205-fc96b9265e2a",
+    "questionText": "Explain key concept #2 in Data Structures & Algorithms and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Data Structures & Algorithms, concept #2 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.708Z"
+  },
+  {
+    "id": "3a47fd1f-5d8b-49cb-8443-b6eec720c643",
+    "categoryId": "d66010a7-b870-40f3-a205-fc96b9265e2a",
+    "questionText": "Explain key concept #3 in Data Structures & Algorithms and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Data Structures & Algorithms, concept #3 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.713Z"
+  },
+  {
+    "id": "4f100b0c-23a7-49ef-aa3d-7642021bb36c",
+    "categoryId": "d66010a7-b870-40f3-a205-fc96b9265e2a",
+    "questionText": "Explain key concept #4 in Data Structures & Algorithms and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Data Structures & Algorithms, concept #4 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.715Z"
+  },
+  {
+    "id": "b1a23593-53fb-41c3-9e9d-d5cdd855d233",
+    "categoryId": "d66010a7-b870-40f3-a205-fc96b9265e2a",
+    "questionText": "Explain key concept #5 in Data Structures & Algorithms and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Data Structures & Algorithms, concept #5 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.718Z"
+  },
+  {
+    "id": "1a1e75cd-9a6f-46d0-93fb-0b4a6c0e50a2",
+    "categoryId": "d66010a7-b870-40f3-a205-fc96b9265e2a",
+    "questionText": "Explain key concept #6 in Data Structures & Algorithms and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Data Structures & Algorithms, concept #6 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.721Z"
+  },
+  {
+    "id": "9fcb0b92-3986-4d89-9fd0-d19b695cff7a",
+    "categoryId": "d66010a7-b870-40f3-a205-fc96b9265e2a",
+    "questionText": "Explain key concept #7 in Data Structures & Algorithms and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Data Structures & Algorithms, concept #7 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.724Z"
+  },
+  {
+    "id": "10168926-dfec-4c27-8f97-6398574bc4b6",
+    "categoryId": "d66010a7-b870-40f3-a205-fc96b9265e2a",
+    "questionText": "Explain key concept #8 in Data Structures & Algorithms and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Data Structures & Algorithms, concept #8 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.727Z"
+  },
+  {
+    "id": "b0e7df81-11cf-4e08-a324-f2d3a7d0e2d7",
+    "categoryId": "d66010a7-b870-40f3-a205-fc96b9265e2a",
+    "questionText": "Explain key concept #9 in Data Structures & Algorithms and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Data Structures & Algorithms, concept #9 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.730Z"
+  },
+  {
+    "id": "37e7d5d3-8bd1-4e02-b077-8a036492dca9",
+    "categoryId": "d66010a7-b870-40f3-a205-fc96b9265e2a",
+    "questionText": "Explain key concept #10 in Data Structures & Algorithms and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Data Structures & Algorithms, concept #10 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.732Z"
+  },
+  {
+    "id": "bdad85c6-05c4-4fc1-bef2-d40341110c00",
+    "categoryId": "00aa124f-943f-491d-87c1-d880a0403433",
+    "questionText": "Explain key concept #1 in Web Development and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Web Development, concept #1 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.735Z"
+  },
+  {
+    "id": "92faccba-ac77-4a55-9286-b290506b10d9",
+    "categoryId": "00aa124f-943f-491d-87c1-d880a0403433",
+    "questionText": "Explain key concept #2 in Web Development and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Web Development, concept #2 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.737Z"
+  },
+  {
+    "id": "3798f772-4b3a-434a-94e0-b7e297d03341",
+    "categoryId": "00aa124f-943f-491d-87c1-d880a0403433",
+    "questionText": "Explain key concept #3 in Web Development and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Web Development, concept #3 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.740Z"
+  },
+  {
+    "id": "53ecc0b0-054c-4542-9f74-22e00c40ccae",
+    "categoryId": "00aa124f-943f-491d-87c1-d880a0403433",
+    "questionText": "Explain key concept #4 in Web Development and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Web Development, concept #4 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.743Z"
+  },
+  {
+    "id": "8e2e4394-2867-4c8c-a8a9-54f42591c73b",
+    "categoryId": "00aa124f-943f-491d-87c1-d880a0403433",
+    "questionText": "Explain key concept #5 in Web Development and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Web Development, concept #5 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.748Z"
+  },
+  {
+    "id": "1b64e799-c94c-4434-b44e-f2ca999238f7",
+    "categoryId": "00aa124f-943f-491d-87c1-d880a0403433",
+    "questionText": "Explain key concept #6 in Web Development and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Web Development, concept #6 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.752Z"
+  },
+  {
+    "id": "9694174a-8a3e-43aa-beda-e41a012258bb",
+    "categoryId": "00aa124f-943f-491d-87c1-d880a0403433",
+    "questionText": "Explain key concept #7 in Web Development and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Web Development, concept #7 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.755Z"
+  },
+  {
+    "id": "0de1a593-dcf2-4f2e-b3e2-981a30d5fdbb",
+    "categoryId": "00aa124f-943f-491d-87c1-d880a0403433",
+    "questionText": "Explain key concept #8 in Web Development and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Web Development, concept #8 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.759Z"
+  },
+  {
+    "id": "2a4a720d-2b72-4a43-a211-f5123637bced",
+    "categoryId": "00aa124f-943f-491d-87c1-d880a0403433",
+    "questionText": "Explain key concept #9 in Web Development and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Web Development, concept #9 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.762Z"
+  },
+  {
+    "id": "ed4d01ee-c2f6-4334-978f-7d4443cba61d",
+    "categoryId": "00aa124f-943f-491d-87c1-d880a0403433",
+    "questionText": "Explain key concept #10 in Web Development and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Web Development, concept #10 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.764Z"
+  },
+  {
+    "id": "a2ff291b-a1b3-49b1-9650-59d32a2bc832",
+    "categoryId": "23dca704-64f9-400b-a90a-e455257ec3f2",
+    "questionText": "Explain key concept #1 in SAP ABAP and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In SAP ABAP, concept #1 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.767Z"
+  },
+  {
+    "id": "0f72487c-0ccd-4257-bc8f-dfff4b92378e",
+    "categoryId": "23dca704-64f9-400b-a90a-e455257ec3f2",
+    "questionText": "Explain key concept #2 in SAP ABAP and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In SAP ABAP, concept #2 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.769Z"
+  },
+  {
+    "id": "86c46add-f239-4485-b931-75dbf47177b5",
+    "categoryId": "23dca704-64f9-400b-a90a-e455257ec3f2",
+    "questionText": "Explain key concept #3 in SAP ABAP and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In SAP ABAP, concept #3 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.773Z"
+  },
+  {
+    "id": "275d3783-f77b-48df-bc55-e5deef6e91b0",
+    "categoryId": "23dca704-64f9-400b-a90a-e455257ec3f2",
+    "questionText": "Explain key concept #4 in SAP ABAP and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In SAP ABAP, concept #4 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.778Z"
+  },
+  {
+    "id": "4b3da9af-f4ac-4e6f-996c-cac221c5887b",
+    "categoryId": "23dca704-64f9-400b-a90a-e455257ec3f2",
+    "questionText": "Explain key concept #5 in SAP ABAP and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In SAP ABAP, concept #5 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.780Z"
+  },
+  {
+    "id": "2f63c60e-1b0b-4790-8611-c7d024923d7d",
+    "categoryId": "23dca704-64f9-400b-a90a-e455257ec3f2",
+    "questionText": "Explain key concept #6 in SAP ABAP and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In SAP ABAP, concept #6 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.784Z"
+  },
+  {
+    "id": "2a672abc-f802-4034-a484-f4c463f4ee85",
+    "categoryId": "23dca704-64f9-400b-a90a-e455257ec3f2",
+    "questionText": "Explain key concept #7 in SAP ABAP and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In SAP ABAP, concept #7 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.787Z"
+  },
+  {
+    "id": "90428c3e-b6ba-48cb-aa30-925fd11c7f2f",
+    "categoryId": "23dca704-64f9-400b-a90a-e455257ec3f2",
+    "questionText": "Explain key concept #8 in SAP ABAP and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In SAP ABAP, concept #8 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.791Z"
+  },
+  {
+    "id": "d210af7d-7da0-422f-a7be-7b1b6387175c",
+    "categoryId": "23dca704-64f9-400b-a90a-e455257ec3f2",
+    "questionText": "Explain key concept #9 in SAP ABAP and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In SAP ABAP, concept #9 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.795Z"
+  },
+  {
+    "id": "327337ac-6c83-4326-9a1d-5a001a64eeeb",
+    "categoryId": "23dca704-64f9-400b-a90a-e455257ec3f2",
+    "questionText": "Explain key concept #10 in SAP ABAP and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In SAP ABAP, concept #10 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.799Z"
+  },
+  {
+    "id": "cdb36ead-9268-47a1-86e0-3a62661975f7",
+    "categoryId": "0613e4f8-beee-4ed6-b90d-c42d59e6049b",
+    "questionText": "Explain key concept #1 in Machine Learning & AI and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Machine Learning & AI, concept #1 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.802Z"
+  },
+  {
+    "id": "ca76ec35-bb99-4299-9586-e82bbbc74b19",
+    "categoryId": "0613e4f8-beee-4ed6-b90d-c42d59e6049b",
+    "questionText": "Explain key concept #2 in Machine Learning & AI and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Machine Learning & AI, concept #2 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.805Z"
+  },
+  {
+    "id": "3da44550-9cfb-4022-b02e-56f8fd260d29",
+    "categoryId": "0613e4f8-beee-4ed6-b90d-c42d59e6049b",
+    "questionText": "Explain key concept #3 in Machine Learning & AI and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Machine Learning & AI, concept #3 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.808Z"
+  },
+  {
+    "id": "ac1bdc5a-9da3-4047-b2ef-53059c84b818",
+    "categoryId": "0613e4f8-beee-4ed6-b90d-c42d59e6049b",
+    "questionText": "Explain key concept #4 in Machine Learning & AI and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Machine Learning & AI, concept #4 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.811Z"
+  },
+  {
+    "id": "1f60cfb0-2570-4a10-be7b-e7a67b756c29",
+    "categoryId": "0613e4f8-beee-4ed6-b90d-c42d59e6049b",
+    "questionText": "Explain key concept #5 in Machine Learning & AI and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Machine Learning & AI, concept #5 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.817Z"
+  },
+  {
+    "id": "1f335f84-ab5a-443e-9dda-0ab8dfdf7c18",
+    "categoryId": "0613e4f8-beee-4ed6-b90d-c42d59e6049b",
+    "questionText": "Explain key concept #6 in Machine Learning & AI and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Machine Learning & AI, concept #6 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.820Z"
+  },
+  {
+    "id": "8583497a-ce97-4b09-85e7-a2ac4f265619",
+    "categoryId": "0613e4f8-beee-4ed6-b90d-c42d59e6049b",
+    "questionText": "Explain key concept #7 in Machine Learning & AI and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Machine Learning & AI, concept #7 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.822Z"
+  },
+  {
+    "id": "8aaecca3-f336-4810-b65d-4a6290bc1682",
+    "categoryId": "0613e4f8-beee-4ed6-b90d-c42d59e6049b",
+    "questionText": "Explain key concept #8 in Machine Learning & AI and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Machine Learning & AI, concept #8 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.824Z"
+  },
+  {
+    "id": "0225548e-961d-4ce1-8a68-2a7648ecb195",
+    "categoryId": "0613e4f8-beee-4ed6-b90d-c42d59e6049b",
+    "questionText": "Explain key concept #9 in Machine Learning & AI and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Machine Learning & AI, concept #9 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.827Z"
+  },
+  {
+    "id": "eacd730c-9dde-4e28-81ae-5037b2ddfeb5",
+    "categoryId": "0613e4f8-beee-4ed6-b90d-c42d59e6049b",
+    "questionText": "Explain key concept #10 in Machine Learning & AI and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Machine Learning & AI, concept #10 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.832Z"
+  },
+  {
+    "id": "be532cef-a816-482d-a416-12a0eef0fbb1",
+    "categoryId": "9d9c63fa-88f6-4a3c-9862-13f82c3daedf",
+    "questionText": "Explain key concept #1 in Cyber Security and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Cyber Security, concept #1 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.836Z"
+  },
+  {
+    "id": "3168e80f-9924-4dd3-91d5-784d74a975e7",
+    "categoryId": "9d9c63fa-88f6-4a3c-9862-13f82c3daedf",
+    "questionText": "Explain key concept #2 in Cyber Security and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Cyber Security, concept #2 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.839Z"
+  },
+  {
+    "id": "a20bcf72-7868-44be-b694-4072d85e63e8",
+    "categoryId": "9d9c63fa-88f6-4a3c-9862-13f82c3daedf",
+    "questionText": "Explain key concept #3 in Cyber Security and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Cyber Security, concept #3 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.842Z"
+  },
+  {
+    "id": "533c222c-e369-48d5-a57e-81798f2704ac",
+    "categoryId": "9d9c63fa-88f6-4a3c-9862-13f82c3daedf",
+    "questionText": "Explain key concept #4 in Cyber Security and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Cyber Security, concept #4 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.844Z"
+  },
+  {
+    "id": "f43fba13-3b4f-4b8c-b1ef-4c5602587b1d",
+    "categoryId": "9d9c63fa-88f6-4a3c-9862-13f82c3daedf",
+    "questionText": "Explain key concept #5 in Cyber Security and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Cyber Security, concept #5 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.847Z"
+  },
+  {
+    "id": "3a5e6fc9-9c5e-41b2-b488-d8ba74b65d32",
+    "categoryId": "9d9c63fa-88f6-4a3c-9862-13f82c3daedf",
+    "questionText": "Explain key concept #6 in Cyber Security and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Cyber Security, concept #6 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.850Z"
+  },
+  {
+    "id": "bcec4f68-bd6d-4b62-9a33-749bc1877bcf",
+    "categoryId": "9d9c63fa-88f6-4a3c-9862-13f82c3daedf",
+    "questionText": "Explain key concept #7 in Cyber Security and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Cyber Security, concept #7 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.853Z"
+  },
+  {
+    "id": "39cc124a-1d26-46bd-bd5c-66aedf21177d",
+    "categoryId": "9d9c63fa-88f6-4a3c-9862-13f82c3daedf",
+    "questionText": "Explain key concept #8 in Cyber Security and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Cyber Security, concept #8 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.856Z"
+  },
+  {
+    "id": "76920fad-7909-43b3-819f-db5760267bb6",
+    "categoryId": "9d9c63fa-88f6-4a3c-9862-13f82c3daedf",
+    "questionText": "Explain key concept #9 in Cyber Security and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Cyber Security, concept #9 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.858Z"
+  },
+  {
+    "id": "0aa5e09e-eed5-43ec-9bf2-2f09ddd9c932",
+    "categoryId": "9d9c63fa-88f6-4a3c-9862-13f82c3daedf",
+    "questionText": "Explain key concept #10 in Cyber Security and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Cyber Security, concept #10 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.860Z"
+  },
+  {
+    "id": "74e70ef9-e366-4bbc-a6d0-630ff4d6a1a1",
+    "categoryId": "085a6bae-d543-43b9-9790-b72f55d5fbc0",
+    "questionText": "Explain key concept #1 in Cloud Computing and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Cloud Computing, concept #1 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.862Z"
+  },
+  {
+    "id": "573c37bf-8c12-4805-b336-1cab83b7df14",
+    "categoryId": "085a6bae-d543-43b9-9790-b72f55d5fbc0",
+    "questionText": "Explain key concept #2 in Cloud Computing and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Cloud Computing, concept #2 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.866Z"
+  },
+  {
+    "id": "3e08c7eb-420e-449a-bd9f-7cca1b6651c4",
+    "categoryId": "085a6bae-d543-43b9-9790-b72f55d5fbc0",
+    "questionText": "Explain key concept #3 in Cloud Computing and provide a practical real-world application example.",
+    "difficulty": "Beginner",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Cloud Computing, concept #3 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.868Z"
+  },
+  {
+    "id": "75ddf495-64bd-4b10-848b-97a2a52c23cc",
+    "categoryId": "085a6bae-d543-43b9-9790-b72f55d5fbc0",
+    "questionText": "Explain key concept #4 in Cloud Computing and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Cloud Computing, concept #4 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.870Z"
+  },
+  {
+    "id": "95feb85e-5edc-4ba9-a0d7-dc28d3be5be9",
+    "categoryId": "085a6bae-d543-43b9-9790-b72f55d5fbc0",
+    "questionText": "Explain key concept #5 in Cloud Computing and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Cloud Computing, concept #5 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.872Z"
+  },
+  {
+    "id": "e32dbd7c-8dd0-44ea-a90e-aa493d484db9",
+    "categoryId": "085a6bae-d543-43b9-9790-b72f55d5fbc0",
+    "questionText": "Explain key concept #6 in Cloud Computing and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Cloud Computing, concept #6 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.875Z"
+  },
+  {
+    "id": "4ccaac47-faa0-4884-8683-3dedb3db95b8",
+    "categoryId": "085a6bae-d543-43b9-9790-b72f55d5fbc0",
+    "questionText": "Explain key concept #7 in Cloud Computing and provide a practical real-world application example.",
+    "difficulty": "Intermediate",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Cloud Computing, concept #7 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.877Z"
+  },
+  {
+    "id": "ab21be32-006d-4dfc-90aa-2f7d8e6c6939",
+    "categoryId": "085a6bae-d543-43b9-9790-b72f55d5fbc0",
+    "questionText": "Explain key concept #8 in Cloud Computing and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Cloud Computing, concept #8 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.880Z"
+  },
+  {
+    "id": "813559d9-44a0-41cb-9d7e-411cf5c07432",
+    "categoryId": "085a6bae-d543-43b9-9790-b72f55d5fbc0",
+    "questionText": "Explain key concept #9 in Cloud Computing and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Cloud Computing, concept #9 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.884Z"
+  },
+  {
+    "id": "f2313bba-668c-46d6-9785-8e121581aec1",
+    "categoryId": "085a6bae-d543-43b9-9790-b72f55d5fbc0",
+    "questionText": "Explain key concept #10 in Cloud Computing and provide a practical real-world application example.",
+    "difficulty": "Advanced",
+    "estimatedMinutes": 4,
+    "sampleAnswer": "In Cloud Computing, concept #10 plays a critical role in optimizing performance, maintaining clean architecture, and enabling scalable software operations.",
+    "keyPointsJson": "[\"Technical accuracy\",\"Code structure\",\"Performance awareness\",\"Real-world example\"]",
+    "createdAt": "2026-09-09T07:09:44.888Z"
+  }
+]
