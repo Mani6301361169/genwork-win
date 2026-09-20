@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { apiFetch } from '../../services/api';
 import { InterviewCategory, InterviewQuestion } from '../../types';
-import { BrainCircuit, Play, Code, Users, Award, ChevronRight, Sparkles } from 'lucide-react';
+import { BrainCircuit, ChevronRight, Zap } from 'lucide-react';
 import { SkeletonLoader } from '../../components/common/SkeletonLoader';
 
 export const InterviewPractice: React.FC = () => {
@@ -46,33 +46,33 @@ export const InterviewPractice: React.FC = () => {
   }, [selectedCategory]);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 max-w-7xl mx-auto font-sans text-black">
       
       {/* Banner */}
-      <div className="bg-gradient-to-r from-brand-900 via-indigo-950 to-navy-900 rounded-3xl p-6 sm:p-8 text-white shadow-soft flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+      <div className="bg-black text-white rounded-3xl p-8 border-2 border-black shadow-lg flex flex-col sm:flex-row sm:items-center justify-between gap-6">
         <div className="space-y-2 max-w-xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-brand-200 text-xs font-bold">
-            <Sparkles className="w-3.5 h-3.5 text-accent-400" /> Interactive Interview Coach
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs font-extrabold uppercase tracking-wider">
+            <Zap className="w-3.5 h-3.5 text-white" /> AI Practice Arena & Interview Coach
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
-            Interview Practice & Simulator
+            Interview Practice Arena & Simulator
           </h1>
-          <p className="text-xs text-brand-100 leading-relaxed font-medium">
-            Practice HR, Technical, and Behavioral questions with real-time AI feedback or test yourself in our full Interview Simulator.
+          <p className="text-xs text-zinc-300 leading-relaxed font-medium">
+            Practice HR, Technical, and Behavioral interview questions with real-time NLP speech analysis or test your placement readiness in our AI Simulator.
           </p>
         </div>
 
         <button
           onClick={() => navigate('/student/simulator')}
-          className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-to-r from-accent-500 to-purple-600 hover:from-accent-600 hover:to-purple-700 text-white rounded-2xl font-bold text-xs shadow-glow transition-all"
+          className="shrink-0 inline-flex items-center justify-center gap-2 px-6 py-4 bg-white hover:bg-zinc-100 text-black rounded-2xl font-extrabold text-xs shadow-md transition-all border-2 border-white"
         >
-          <BrainCircuit className="w-4 h-4" /> Start AI Simulator
+          <BrainCircuit className="w-4 h-4" /> Launch AI Simulator
         </button>
       </div>
 
-      {/* Category Grid */}
+      {/* Domain Selection */}
       <div>
-        <h2 className="text-xs font-extrabold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-3 px-1">
+        <h2 className="text-xs font-extrabold uppercase tracking-widest text-black mb-3 px-1">
           Select Interview Domain
         </h2>
 
@@ -84,14 +84,14 @@ export const InterviewPractice: React.FC = () => {
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat)}
-                className={`p-4 rounded-2xl border text-left transition-all ${
+                className={`p-4 rounded-2xl border-2 border-black text-left transition-all ${
                   selectedCategory?.id === cat.id
-                    ? 'bg-brand-500 text-white border-brand-500 shadow-soft font-bold'
-                    : 'bg-white dark:bg-navy-900 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-brand-300'
+                    ? 'bg-black text-white shadow-xs font-extrabold'
+                    : 'bg-white text-black hover:bg-zinc-100'
                 }`}
               >
                 <div className="text-xs font-extrabold truncate">{cat.name}</div>
-                <div className="text-[10px] mt-1 opacity-80">{cat.totalQuestions} Questions</div>
+                <div className="text-[10px] mt-1 opacity-80 font-bold">{cat.totalQuestions} Questions</div>
               </button>
             ))}
           </div>
@@ -100,17 +100,17 @@ export const InterviewPractice: React.FC = () => {
 
       {/* Question Explorer for Selected Category */}
       {selectedCategory && (
-        <div className="bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-soft space-y-4">
-          <div className="flex items-center justify-between">
+        <div className="bg-white border-2 border-black rounded-3xl p-6 shadow-xs space-y-4">
+          <div className="flex items-center justify-between pb-3 border-b-2 border-black">
             <div>
-              <h3 className="text-base font-extrabold text-slate-900 dark:text-white">
+              <h3 className="text-base font-extrabold text-black">
                 {selectedCategory.name} Question Bank
               </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400">{selectedCategory.description}</p>
+              <p className="text-xs text-zinc-600 font-medium">{selectedCategory.description}</p>
             </div>
             <button
               onClick={() => navigate('/student/simulator')}
-              className="text-xs font-bold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1"
+              className="text-xs font-extrabold text-black underline flex items-center gap-1"
             >
               Practice in Simulator <ChevronRight className="w-3.5 h-3.5" />
             </button>
@@ -120,17 +120,17 @@ export const InterviewPractice: React.FC = () => {
             {questions.map((q, idx) => (
               <div
                 key={q.id}
-                className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-700/60 space-y-2"
+                className="p-4 rounded-2xl bg-zinc-50 border-2 border-black space-y-2"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-extrabold text-brand-600 dark:text-brand-400">
+                  <span className="text-[11px] font-extrabold text-black uppercase">
                     Question #{idx + 1} • {q.difficulty}
                   </span>
-                  <span className="text-[10px] font-bold text-slate-500">Est. {q.estimatedMinutes} Mins</span>
+                  <span className="text-[10px] font-bold text-zinc-500">Est. {q.estimatedMinutes} Mins</span>
                 </div>
-                <h4 className="text-xs font-bold text-slate-900 dark:text-white">{q.questionText}</h4>
-                <div className="pt-2 border-t border-slate-200/40 dark:border-slate-700/40 text-[11px] text-slate-600 dark:text-slate-400">
-                  <span className="font-bold text-slate-800 dark:text-slate-200">Recommended Approach: </span>
+                <h4 className="text-xs font-extrabold text-black">{q.questionText}</h4>
+                <div className="pt-2 border-t border-black text-[11px] text-zinc-800 font-medium">
+                  <span className="font-extrabold text-black">Recommended Response Approach: </span>
                   {q.sampleAnswer}
                 </div>
               </div>

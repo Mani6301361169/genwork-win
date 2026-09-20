@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { apiFetch } from '../../services/api';
 import { LearningContent } from '../../types';
-import { BookOpen, Clock, Award, X, Sparkles } from 'lucide-react';
+import { BookOpen, Clock, X } from 'lucide-react';
 import { SkeletonLoader } from '../../components/common/SkeletonLoader';
 
 export const LearningCenter: React.FC = () => {
@@ -39,13 +39,13 @@ export const LearningCenter: React.FC = () => {
   }, [selectedCategory]);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 max-w-7xl mx-auto font-sans text-black">
       <div>
-        <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
-          <BookOpen className="w-6 h-6 text-brand-500" /> Learning Center
+        <h1 className="text-2xl font-extrabold text-black tracking-tight flex items-center gap-2">
+          <BookOpen className="w-6 h-6 text-black" /> Learning Management & Skill Guides
         </h1>
-        <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
-          Bite-sized 5-minute guides on communication, interview frameworks, resume building, and placement strategies.
+        <p className="text-xs text-zinc-700 font-medium mt-1">
+          Bite-sized 5-minute guides on communication, interview frameworks, resume building, and placement readiness strategies.
         </p>
       </div>
 
@@ -55,10 +55,10 @@ export const LearningCenter: React.FC = () => {
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
-            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all shrink-0 whitespace-nowrap ${
+            className={`px-4 py-2 rounded-xl text-xs font-extrabold transition-all shrink-0 whitespace-nowrap border-2 border-black ${
               selectedCategory === cat
-                ? 'bg-brand-600 text-white shadow-soft'
-                : 'bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-100'
+                ? 'bg-black text-white shadow-xs'
+                : 'bg-white text-black hover:bg-zinc-100'
             }`}
           >
             {cat}
@@ -74,31 +74,31 @@ export const LearningCenter: React.FC = () => {
           {items.map((item) => (
             <div
               key={item.id}
-              className="bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-soft flex flex-col justify-between hover:border-brand-400 transition-all"
+              className="bg-white border-2 border-black rounded-3xl p-6 shadow-xs flex flex-col justify-between hover:bg-black hover:text-white transition-all group"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-0.5 rounded-full bg-brand-50 dark:bg-brand-950 text-brand-700 dark:text-brand-300 font-extrabold text-[10px]">
+                  <span className="px-2.5 py-0.5 rounded-md bg-black text-white group-hover:bg-white group-hover:text-black font-extrabold text-[10px] border border-black">
                     {item.category}
                   </span>
-                  <span className="flex items-center gap-1 text-[11px] font-bold text-slate-500">
+                  <span className="flex items-center gap-1 text-[11px] font-extrabold text-zinc-600 group-hover:text-zinc-400">
                     <Clock className="w-3.5 h-3.5" /> {item.estimatedMinutes} min
                   </span>
                 </div>
 
-                <h3 className="text-base font-extrabold text-slate-900 dark:text-white leading-snug">
+                <h3 className="text-base font-extrabold leading-snug">
                   {item.title}
                 </h3>
-                <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-3 leading-relaxed">
+                <p className="text-xs text-zinc-700 group-hover:text-zinc-300 line-clamp-3 leading-relaxed font-medium">
                   {item.description}
                 </p>
               </div>
 
               <button
                 onClick={() => setActiveItem(item)}
-                className="mt-6 w-full py-2.5 bg-slate-100 dark:bg-slate-800 hover:bg-brand-600 hover:text-white dark:hover:bg-brand-600 text-slate-800 dark:text-slate-200 rounded-xl text-xs font-bold transition-all"
+                className="mt-6 w-full py-3 bg-black text-white group-hover:bg-white group-hover:text-black rounded-xl text-xs font-extrabold transition-colors border-2 border-black"
               >
-                Start Learning
+                Read Learning Guide
               </button>
             </div>
           ))}
@@ -107,32 +107,32 @@ export const LearningCenter: React.FC = () => {
 
       {/* Guide Reader Modal */}
       {activeItem && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs">
-          <div className="bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl relative animate-in zoom-in-95">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-xs">
+          <div className="bg-white border-2 border-black rounded-3xl p-6 sm:p-8 max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl relative animate-in zoom-in-95 text-black">
             <button
               onClick={() => setActiveItem(null)}
-              className="absolute top-6 right-6 p-1.5 rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800"
+              className="absolute top-6 right-6 p-1.5 rounded-xl text-black hover:bg-zinc-100 border border-black"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <span className="px-2.5 py-0.5 rounded-full bg-brand-100 dark:bg-brand-950 text-brand-700 dark:text-brand-300 font-extrabold text-[10px]">
+            <span className="px-2.5 py-0.5 rounded-md bg-black text-white font-extrabold text-[10px] border border-black">
               {activeItem.category} • {activeItem.estimatedMinutes} min read
             </span>
 
-            <h2 className="text-xl font-extrabold text-slate-900 dark:text-white mt-3 mb-4">
+            <h2 className="text-xl font-extrabold text-black mt-3 mb-4">
               {activeItem.title}
             </h2>
 
-            <div className="prose dark:prose-invert text-xs text-slate-700 dark:text-slate-300 leading-relaxed whitespace-pre-line space-y-3">
+            <div className="text-xs text-zinc-900 leading-relaxed whitespace-pre-line space-y-3 font-medium">
               {activeItem.bodyText}
             </div>
 
             <button
               onClick={() => setActiveItem(null)}
-              className="mt-6 w-full py-3 bg-brand-600 text-white font-bold rounded-2xl text-xs"
+              className="mt-6 w-full py-3.5 bg-black text-white font-extrabold rounded-2xl text-xs border-2 border-black"
             >
-              Got It, Completed!
+              Mark Completed & Continue
             </button>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { apiFetch } from '../../services/api';
-import { BarChart3, TrendingUp, Sparkles, Award } from 'lucide-react';
-import { ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import { BarChart3, Sparkles, Award } from 'lucide-react';
+import { ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, BarChart, Bar, XAxis, YAxis, Tooltip } from 'recharts';
 import { SkeletonLoader } from '../../components/common/SkeletonLoader';
 
 export const MyScores: React.FC = () => {
@@ -35,12 +35,12 @@ export const MyScores: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 max-w-7xl mx-auto font-sans text-black">
       <div>
-        <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
-          <BarChart3 className="w-6 h-6 text-brand-500" /> Performance Analytics
+        <h1 className="text-2xl font-extrabold text-black tracking-tight flex items-center gap-2">
+          <BarChart3 className="w-6 h-6 text-black" /> My Scores & Skill Analytics
         </h1>
-        <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
+        <p className="text-xs text-zinc-700 font-medium mt-1">
           Detailed skill breakdown across fluency, grammar, technical readiness, and speaking confidence.
         </p>
       </div>
@@ -49,38 +49,38 @@ export const MyScores: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         
         {/* Radar Skill Hexagon */}
-        <div className="bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-soft">
-          <h2 className="text-sm font-extrabold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-accent-500" /> Skill Competency Radar
+        <div className="bg-white border-2 border-black rounded-3xl p-6 shadow-xs">
+          <h2 className="text-sm font-extrabold text-black mb-2 flex items-center gap-2">
+            <Sparkles className="w-4 h-4 text-black" /> Skill Competency Radar
           </h2>
-          <p className="text-[11px] text-slate-500 mb-4">Multi-dimensional evaluation of your speaking and placement abilities.</p>
+          <p className="text-[11px] text-zinc-600 font-medium mb-4">Multi-dimensional evaluation of your speaking and placement abilities.</p>
 
           <div className="h-72 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <RadarChart cx="50%" cy="50%" outerRadius="75%" data={skillProgress}>
-                <PolarGrid stroke="#94a3b8" />
-                <PolarAngleAxis dataKey="skill" stroke="#94a3b8" fontSize={11} />
-                <PolarRadiusAxis angle={30} domain={[0, 100]} stroke="#94a3b8" fontSize={10} />
-                <Radar name="Student Skill" dataKey="score" stroke="#6366f1" fill="#6366f1" fillOpacity={0.5} />
+                <PolarGrid stroke="#000000" />
+                <PolarAngleAxis dataKey="skill" stroke="#000000" fontSize={11} />
+                <PolarRadiusAxis angle={30} domain={[0, 100]} stroke="#000000" fontSize={10} />
+                <Radar name="Student Skill" dataKey="score" stroke="#000000" fill="#000000" fillOpacity={0.4} />
               </RadarChart>
             </ResponsiveContainer>
           </div>
         </div>
 
         {/* Bar Comparison Chart */}
-        <div className="bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-soft">
-          <h2 className="text-sm font-extrabold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
-            <Award className="w-4 h-4 text-emerald-500" /> Domain Score Breakdown
+        <div className="bg-white border-2 border-black rounded-3xl p-6 shadow-xs">
+          <h2 className="text-sm font-extrabold text-black mb-2 flex items-center gap-2">
+            <Award className="w-4 h-4 text-black" /> Domain Score Breakdown
           </h2>
-          <p className="text-[11px] text-slate-500 mb-4">Comparative score analysis across primary skill categories.</p>
+          <p className="text-[11px] text-zinc-600 font-medium mb-4">Comparative score analysis across primary skill categories.</p>
 
           <div className="h-72 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={skillProgress}>
-                <XAxis dataKey="skill" stroke="#94a3b8" fontSize={10} tickLine={false} />
-                <YAxis domain={[0, 100]} stroke="#94a3b8" fontSize={11} tickLine={false} />
-                <Tooltip contentStyle={{ backgroundColor: '#0f172a', borderRadius: '12px', color: '#fff', fontSize: '11px' }} />
-                <Bar dataKey="score" fill="#a855f7" radius={[8, 8, 0, 0]} />
+                <XAxis dataKey="skill" stroke="#000000" fontSize={10} tickLine={false} />
+                <YAxis domain={[0, 100]} stroke="#000000" fontSize={11} tickLine={false} />
+                <Tooltip contentStyle={{ backgroundColor: '#000000', borderRadius: '12px', color: '#fff', fontSize: '11px', border: '1px solid #000' }} />
+                <Bar dataKey="score" fill="#000000" radius={[8, 8, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
