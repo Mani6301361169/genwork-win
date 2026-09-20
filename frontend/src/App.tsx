@@ -24,6 +24,7 @@ import { Leaderboard } from './pages/student/Leaderboard';
 import { MyScores } from './pages/student/MyScores';
 import { History } from './pages/student/History';
 import { FeedbackMentoring } from './pages/student/FeedbackMentoring';
+import { Subscription } from './pages/student/Subscription';
 import { Profile } from './pages/student/Profile';
 import { Settings } from './pages/student/Settings';
 
@@ -60,6 +61,7 @@ export const App: React.FC = () => {
               <Route path="history" element={<History />} />
               <Route path="feedback" element={<FeedbackMentoring />} />
               <Route path="mentoring" element={<FeedbackMentoring />} />
+              <Route path="subscription" element={<Subscription />} />
               <Route path="profile" element={<Profile />} />
               <Route path="settings" element={<Settings />} />
             </Route>
