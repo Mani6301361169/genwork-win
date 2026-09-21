@@ -1,6 +1,7 @@
 import { Response } from 'express';
 import prisma from '../config/db';
 import { AuthRequest } from '../middleware/auth';
+import { getOrCreateStudentProfileId } from '../utils/profileHelper';
 
 export const getLeaderboard = async (req: AuthRequest, res: Response) => {
   try {
@@ -25,7 +26,7 @@ export const getLeaderboard = async (req: AuthRequest, res: Response) => {
       take: 50,
     });
 
-    const currentStudentProfileId = req.user?.studentProfileId;
+    const currentStudentProfileId = await getOrCreateStudentProfileId(req);
 
     const formatted = leaderboardEntries.map((entry, index) => {
       const isCurrentUser = entry.studentId === currentStudentProfileId;
@@ -54,7 +55,7 @@ export const getLeaderboard = async (req: AuthRequest, res: Response) => {
 
 export const getStudentScores = async (req: AuthRequest, res: Response) => {
   try {
-    const studentProfileId = req.user?.studentProfileId;
+    const studentProfileId = await getOrCreateStudentProfileId(req);
     if (!studentProfileId) return res.status(401).json({ message: 'Unauthorized' });
 
     const student = await prisma.studentProfile.findUnique({
@@ -99,46 +100,37 @@ export const getStudentScores = async (req: AuthRequest, res: Response) => {
       totalXP: student.totalXP,
       weeklyData,
       skillProgress,
-      strengths: ['Vocabulary', 'Relevance', 'Confidence'],
-      areasToImprove: ['Fluency', 'Grammar', 'Answer structure'],
-      recommendations: [
-        { id: 'rec-1', text: 'Practice speaking without filler words such as "um" and "like".', type: 'fluency', challengeId: 'c-1' },
-        { id: 'rec-2', text: 'Try answering one HR technical or behavioral question today.', type: 'interview', categoryId: 'cat-hr' },
-        { id: 'rec-3', text: 'Improve your answer structure using the STAR framework.', type: 'structure', contentId: 'learn-1' },
-      ],
     });
   } catch (error: any) {
-    return res.status(500).json({ message: 'Failed to fetch score analytics.' });
+    return res.status(500).json({ message: 'Failed to fetch student scores.' });
   }
 };
 
 export const getCampusChallenges = async (req: AuthRequest, res: Response) => {
   try {
-    const studentProfileId = req.user?.studentProfileId;
-    const campusList = await prisma.campusChallenge.findMany({
+    const campusChallenges = await prisma.campusChallenge.findMany({
       include: { department: true },
-      orderBy: { createdAt: 'asc' },
+      orderBy: { createdAt: 'desc' },
     });
 
-    const userAttemptsCount = studentProfileId
-      ? await prisma.challengeAttempt.count({ where: { studentId: studentProfileId } })
-      : 0;
+    const studentProfileId = await getOrCreateStudentProfileId(req);
+    let attemptsCount = 0;
+    if (studentProfileId) {
+      attemptsCount = await prisma.challengeAttempt.count({ where: { studentId: studentProfileId } });
+    }
 
-    const formatted = campusList.map((c, idx) => {
-      const completed = Math.min(c.totalQuestions, (idx * 7 + userAttemptsCount) % (c.totalQuestions + 1));
-      return {
-        id: c.id,
-        title: c.title,
-        description: c.description,
-        category: c.category,
-        department: c.department.name,
-        departmentCode: c.department.code,
-        totalQuestions: c.totalQuestions,
-        completed,
-        remaining: c.totalQuestions - completed,
-        difficulty: c.difficulty,
-      };
-    });
+    const formatted = campusChallenges.map((c) => ({
+      id: c.id,
+      title: c.title,
+      description: c.description,
+      category: c.category,
+      department: c.department.name,
+      departmentCode: c.department.code,
+      totalQuestions: c.totalQuestions,
+      completed: Math.min(c.totalQuestions, attemptsCount),
+      remaining: Math.max(0, c.totalQuestions - attemptsCount),
+      difficulty: c.difficulty,
+    }));
 
     return res.json({ campusChallenges: formatted });
   } catch (error: any) {
@@ -149,12 +141,18 @@ export const getCampusChallenges = async (req: AuthRequest, res: Response) => {
 export const getLearningContent = async (req: AuthRequest, res: Response) => {
   try {
     const { category } = req.query;
-    const items = await prisma.learningContent.findMany({
-      where: category && category !== 'All' ? { category: String(category) } : {},
+
+    const whereClause: any = {};
+    if (category && category !== 'All') {
+      whereClause.category = String(category);
+    }
+
+    const learningContent = await prisma.learningContent.findMany({
+      where: whereClause,
       orderBy: { createdAt: 'asc' },
     });
 
-    return res.json({ learningContent: items });
+    return res.json({ learningContent });
   } catch (error: any) {
     return res.status(500).json({ message: 'Failed to fetch learning content.' });
   }
@@ -162,10 +160,11 @@ export const getLearningContent = async (req: AuthRequest, res: Response) => {
 
 export const submitFeedback = async (req: AuthRequest, res: Response) => {
   try {
-    const studentProfileId = req.user?.studentProfileId;
+    const studentProfileId = await getOrCreateStudentProfileId(req);
     if (!studentProfileId) return res.status(401).json({ message: 'Unauthorized' });
 
-    const { category, subject, message, rating } = req.body;
+    const { category = 'Platform', subject, message, rating = 5 } = req.body;
+
     if (!subject || !message) {
       return res.status(400).json({ message: 'Subject and message are required.' });
     }
@@ -173,27 +172,15 @@ export const submitFeedback = async (req: AuthRequest, res: Response) => {
     const feedback = await prisma.feedback.create({
       data: {
         studentId: studentProfileId,
-        category: category || 'Platform',
-        subject,
-        message,
-        rating: rating ? parseInt(rating, 10) : 5,
+        category: String(category),
+        subject: String(subject),
+        message: String(message),
+        rating: parseInt(String(rating), 10),
       },
     });
 
-    return res.status(201).json({ message: 'Thank you for your feedback! Our mentors will review it.', feedback });
+    return res.status(201).json({ message: 'Feedback submitted successfully!', feedback });
   } catch (error: any) {
     return res.status(500).json({ message: 'Failed to submit feedback.' });
-  }
-};
-
-export const getAnnouncements = async (req: AuthRequest, res: Response) => {
-  try {
-    const announcements = await prisma.announcement.findMany({
-      orderBy: { createdAt: 'desc' },
-      take: 10,
-    });
-    return res.json({ announcements });
-  } catch (error: any) {
-    return res.status(500).json({ message: 'Failed to fetch announcements.' });
   }
 };

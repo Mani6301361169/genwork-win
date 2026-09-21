@@ -2,6 +2,7 @@ import { Response } from 'express';
 import prisma from '../config/db';
 import { AuthRequest } from '../middleware/auth';
 import { evaluateInterviewResponse } from '../utils/aiEvaluator';
+import { getOrCreateStudentProfileId } from '../utils/profileHelper';
 
 export const getInterviewCategories = async (req: AuthRequest, res: Response) => {
   try {
@@ -51,7 +52,7 @@ export const getQuestionsByCategory = async (req: AuthRequest, res: Response) =>
 
 export const createInterviewSession = async (req: AuthRequest, res: Response) => {
   try {
-    const studentProfileId = req.user?.studentProfileId;
+    const studentProfileId = await getOrCreateStudentProfileId(req);
     if (!studentProfileId) {
       return res.status(401).json({ message: 'Unauthorized' });
     }
@@ -98,62 +99,37 @@ export const submitInterviewResponse = async (req: AuthRequest, res: Response) =
 
     // Update Session aggregates
     const allResponses = await prisma.interviewResponse.findMany({ where: { sessionId } });
-    const session = await prisma.interviewSession.findUnique({ where: { id: sessionId } });
+    const avgScore = Math.round(allResponses.reduce((acc, curr) => acc + curr.score, 0) / allResponses.length);
 
-    if (session) {
-      const avgOverall = Math.round(allResponses.reduce((a, b) => a + b.score, 0) / allResponses.length);
-      const isComplete = allResponses.length >= session.totalQuestions;
-
-      const updatedSession = await prisma.interviewSession.update({
-        where: { id: sessionId },
-        data: {
-          overallScore: avgOverall,
-          communicationScore: evaluation.communicationScore,
-          technicalScore: evaluation.technicalKnowledgeScore,
-          confidenceScore: evaluation.confidenceScore,
-          answerQualityScore: evaluation.answerQualityScore,
-          problemSolvingScore: evaluation.problemSolvingScore,
-          professionalismScore: evaluation.professionalismScore,
-          status: isComplete ? 'COMPLETED' : 'IN_PROGRESS',
-          feedbackSummary: isComplete
-            ? 'Completed all questions with solid clarity and professional posture.'
-            : session.feedbackSummary,
-        },
-      });
-
-      // Update student profile scores if complete
-      if (isComplete && req.user?.studentProfileId) {
-        await prisma.studentProfile.update({
-          where: { id: req.user.studentProfileId },
-          data: {
-            interviewScore: avgOverall,
-            technicalScore: evaluation.technicalKnowledgeScore,
-          },
-        });
-      }
-
-      return res.json({
-        message: 'Response recorded successfully!',
-        response: newResponse,
-        session: updatedSession,
-        evaluation,
-      });
-    }
+    await prisma.interviewSession.update({
+      where: { id: sessionId },
+      data: {
+        overallScore: avgScore,
+        communicationScore: evaluation.communicationScore,
+        technicalScore: evaluation.technicalKnowledgeScore,
+        confidenceScore: evaluation.confidenceScore,
+        answerQualityScore: evaluation.answerQualityScore,
+        problemSolvingScore: evaluation.problemSolvingScore,
+        professionalismScore: evaluation.professionalismScore,
+        feedbackSummary: evaluation.feedbackText,
+      },
+    });
 
     return res.json({ response: newResponse, evaluation });
   } catch (error: any) {
-    return res.status(500).json({ message: 'Failed to record interview response.' });
+    return res.status(500).json({ message: 'Failed to submit response.' });
   }
 };
 
-export const getInterviewSessionResults = async (req: AuthRequest, res: Response) => {
+export const getSessionById = async (req: AuthRequest, res: Response) => {
   try {
     const { id } = req.params;
+
     const session = await prisma.interviewSession.findUnique({
       where: { id },
       include: {
         responses: {
-          include: { question: true },
+          orderBy: { createdAt: 'asc' },
         },
       },
     });
@@ -164,6 +140,6 @@ export const getInterviewSessionResults = async (req: AuthRequest, res: Response
 
     return res.json({ session });
   } catch (error: any) {
-    return res.status(500).json({ message: 'Failed to fetch session results.' });
+    return res.status(500).json({ message: 'Failed to fetch session details.' });
   }
 };

@@ -2,6 +2,7 @@ import { Response } from 'express';
 import prisma from '../config/db';
 import { AuthRequest } from '../middleware/auth';
 import { evaluateSpeakingAttempt } from '../utils/aiEvaluator';
+import { getOrCreateStudentProfileId } from '../utils/profileHelper';
 
 export const getChallenges = async (req: AuthRequest, res: Response) => {
   try {
@@ -29,9 +30,10 @@ export const getChallenges = async (req: AuthRequest, res: Response) => {
 
     // Attach student completion status if logged in
     let studentAttemptsMap: Record<string, boolean> = {};
-    if (req.user?.studentProfileId) {
+    const studentProfileId = await getOrCreateStudentProfileId(req);
+    if (studentProfileId) {
       const attempts = await prisma.challengeAttempt.findMany({
-        where: { studentId: req.user.studentProfileId },
+        where: { studentId: studentProfileId },
         select: { challengeId: true },
       });
       attempts.forEach((a) => {
@@ -87,9 +89,9 @@ export const getChallengeById = async (req: AuthRequest, res: Response) => {
 
 export const submitAttempt = async (req: AuthRequest, res: Response) => {
   try {
-    const studentProfileId = req.user?.studentProfileId;
+    const studentProfileId = await getOrCreateStudentProfileId(req);
     if (!studentProfileId) {
-      return res.status(401).json({ message: 'Student profile required to submit practice.' });
+      return res.status(401).json({ message: 'User profile required to submit practice.' });
     }
 
     const { challengeId, transcript, audioUrl } = req.body;
@@ -181,7 +183,7 @@ export const submitAttempt = async (req: AuthRequest, res: Response) => {
 
 export const getAttemptHistory = async (req: AuthRequest, res: Response) => {
   try {
-    const studentProfileId = req.user?.studentProfileId;
+    const studentProfileId = await getOrCreateStudentProfileId(req);
     if (!studentProfileId) {
       return res.status(401).json({ message: 'Unauthorized' });
     }
@@ -224,29 +226,6 @@ export const getAttemptHistory = async (req: AuthRequest, res: Response) => {
 
     return res.json({ attempts: formatted });
   } catch (error: any) {
-    return res.status(500).json({ message: 'Failed to fetch practice attempt history.' });
-  }
-};
-
-export const getAttemptById = async (req: AuthRequest, res: Response) => {
-  try {
-    const { id } = req.params;
-    const attempt = await prisma.challengeAttempt.findUnique({
-      where: { id },
-      include: { challenge: true },
-    });
-
-    if (!attempt) {
-      return res.status(404).json({ message: 'Attempt record not found.' });
-    }
-
-    return res.json({
-      attempt: {
-        ...attempt,
-        aiFeedback: JSON.parse(attempt.aiFeedbackJson || '{}'),
-      },
-    });
-  } catch (error: any) {
-    return res.status(500).json({ message: 'Failed to fetch attempt details.' });
+    return res.status(500).json({ message: 'Failed to fetch attempt history.' });
   }
 };
