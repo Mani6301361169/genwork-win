@@ -1,0 +1,322 @@
+[
+  {
+    "id": "6f7f2f0e-1f99-43c4-b14c-c9098fa024a0",
+    "studentId": "25bb6f5a-ebe2-4ef8-882f-245a0d12e0e6",
+    "overallScore": 70,
+    "speakingScore": 76,
+    "interviewScore": 64,
+    "challengesCompleted": 9,
+    "streak": 8,
+    "period": "OVERALL",
+    "updatedAt": "2026-09-11T15:08:21.912Z",
+    "student": {
+      "fullName": "Alex Johnson",
+      "college": "SkillSprint Institute of Technology",
+      "studentId": "21CS001"
+    }
+  },
+  {
+    "id": "5d2d179f-45a5-462b-87fb-7e6c16a7c16a",
+    "studentId": "25096621-958c-4b59-b41f-9fc18ee33213",
+    "overallScore": 81,
+    "speakingScore": 89,
+    "interviewScore": 65,
+    "challengesCompleted": 19,
+    "streak": 11,
+    "period": "OVERALL",
+    "updatedAt": "2026-09-09T07:09:44.042Z",
+    "student": {
+      "fullName": "Priya Sharma",
+      "college": "SkillSprint Institute of Technology",
+      "studentId": "21CS002"
+    }
+  },
+  {
+    "id": "45954906-db0c-402c-a843-f96179a7a8e2",
+    "studentId": "7ba4fa1b-638c-46fe-ac32-9c9dad6ea320",
+    "overallScore": 68,
+    "speakingScore": 68,
+    "interviewScore": 91,
+    "challengesCompleted": 7,
+    "streak": 1,
+    "period": "OVERALL",
+    "updatedAt": "2026-09-09T07:09:44.048Z",
+    "student": {
+      "fullName": "Rohan Mehta",
+      "college": "SkillSprint Institute of Technology",
+      "studentId": "21EC015"
+    }
+  },
+  {
+    "id": "583a53f0-5421-4256-b4cc-009718600f3e",
+    "studentId": "9c46dc18-be8e-470b-a390-ab53c6e67362",
+    "overallScore": 92,
+    "speakingScore": 81,
+    "interviewScore": 67,
+    "challengesCompleted": 14,
+    "streak": 2,
+    "period": "OVERALL",
+    "updatedAt": "2026-09-09T07:09:44.053Z",
+    "student": {
+      "fullName": "Sneha Patel",
+      "college": "SkillSprint Institute of Technology",
+      "studentId": "21IT024"
+    }
+  },
+  {
+    "id": "6b2c6796-316f-409b-a333-b9a48f44e7fa",
+    "studentId": "3a3431af-676f-4362-b440-d2ca8c5174b7",
+    "overallScore": 69,
+    "speakingScore": 86,
+    "interviewScore": 77,
+    "challengesCompleted": 14,
+    "streak": 8,
+    "period": "OVERALL",
+    "updatedAt": "2026-09-09T07:09:44.059Z",
+    "student": {
+      "fullName": "Vikram Singh",
+      "college": "SkillSprint Institute of Technology",
+      "studentId": "21ME009"
+    }
+  },
+  {
+    "id": "7a4bd128-0f1d-4906-8336-bd4d9ecce0ec",
+    "studentId": "a06c10e7-7246-4b52-aed8-fdfb91a88e28",
+    "overallScore": 91,
+    "speakingScore": 81,
+    "interviewScore": 91,
+    "challengesCompleted": 28,
+    "streak": 9,
+    "period": "OVERALL",
+    "updatedAt": "2026-09-09T07:09:44.065Z",
+    "student": {
+      "fullName": "Ananya Roy",
+      "college": "SkillSprint Institute of Technology",
+      "studentId": "21EE011"
+    }
+  },
+  {
+    "id": "7319adab-6166-4994-bd5a-d548a9762b17",
+    "studentId": "935e9b33-6009-4b4b-8ac1-a88d7b9813ef",
+    "overallScore": 70,
+    "speakingScore": 78,
+    "interviewScore": 86,
+    "challengesCompleted": 17,
+    "streak": 7,
+    "period": "OVERALL",
+    "updatedAt": "2026-09-09T07:09:44.070Z",
+    "student": {
+      "fullName": "Rahul Verma",
+      "college": "SkillSprint Institute of Technology",
+      "studentId": "21CS045"
+    }
+  },
+  {
+    "id": "3819e772-138d-4854-9b63-b03b47016bf5",
+    "studentId": "be39f3b3-db25-4ea9-bbf5-546f7bbc8f43",
+    "overallScore": 76,
+    "speakingScore": 68,
+    "interviewScore": 88,
+    "challengesCompleted": 15,
+    "streak": 8,
+    "period": "OVERALL",
+    "updatedAt": "2026-09-09T07:09:44.076Z",
+    "student": {
+      "fullName": "Divya Kulkarni",
+      "college": "SkillSprint Institute of Technology",
+      "studentId": "21IT088"
+    }
+  },
+  {
+    "id": "3ea82d6b-24a6-40e9-8146-10598e938d45",
+    "studentId": "ba6713ab-f6f4-48cf-8dff-6baee9de5790",
+    "overallScore": 66,
+    "speakingScore": 89,
+    "interviewScore": 87,
+    "challengesCompleted": 16,
+    "streak": 5,
+    "period": "OVERALL",
+    "updatedAt": "2026-09-09T07:09:44.082Z",
+    "student": {
+      "fullName": "Karan Malhotra",
+      "college": "SkillSprint Institute of Technology",
+      "studentId": "21EC090"
+    }
+  },
+  {
+    "id": "572c8249-b72c-4d61-a76a-0692f6fceea5",
+    "studentId": "7ffc9d69-585b-4415-bac1-a6af3c4153c8",
+    "overallScore": 77,
+    "speakingScore": 89,
+    "interviewScore": 64,
+    "challengesCompleted": 6,
+    "streak": 3,
+    "period": "OVERALL",
+    "updatedAt": "2026-09-09T07:09:44.087Z",
+    "student": {
+      "fullName": "Neha Gupta",
+      "college": "SkillSprint Institute of Technology",
+      "studentId": "21CS102"
+    }
+  },
+  {
+    "id": "7500b35d-827b-4493-8fef-62d35d87f25c",
+    "studentId": "e7e091e4-81dc-45d9-82b8-14c0ceb3ffe3",
+    "overallScore": 70,
+    "speakingScore": 70,
+    "interviewScore": 88,
+    "challengesCompleted": 9,
+    "streak": 3,
+    "period": "OVERALL",
+    "updatedAt": "2026-09-09T07:09:44.093Z",
+    "student": {
+      "fullName": "Arjun Das",
+      "college": "SkillSprint Institute of Technology",
+      "studentId": "21ME033"
+    }
+  },
+  {
+    "id": "267ab54f-906b-4c46-ad29-163ab044cc64",
+    "studentId": "566a0330-ba14-44e0-ab7a-37bd7e0ed72d",
+    "overallScore": 75,
+    "speakingScore": 83,
+    "interviewScore": 85,
+    "challengesCompleted": 13,
+    "streak": 5,
+    "period": "OVERALL",
+    "updatedAt": "2026-09-09T07:09:44.099Z",
+    "student": {
+      "fullName": "Meera Nair",
+      "college": "SkillSprint Institute of Technology",
+      "studentId": "21EE052"
+    }
+  },
+  {
+    "id": "72fe4a58-b297-4e0c-a1e2-9f7718d293cb",
+    "studentId": "6c678a3a-de22-4289-a095-316b41db1f58",
+    "overallScore": 66,
+    "speakingScore": 70,
+    "interviewScore": 74,
+    "challengesCompleted": 29,
+    "streak": 9,
+    "period": "OVERALL",
+    "updatedAt": "2026-09-09T07:09:44.105Z",
+    "student": {
+      "fullName": "Siddharth Rao",
+      "college": "SkillSprint Institute of Technology",
+      "studentId": "21CS115"
+    }
+  },
+  {
+    "id": "0747a649-fcbb-44d6-ba2b-335308a3dd3f",
+    "studentId": "d13f2f2a-a42f-4ad7-b200-5a379cab3b0f",
+    "overallScore": 70,
+    "speakingScore": 79,
+    "interviewScore": 67,
+    "challengesCompleted": 11,
+    "streak": 5,
+    "period": "OVERALL",
+    "updatedAt": "2026-09-09T07:09:44.111Z",
+    "student": {
+      "fullName": "Pooja Reddy",
+      "college": "SkillSprint Institute of Technology",
+      "studentId": "21IT067"
+    }
+  },
+  {
+    "id": "58973e52-b520-4f6a-b401-af2c2b058d5f",
+    "studentId": "059a2e86-23bc-41fc-a5e9-bf383497185c",
+    "overallScore": 68,
+    "speakingScore": 88,
+    "interviewScore": 82,
+    "challengesCompleted": 27,
+    "streak": 7,
+    "period": "OVERALL",
+    "updatedAt": "2026-09-09T07:09:44.117Z",
+    "student": {
+      "fullName": "Aditya Dave",
+      "college": "SkillSprint Institute of Technology",
+      "studentId": "21EC041"
+    }
+  },
+  {
+    "id": "1a8dd450-f3da-4cb6-b5bf-a8a18c25575d",
+    "studentId": "35cdbd10-5f84-4948-829f-ee6ead75b88d",
+    "overallScore": 74,
+    "speakingScore": 76,
+    "interviewScore": 75,
+    "challengesCompleted": 26,
+    "streak": 1,
+    "period": "OVERALL",
+    "updatedAt": "2026-09-09T07:09:44.123Z",
+    "student": {
+      "fullName": "Tanvi Joshi",
+      "college": "SkillSprint Institute of Technology",
+      "studentId": "21CS140"
+    }
+  },
+  {
+    "id": "9d3ac3d5-d271-45b7-aa11-5fb4218097e1",
+    "studentId": "7e11de5f-d105-442a-8fc4-855f13c523c7",
+    "overallScore": 80,
+    "speakingScore": 80,
+    "interviewScore": 64,
+    "challengesCompleted": 24,
+    "streak": 3,
+    "period": "OVERALL",
+    "updatedAt": "2026-09-09T07:09:44.128Z",
+    "student": {
+      "fullName": "Varun Sen",
+      "college": "SkillSprint Institute of Technology",
+      "studentId": "21ME078"
+    }
+  },
+  {
+    "id": "11e5b66f-88d3-4634-8ed9-27adcf5316e2",
+    "studentId": "fc51294c-cc6b-4200-b334-f125be359e89",
+    "overallScore": 73,
+    "speakingScore": 82,
+    "interviewScore": 70,
+    "challengesCompleted": 20,
+    "streak": 2,
+    "period": "OVERALL",
+    "updatedAt": "2026-09-09T07:09:44.135Z",
+    "student": {
+      "fullName": "Ritu Agarwal",
+      "college": "SkillSprint Institute of Technology",
+      "studentId": "21EE099"
+    }
+  },
+  {
+    "id": "91bacba9-a3d1-4279-bd0f-17d4a21cf8d4",
+    "studentId": "bbffb73a-cc14-4693-ba0c-220211eeddbb",
+    "overallScore": 70,
+    "speakingScore": 91,
+    "interviewScore": 69,
+    "challengesCompleted": 13,
+    "streak": 8,
+    "period": "OVERALL",
+    "updatedAt": "2026-09-09T07:09:44.140Z",
+    "student": {
+      "fullName": "Yash Saxena",
+      "college": "SkillSprint Institute of Technology",
+      "studentId": "21IT120"
+    }
+  },
+  {
+    "id": "03e740fe-6482-4f77-b779-8697a6cd444e",
+    "studentId": "ad84049a-06d6-44b7-855b-06360f715007",
+    "overallScore": 88,
+    "speakingScore": 91,
+    "interviewScore": 72,
+    "challengesCompleted": 29,
+    "streak": 5,
+    "period": "OVERALL",
+    "updatedAt": "2026-09-09T07:09:44.146Z",
+    "student": {
+      "fullName": "Ishita Bannerjee",
+      "college": "SkillSprint Institute of Technology",
+      "studentId": "21CS162"
+    }
+  }
+]

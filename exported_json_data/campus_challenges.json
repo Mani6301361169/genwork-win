@@ -1,0 +1,112 @@
+[
+  {
+    "id": "a4f8819e-ffa7-4a74-8ef2-060f22196e74",
+    "title": "CSE Interview Preparation",
+    "description": "Comprehensive practice challenge tailored for Computer Science & Engineering campus placement preparation.",
+    "category": "Technical",
+    "departmentId": "1b78ebcf-1b6e-4481-826e-0c07311f26b1",
+    "totalQuestions": 100,
+    "difficulty": "Intermediate",
+    "createdAt": "2026-09-09T07:09:44.890Z"
+  },
+  {
+    "id": "1fba5416-f90d-4ce3-a2bb-edc21fd2e9ec",
+    "title": "Python Core & Advanced Questions",
+    "description": "Comprehensive practice challenge tailored for Computer Science & Engineering campus placement preparation.",
+    "category": "Programming",
+    "departmentId": "1b78ebcf-1b6e-4481-826e-0c07311f26b1",
+    "totalQuestions": 80,
+    "difficulty": "Intermediate",
+    "createdAt": "2026-09-09T07:09:44.894Z"
+  },
+  {
+    "id": "e6700aae-9dbf-4a19-8d9b-aeca51cc9feb",
+    "title": "Java & Spring Boot Fundamentals",
+    "description": "Comprehensive practice challenge tailored for Computer Science & Engineering campus placement preparation.",
+    "category": "Programming",
+    "departmentId": "1b78ebcf-1b6e-4481-826e-0c07311f26b1",
+    "totalQuestions": 90,
+    "difficulty": "Intermediate",
+    "createdAt": "2026-09-09T07:09:44.900Z"
+  },
+  {
+    "id": "76733f4c-ea61-463d-8226-dce186727185",
+    "title": "SAP ABAP Module & Reports Practice",
+    "description": "Comprehensive practice challenge tailored for Information Technology campus placement preparation.",
+    "category": "Enterprise Software",
+    "departmentId": "354b4109-5216-471a-8ca5-c28b29076d0e",
+    "totalQuestions": 100,
+    "difficulty": "Intermediate",
+    "createdAt": "2026-09-09T07:09:44.905Z"
+  },
+  {
+    "id": "858d3f87-2417-46ba-a8a6-52d841110281",
+    "title": "ServiceNow System Admin & Scripting",
+    "description": "Comprehensive practice challenge tailored for Information Technology campus placement preparation.",
+    "category": "Cloud Platforms",
+    "departmentId": "354b4109-5216-471a-8ca5-c28b29076d0e",
+    "totalQuestions": 75,
+    "difficulty": "Intermediate",
+    "createdAt": "2026-09-09T07:09:44.910Z"
+  },
+  {
+    "id": "0b66a91b-2a7e-4505-b995-cb2baf96be57",
+    "title": "Cyber Security & Network Defense",
+    "description": "Comprehensive practice challenge tailored for Electronics & Communication campus placement preparation.",
+    "category": "Security",
+    "departmentId": "752b254d-4482-4d09-bd9c-c7ff4364f24c",
+    "totalQuestions": 60,
+    "difficulty": "Intermediate",
+    "createdAt": "2026-09-09T07:09:44.915Z"
+  },
+  {
+    "id": "dc70ca98-4afb-4353-bcd8-9acc50547d26",
+    "title": "Data Science & Machine Learning Pipeline",
+    "description": "Comprehensive practice challenge tailored for Computer Science & Engineering campus placement preparation.",
+    "category": "AI",
+    "departmentId": "1b78ebcf-1b6e-4481-826e-0c07311f26b1",
+    "totalQuestions": 85,
+    "difficulty": "Intermediate",
+    "createdAt": "2026-09-09T07:09:44.920Z"
+  },
+  {
+    "id": "6c816e63-18c2-4ad1-a125-8b281224b811",
+    "title": "ECE Microcontrollers & Embedded Systems",
+    "description": "Comprehensive practice challenge tailored for Electronics & Communication campus placement preparation.",
+    "category": "Hardware",
+    "departmentId": "752b254d-4482-4d09-bd9c-c7ff4364f24c",
+    "totalQuestions": 70,
+    "difficulty": "Intermediate",
+    "createdAt": "2026-09-09T07:09:44.922Z"
+  },
+  {
+    "id": "eeef9510-6adc-4c4d-8458-f2d230950902",
+    "title": "HR & Behavioral Placement Sprint",
+    "description": "Comprehensive practice challenge tailored for Computer Science & Engineering campus placement preparation.",
+    "category": "Placement Prep",
+    "departmentId": "1b78ebcf-1b6e-4481-826e-0c07311f26b1",
+    "totalQuestions": 50,
+    "difficulty": "Intermediate",
+    "createdAt": "2026-09-09T07:09:44.924Z"
+  },
+  {
+    "id": "1b1da766-4791-4b49-b8d6-509fb5fdb31c",
+    "title": "Quantitative Aptitude & Logical Reasoning",
+    "description": "Comprehensive practice challenge tailored for Mechanical Engineering campus placement preparation.",
+    "category": "Aptitude",
+    "departmentId": "bf2c37a4-402f-43dd-9952-4e4da3446aef",
+    "totalQuestions": 120,
+    "difficulty": "Intermediate",
+    "createdAt": "2026-09-09T07:09:44.927Z"
+  },
+  {
+    "id": "46956da2-dc4a-4814-861e-377fbade8f39",
+    "title": "Communication Skills Assessment",
+    "description": "Comprehensive practice challenge tailored for Electrical & Electronics campus placement preparation.",
+    "category": "Soft Skills",
+    "departmentId": "056d4617-6b78-45ef-86c8-6bbf160a9976",
+    "totalQuestions": 50,
+    "difficulty": "Intermediate",
+    "createdAt": "2026-09-09T07:09:44.930Z"
+  }
+]
