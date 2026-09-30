@@ -17,32 +17,32 @@ export const ForgotPassword: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#ECE8FF] via-[#F4F1FF] to-[#E4DDFF] flex flex-col items-center justify-center p-4 sm:p-6 font-sans">
-      <div className="w-full max-w-[440px] bg-white rounded-[32px] p-6 sm:p-10 shadow-[0_20px_50px_rgba(99,91,255,0.12)] border border-purple-100/60">
+    <div className="min-h-screen bg-neutral-100 dark:bg-black flex flex-col items-center justify-center p-4 sm:p-6 font-sans">
+      <div className="w-full max-w-[440px] bg-white dark:bg-neutral-900 rounded-3xl p-6 sm:p-10 shadow-xl border-2 border-black dark:border-white">
         
         {/* Top Key Icon Box */}
-        <div className="w-14 h-14 bg-[#F0EEFF] rounded-2xl flex items-center justify-center mx-auto mb-4 text-[#635BFF]">
+        <div className="w-14 h-14 bg-black text-white dark:bg-white dark:text-black rounded-2xl flex items-center justify-center mx-auto mb-4 border-2 border-black">
           <Key className="w-7 h-7" />
         </div>
 
-        <h2 className="text-lg sm:text-xl font-bold text-gray-900 text-center mb-1">
+        <h2 className="text-lg sm:text-xl font-black text-black dark:text-white text-center mb-1">
           Forgot your password?
         </h2>
-        <p className="text-xs sm:text-sm text-gray-500 text-center mb-6 leading-relaxed">
+        <p className="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 text-center mb-6 leading-relaxed font-bold">
           Enter your registered email and we'll send you reset instructions.
         </p>
 
         {submitted ? (
           <div className="text-center py-4 space-y-4">
-            <CheckCircle2 className="w-12 h-12 text-emerald-500 mx-auto" />
-            <h3 className="text-base font-bold text-gray-900">Instructions Sent</h3>
-            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-              Password recovery instructions have been sent to <span className="font-bold text-gray-900">{email}</span>. Please check your inbox.
+            <CheckCircle2 className="w-12 h-12 text-black dark:text-white mx-auto" />
+            <h3 className="text-base font-black text-black dark:text-white">Instructions Sent</h3>
+            <p className="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed font-bold">
+              Password recovery instructions have been sent to <span className="font-black text-black dark:text-white">{email}</span>. Please check your inbox.
             </p>
             <div className="pt-2">
               <Link
                 to="/login"
-                className="inline-block w-full py-3.5 bg-[#635BFF] hover:bg-[#5349EE] text-white font-bold text-sm rounded-2xl shadow-md transition-all"
+                className="inline-block w-full py-3.5 bg-black text-white dark:bg-white dark:text-black font-black text-sm rounded-2xl shadow-md border-2 border-black transition-all"
               >
                 Back to sign in
               </Link>
@@ -51,8 +51,8 @@ export const ForgotPassword: React.FC = () => {
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-xs sm:text-sm font-bold text-gray-900 mb-1.5">
-                <span className="text-red-500 mr-0.5 font-bold">*</span>Email address
+              <label className="block text-xs sm:text-sm font-black text-black dark:text-white mb-1.5">
+                <span className="text-black dark:text-white mr-0.5 font-black">*</span>Email address
               </label>
               <input
                 type="email"
@@ -60,34 +60,32 @@ export const ForgotPassword: React.FC = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@institution.edu"
-                className="w-full px-4 py-3 rounded-2xl border border-indigo-200 focus:border-[#635BFF] focus:ring-4 focus:ring-indigo-100 bg-white text-gray-900 text-xs sm:text-sm font-medium placeholder:text-gray-400 outline-none transition-all"
+                className="w-full px-4 py-3 rounded-2xl border-2 border-black dark:border-white bg-white dark:bg-neutral-800 text-black dark:text-white text-xs sm:text-sm font-bold placeholder:text-neutral-400 outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all"
               />
             </div>
 
             {/* reCAPTCHA Mock Container */}
-            <div className="border border-gray-200 bg-[#F9FAFB] p-3.5 rounded-2xl flex items-center justify-between my-4">
+            <div className="border-2 border-black dark:border-white bg-neutral-50 dark:bg-neutral-800 p-3.5 rounded-2xl flex items-center justify-between my-4">
               <label className="flex items-center gap-3 cursor-pointer select-none">
                 <input
                   type="checkbox"
                   checked={isCaptchaChecked}
                   onChange={(e) => setIsCaptchaChecked(e.target.checked)}
-                  className="w-5 h-5 rounded border-gray-300 text-[#635BFF] focus:ring-[#635BFF] cursor-pointer"
+                  className="w-5 h-5 rounded border-2 border-black text-black focus:ring-black cursor-pointer"
                 />
-                <span className="text-xs sm:text-sm font-medium text-gray-700">
+                <span className="text-xs sm:text-sm font-black text-black dark:text-white">
                   I'm not a robot
                 </span>
               </label>
               <div className="flex flex-col items-center justify-center">
-                <svg className="w-6 h-6 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
-                </svg>
-                <span className="text-[9px] text-gray-400 font-semibold mt-0.5">reCAPTCHA</span>
+                <span className="text-xs font-black text-black dark:text-white">✔</span>
+                <span className="text-[9px] text-black dark:text-white font-black mt-0.5">reCAPTCHA</span>
               </div>
             </div>
 
             <button
               type="submit"
-              className="w-full py-3.5 bg-[#635BFF] hover:bg-[#5349EE] active:scale-[0.99] text-white font-bold text-sm rounded-2xl shadow-md shadow-indigo-200 transition-all flex items-center justify-center"
+              className="w-full py-3.5 bg-black text-white dark:bg-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-200 border-2 border-black font-black text-sm rounded-2xl shadow-md transition-all flex items-center justify-center"
             >
               Send reset instructions
             </button>
@@ -95,7 +93,7 @@ export const ForgotPassword: React.FC = () => {
             <div className="text-center pt-2">
               <Link
                 to="/login"
-                className="text-xs sm:text-sm font-semibold text-[#635BFF] hover:underline inline-block"
+                className="text-xs sm:text-sm font-black text-black dark:text-white hover:underline inline-block"
               >
                 Back to sign in
               </Link>

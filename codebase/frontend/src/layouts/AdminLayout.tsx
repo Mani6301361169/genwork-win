@@ -8,8 +8,8 @@ export const AdminLayout: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-navy-950">
-        <div className="w-8 h-8 border-4 border-brand-500 border-t-transparent rounded-full animate-spin" />
+      <div className="min-h-screen flex items-center justify-center bg-neutral-100 dark:bg-black">
+        <div className="w-8 h-8 border-4 border-black dark:border-white border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -27,15 +27,15 @@ export const AdminLayout: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-navy-950 flex flex-col font-sans">
-      <header className="bg-white dark:bg-navy-900 border-b border-slate-200 dark:border-slate-800 px-6 py-3 flex items-center justify-between">
+    <div className="min-h-screen bg-neutral-100 dark:bg-black text-black dark:text-white flex flex-col font-sans">
+      <header className="bg-white dark:bg-neutral-900 border-b-2 border-black dark:border-white px-6 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-brand-600 to-accent-500 text-white font-extrabold flex items-center justify-center">
+          <div className="w-8 h-8 rounded-xl bg-black text-white dark:bg-white dark:text-black font-black flex items-center justify-center border-2 border-black">
             SS
           </div>
           <div>
-            <span className="font-extrabold text-slate-900 dark:text-white text-base">SkillSprint</span>
-            <span className="ml-2 px-2 py-0.5 rounded-full bg-accent-500/10 text-accent-600 dark:text-accent-400 text-[10px] font-bold uppercase tracking-wider">
+            <span className="font-black text-black dark:text-white text-base">SkillSprint</span>
+            <span className="ml-2 px-2.5 py-0.5 rounded-full bg-black text-white dark:bg-white dark:text-black text-[10px] font-black uppercase tracking-wider border border-black">
               Faculty Admin Portal
             </span>
           </div>
@@ -44,23 +44,23 @@ export const AdminLayout: React.FC = () => {
         <div className="flex items-center gap-4">
           <NavLink
             to="/student/dashboard"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold hover:bg-slate-200 transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-black dark:text-white text-xs font-black border-2 border-black dark:border-white hover:bg-neutral-200 transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" /> Student View
           </NavLink>
 
           <button
             onClick={logout}
-            className="p-2 text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-xl text-xs font-bold transition-colors"
+            className="p-2 text-black dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800 border-2 border-black dark:border-white rounded-xl text-xs font-black transition-colors flex items-center gap-1"
             title="Sign Out"
           >
-            <LogOut className="w-4 h-4" />
+            <LogOut className="w-4 h-4" /> Sign Out
           </button>
         </div>
       </header>
 
       <div className="flex flex-1 max-w-7xl mx-auto w-full">
-        <aside className="w-64 bg-white dark:bg-navy-900 border-r border-slate-200 dark:border-slate-800 p-4 shrink-0 hidden md:block">
+        <aside className="w-64 bg-white dark:bg-neutral-900 border-r-2 border-black dark:border-white p-4 shrink-0 hidden md:block">
           <nav className="space-y-1">
             {adminNavs.map((item) => {
               const Icon = item.icon;
@@ -69,10 +69,10 @@ export const AdminLayout: React.FC = () => {
                   key={item.path}
                   to={item.path}
                   className={({ isActive }) =>
-                    `flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all ${
+                    `flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-black transition-all border ${
                       isActive
-                        ? 'bg-brand-600 text-white shadow-soft'
-                        : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
+                        ? 'bg-black text-white dark:bg-white dark:text-black border-black dark:border-white shadow-xs'
+                        : 'text-black dark:text-neutral-300 border-transparent hover:bg-neutral-100 dark:hover:bg-neutral-800'
                     }`
                   }
                 >

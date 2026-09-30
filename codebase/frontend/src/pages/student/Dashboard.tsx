@@ -2,17 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { apiFetch } from '../../services/api';
 import { Challenge } from '../../types';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
   Mic,
   Lightbulb,
   ArrowRight,
   TrendingDown,
-  Award,
-  ChevronRight,
-  Sparkles,
-  Clock,
-  Radio
+  ChevronRight
 } from 'lucide-react';
 
 export const Dashboard: React.FC = () => {
@@ -37,27 +33,24 @@ export const Dashboard: React.FC = () => {
   const overallScore = profile?.overallScore || 74;
 
   const cohortLeaderboard = [
-    { rank: 1, name: 'JASMINE MOHAMMED', score: 78, badgeColor: 'bg-amber-400 text-amber-950' },
-    { rank: 2, name: 'KOWSHIK NAIDU VALISETTY', score: 71, badgeColor: 'bg-slate-300 text-slate-800' },
-    { rank: 3, name: 'ABHIRAMI PRATIVADA', score: 69, badgeColor: 'bg-amber-700 text-white' },
+    { rank: 1, name: 'JASMINE MOHAMMED', score: 78, badgeColor: 'bg-black text-white dark:bg-white dark:text-black' },
+    { rank: 2, name: 'KOWSHIK NAIDU VALISETTY', score: 71, badgeColor: 'bg-neutral-200 text-black dark:bg-neutral-800 dark:text-white' },
+    { rank: 3, name: 'ABHIRAMI PRATIVADA', score: 69, badgeColor: 'bg-neutral-100 text-black dark:bg-neutral-900 dark:text-white' },
   ];
 
   return (
-    <div className="space-y-6 max-w-6xl mx-auto font-sans text-slate-900 pb-12">
+    <div className="space-y-6 max-w-6xl mx-auto font-sans text-black dark:text-white pb-12">
       
       {/* PAGE SUBTITLE */}
       <div>
-        <p className="text-xs font-bold text-slate-500">Time to Shine</p>
+        <p className="text-xs font-black text-neutral-600 dark:text-neutral-400 uppercase tracking-wider">Time to Shine</p>
       </div>
 
       {/* 1. THIS WEEK'S CHALLENGE HERO BANNER */}
-      <div className="bg-gradient-to-r from-[#5338ec] to-[#6d4df6] text-white rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden border border-purple-400/20">
+      <div className="bg-black text-white rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden border-2 border-black dark:border-white">
         
-        {/* Subtle Background Glow Accent */}
-        <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full blur-2xl pointer-events-none" />
-
         <div className="relative z-10 space-y-4 max-w-2xl">
-          <p className="text-xs font-extrabold uppercase tracking-widest text-purple-200">
+          <p className="text-xs font-black uppercase tracking-widest text-neutral-300">
             This Week's Challenge
           </p>
 
@@ -65,15 +58,15 @@ export const Dashboard: React.FC = () => {
             "{featuredChallenge?.title || 'My Favourite App'}"
           </h1>
 
-          <p className="text-xs sm:text-sm font-medium text-purple-100 leading-relaxed">
+          <p className="text-xs sm:text-sm font-bold text-neutral-300 leading-relaxed">
             {featuredChallenge?.description || 'Describe your favourite mobile app to someone who has never used it – what it does, how it works, and why you enjoy it.'}
           </p>
 
           <div className="flex flex-wrap items-center gap-3 pt-2">
-            <span className="px-3 py-1 rounded-full bg-[#22c55e] text-white font-extrabold text-xs">
+            <span className="px-3 py-1 rounded-full bg-white text-black font-black text-xs border border-white">
               Active
             </span>
-            <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white font-bold text-xs">
+            <span className="px-3 py-1 rounded-full bg-neutral-800 text-white font-bold text-xs border border-neutral-700">
               4d 08:04:48 left
             </span>
           </div>
@@ -81,7 +74,7 @@ export const Dashboard: React.FC = () => {
           <div className="pt-2">
             <button
               onClick={() => navigate(featuredChallenge ? `/student/challenges/${featuredChallenge.id}` : '/student/challenges')}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-slate-900 hover:bg-slate-100 font-extrabold text-xs shadow-md transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black hover:bg-neutral-200 font-black text-xs shadow-md transition-all border-2 border-white"
             >
               Start Challenge <ArrowRight className="w-4 h-4" />
             </button>
@@ -89,8 +82,8 @@ export const Dashboard: React.FC = () => {
         </div>
 
         {/* Right Microphone Graphic Illustration */}
-        <div className="hidden lg:flex absolute right-8 top-1/2 -translate-y-1/2 items-center justify-center w-36 h-36 rounded-full bg-white/10 backdrop-blur-md border-2 border-white/20">
-          <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center">
+        <div className="hidden lg:flex absolute right-8 top-1/2 -translate-y-1/2 items-center justify-center w-36 h-36 rounded-full bg-neutral-900 border-2 border-white">
+          <div className="w-20 h-20 rounded-full bg-neutral-800 border border-white flex items-center justify-center">
             <Mic className="w-10 h-10 text-white" />
           </div>
         </div>
@@ -101,36 +94,36 @@ export const Dashboard: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
         
         {/* WINSPEAK SCORE CARD (LEFT 50%) */}
-        <div className="md:col-span-6 bg-[#5338ec] text-white rounded-3xl p-6 sm:p-8 shadow-md border border-purple-400/20 flex flex-col justify-between space-y-6">
+        <div className="md:col-span-6 bg-black dark:bg-neutral-900 text-white rounded-3xl p-6 sm:p-8 shadow-md border-2 border-black dark:border-white flex flex-col justify-between space-y-6">
           
           <div className="space-y-4">
-            <p className="text-xs font-black uppercase tracking-widest text-purple-200">
+            <p className="text-xs font-black uppercase tracking-widest text-neutral-300">
               WINSPEAK SCORE
             </p>
 
             <div className="flex items-baseline gap-2">
               <span className="text-5xl font-black tracking-tight">{overallScore}</span>
-              <span className="text-xl font-extrabold text-purple-200">/ 100</span>
+              <span className="text-xl font-black text-neutral-400">/ 100</span>
             </div>
 
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/10 text-purple-100 text-xs font-bold border border-white/10">
-              <TrendingDown className="w-3.5 h-3.5 text-purple-200" /> -10 vs last week
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-neutral-800 text-white text-xs font-black border border-neutral-700">
+              <TrendingDown className="w-3.5 h-3.5 text-neutral-300" /> -10 vs last week
             </div>
 
-            <p className="text-xs font-medium text-purple-200">
+            <p className="text-xs font-bold text-neutral-400">
               5-week rolling average
             </p>
           </div>
 
           {/* Strongest & Weakest Sub-cards */}
           <div className="grid grid-cols-2 gap-3 pt-2">
-            <div className="p-3.5 bg-white/10 border border-white/15 rounded-2xl space-y-1">
-              <p className="text-[10px] font-black uppercase tracking-wider text-purple-200">STRONGEST</p>
+            <div className="p-3.5 bg-neutral-900 border border-neutral-700 rounded-2xl space-y-1">
+              <p className="text-[10px] font-black uppercase tracking-wider text-neutral-400">STRONGEST</p>
               <p className="text-sm font-black text-white truncate">Relevancy</p>
             </div>
 
-            <div className="p-3.5 bg-white/10 border border-white/15 rounded-2xl space-y-1">
-              <p className="text-[10px] font-black uppercase tracking-wider text-purple-200">WEAKEST</p>
+            <div className="p-3.5 bg-neutral-900 border border-neutral-700 rounded-2xl space-y-1">
+              <p className="text-[10px] font-black uppercase tracking-wider text-neutral-400">WEAKEST</p>
               <p className="text-sm font-black text-white truncate">Grammar</p>
             </div>
           </div>
@@ -138,28 +131,28 @@ export const Dashboard: React.FC = () => {
         </div>
 
         {/* COHORT LEADERBOARD CARD (RIGHT 50%) */}
-        <div className="md:col-span-6 bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-100 flex flex-col justify-between space-y-4">
+        <div className="md:col-span-6 bg-white dark:bg-neutral-900 text-black dark:text-white rounded-3xl p-6 sm:p-8 shadow-sm border-2 border-black dark:border-white flex flex-col justify-between space-y-4">
           
           <div>
-            <h3 className="text-base font-extrabold text-slate-900">
+            <h3 className="text-base font-black text-black dark:text-white">
               Cohort Leaderboard
             </h3>
-            <p className="text-xs text-slate-500 font-medium">
+            <p className="text-xs text-neutral-600 dark:text-neutral-400 font-bold">
               AI-T2 · T2 · of 6 students
             </p>
 
             <div className="mt-4 space-y-3">
               {cohortLeaderboard.map((item) => (
-                <div key={item.rank} className="flex items-center justify-between p-3 rounded-2xl bg-slate-50/80 border border-slate-100">
+                <div key={item.rank} className="flex items-center justify-between p-3 rounded-2xl bg-neutral-50 dark:bg-neutral-800 border-2 border-black dark:border-white">
                   <div className="flex items-center gap-3">
-                    <div className={`w-7 h-7 rounded-full flex items-center justify-center font-black text-xs shrink-0 ${item.badgeColor}`}>
+                    <div className={`w-7 h-7 rounded-full flex items-center justify-center font-black text-xs shrink-0 border border-black ${item.badgeColor}`}>
                       {item.rank}
                     </div>
-                    <span className="text-xs font-extrabold text-slate-900 tracking-tight uppercase">
+                    <span className="text-xs font-black text-black dark:text-white tracking-tight uppercase">
                       {item.name}
                     </span>
                   </div>
-                  <span className="text-xs font-black text-slate-900">{item.score}</span>
+                  <span className="text-xs font-black text-black dark:text-white">{item.score}</span>
                 </div>
               ))}
             </div>
@@ -168,9 +161,9 @@ export const Dashboard: React.FC = () => {
           <div className="pt-2 text-center">
             <button
               onClick={() => navigate('/student/leaderboard')}
-              className="w-full inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full border border-slate-200 text-slate-800 hover:bg-slate-50 font-extrabold text-xs transition-colors"
+              className="w-full inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-full border-2 border-black dark:border-white text-black dark:text-white bg-white dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 font-black text-xs transition-colors"
             >
-              View Full Leaderboard <ChevronRight className="w-4 h-4 text-slate-500" />
+              View Full Leaderboard <ChevronRight className="w-4 h-4" />
             </button>
           </div>
 
@@ -181,10 +174,10 @@ export const Dashboard: React.FC = () => {
       {/* 3. BOTTOM ROW: YOUR FOCUS THIS WEEK */}
       <div className="space-y-4">
         <div className="flex items-center justify-between px-1">
-          <h3 className="text-base font-black text-slate-900">
+          <h3 className="text-base font-black text-black dark:text-white">
             Your Focus This Week
           </h3>
-          <span className="text-xs font-medium text-slate-500">
+          <span className="text-xs font-bold text-neutral-600 dark:text-neutral-400">
             • Refreshes Monday
           </span>
         </div>
@@ -192,40 +185,40 @@ export const Dashboard: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           
           {/* Card 1 */}
-          <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 space-y-3">
-            <div className="w-10 h-10 rounded-2xl bg-[#5338ec] text-white flex items-center justify-center shadow-md">
-              <Lightbulb className="w-5 h-5 text-white" />
+          <div className="bg-white dark:bg-neutral-900 rounded-3xl p-6 shadow-sm border-2 border-black dark:border-white space-y-3">
+            <div className="w-10 h-10 rounded-2xl bg-black text-white dark:bg-white dark:text-black flex items-center justify-center shadow-md border border-black">
+              <Lightbulb className="w-5 h-5" />
             </div>
-            <h4 className="text-sm font-extrabold text-slate-900">
+            <h4 className="text-sm font-black text-black dark:text-white">
               Smooth out your pacing
             </h4>
-            <p className="text-xs text-slate-600 font-medium leading-relaxed">
+            <p className="text-xs text-neutral-600 dark:text-neutral-400 font-bold leading-relaxed">
               Reduce filler words and link your sentences – a steady pace reads as confidence.
             </p>
           </div>
 
           {/* Card 2 */}
-          <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 space-y-3">
-            <div className="w-10 h-10 rounded-2xl bg-[#5338ec] text-white flex items-center justify-center shadow-md">
-              <Lightbulb className="w-5 h-5 text-white" />
+          <div className="bg-white dark:bg-neutral-900 rounded-3xl p-6 shadow-sm border-2 border-black dark:border-white space-y-3">
+            <div className="w-10 h-10 rounded-2xl bg-black text-white dark:bg-white dark:text-black flex items-center justify-center shadow-md border border-black">
+              <Lightbulb className="w-5 h-5" />
             </div>
-            <h4 className="text-sm font-extrabold text-slate-900">
+            <h4 className="text-sm font-black text-black dark:text-white">
               Tighten your grammar
             </h4>
-            <p className="text-xs text-slate-600 font-medium leading-relaxed">
+            <p className="text-xs text-neutral-600 dark:text-neutral-400 font-bold leading-relaxed">
               Watch subject-verb agreement in longer sentences; pause once to check the verb.
             </p>
           </div>
 
           {/* Card 3 */}
-          <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 space-y-3">
-            <div className="w-10 h-10 rounded-2xl bg-[#5338ec] text-white flex items-center justify-center shadow-md">
-              <Lightbulb className="w-5 h-5 text-white" />
+          <div className="bg-white dark:bg-neutral-900 rounded-3xl p-6 shadow-sm border-2 border-black dark:border-white space-y-3">
+            <div className="w-10 h-10 rounded-2xl bg-black text-white dark:bg-white dark:text-black flex items-center justify-center shadow-md border border-black">
+              <Lightbulb className="w-5 h-5" />
             </div>
-            <h4 className="text-sm font-extrabold text-slate-900">
+            <h4 className="text-sm font-black text-black dark:text-white">
               Structure your answer
             </h4>
-            <p className="text-xs text-slate-600 font-medium leading-relaxed">
+            <p className="text-xs text-neutral-600 dark:text-neutral-400 font-bold leading-relaxed">
               Use the open-anchor-close pattern: one hook, one anchor sentence, one closer.
             </p>
           </div>
