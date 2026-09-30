@@ -2,6 +2,8 @@ import { Response } from 'express';
 import prisma from '../config/db';
 import { AuthRequest } from '../middleware/auth';
 import { getOrCreateStudentProfileId } from '../utils/profileHelper';
+import { analyzeWinnifyAssessment } from '../utils/winnifyAssessmentEngine';
+
 
 export const getLeaderboard = async (req: AuthRequest, res: Response) => {
   try {
@@ -196,3 +198,29 @@ export const getAnnouncements = async (req: AuthRequest, res: Response) => {
     return res.status(500).json({ message: 'Failed to fetch announcements.' });
   }
 };
+
+export const generateAssessmentReport = async (req: AuthRequest, res: Response) => {
+  try {
+    const { assessment_data, category_scores, overall_score, maximum_score, answers } = req.body;
+
+    if (overall_score === undefined || maximum_score === undefined || !category_scores) {
+      return res.status(400).json({
+        message: 'Invalid payload. Required fields: category_scores, overall_score, maximum_score.',
+      });
+    }
+
+    const report = await analyzeWinnifyAssessment({
+      assessment_data: assessment_data || 'Winnify Assessment',
+      category_scores: category_scores || [],
+      overall_score: Number(overall_score),
+      maximum_score: Number(maximum_score),
+      answers: answers || [],
+    });
+
+    return res.json(report);
+  } catch (error: any) {
+    console.error('Assessment Report Error:', error);
+    return res.status(500).json({ message: 'Failed to generate assessment report.' });
+  }
+};
+

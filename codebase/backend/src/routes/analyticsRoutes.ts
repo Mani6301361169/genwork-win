@@ -6,6 +6,7 @@ import {
   getLearningContent,
   submitFeedback,
   getAnnouncements,
+  generateAssessmentReport,
 } from '../controllers/analyticsController';
 import { authenticate } from '../middleware/auth';
 
@@ -17,5 +18,7 @@ router.get('/campus', authenticate, getCampusChallenges);
 router.get('/learning', authenticate, getLearningContent);
 router.get('/announcements', authenticate, getAnnouncements);
 router.post('/feedback', authenticate, submitFeedback);
+router.post('/assessment-report', authenticate, generateAssessmentReport);
 
 export default router;
+

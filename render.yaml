@@ -1,0 +1,20 @@
+services:
+  # Winnify Backend Web Service on Render
+  - type: web
+    name: winnify-backend
+    env: node
+    region: singapore
+    plan: free
+    buildCommand: cd codebase/backend && npm install && npm run build
+    startCommand: cd codebase/backend && npm start
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false # Set to your MongoDB Atlas connection string: mongodb+srv://<user>:<password>@cluster.mongodb.net/winnify_db
+      - key: JWT_SECRET
+        generateValue: true
+      - key: OPENAI_API_KEY
+        sync: false # Optional: OpenAI API Key for live LLM analysis
