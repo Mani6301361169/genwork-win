@@ -12,16 +12,37 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Enable CORS & Custom Security / CSP Headers
 app.use(cors({ origin: true, credentials: true }));
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader(
+    'Content-Security-Policy',
+    "default-src 'self' http: https: data: blob: 'unsafe-inline' 'unsafe-eval'; connect-src 'self' http: https: ws: wss:;"
+  );
+  next();
+});
+
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// Health Check
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok', service: 'SkillSprint API Engine', timestamp: new Date().toISOString() });
+// Chrome DevTools Probe Handling
+app.get('/.well-known/appspecific/com.chrome.devtools.json', (req, res) => {
+  res.status(204).end();
 });
 
-// Routes
+// Root & Health Check Endpoints
+app.get('/', (req, res) => {
+  res.json({ status: 'ok', service: 'Winnify MERN API Engine', version: '1.0.0' });
+});
+
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', service: 'Winnify MERN API Engine', timestamp: new Date().toISOString() });
+});
+
+// API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/challenges', challengeRoutes);
 app.use('/api/interviews', interviewRoutes);
@@ -37,6 +58,5 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 SkillSprint Backend API running on http://localhost:${PORT}`);
+  console.log(`🚀 Winnify MERN API Engine running on http://localhost:${PORT}`);
 });
-
