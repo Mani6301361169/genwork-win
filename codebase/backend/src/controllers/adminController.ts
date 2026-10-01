@@ -62,7 +62,7 @@ export const getStudentsList = async (req: AuthRequest, res: Response) => {
       orderBy: { createdAt: 'desc' },
     });
 
-    const formatted = students.map((s) => ({
+    const formatted = students.map((s: any) => ({
       id: s.id,
       studentId: s.studentId,
       fullName: s.fullName,

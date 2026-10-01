@@ -15,7 +15,7 @@ export const getInterviewCategories = async (req: AuthRequest, res: Response) =>
       orderBy: { name: 'asc' },
     });
 
-    const formatted = categories.map((cat) => ({
+    const formatted = categories.map((cat: any) => ({
       id: cat.id,
       name: cat.name,
       slug: cat.slug,
@@ -99,7 +99,7 @@ export const submitInterviewResponse = async (req: AuthRequest, res: Response) =
 
     // Update Session aggregates
     const allResponses = await prisma.interviewResponse.findMany({ where: { sessionId } });
-    const avgScore = Math.round(allResponses.reduce((acc, curr) => acc + curr.score, 0) / allResponses.length);
+    const avgScore = Math.round(allResponses.reduce((acc: number, curr: any) => acc + curr.score, 0) / allResponses.length);
 
     await prisma.interviewSession.update({
       where: { id: sessionId },

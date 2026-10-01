@@ -30,7 +30,7 @@ export const getLeaderboard = async (req: AuthRequest, res: Response) => {
 
     const currentStudentProfileId = await getOrCreateStudentProfileId(req);
 
-    const formatted = leaderboardEntries.map((entry, index) => {
+    const formatted = leaderboardEntries.map((entry: any, index: number) => {
       const isCurrentUser = entry.studentId === currentStudentProfileId;
       return {
         rank: index + 1,
@@ -47,7 +47,7 @@ export const getLeaderboard = async (req: AuthRequest, res: Response) => {
       };
     });
 
-    let currentUserRank = formatted.find((f) => f.isCurrentUser) || null;
+    let currentUserRank = formatted.find((f: any) => f.isCurrentUser) || null;
 
     return res.json({ leaderboard: formatted, currentUserRank });
   } catch (error: any) {
@@ -121,7 +121,7 @@ export const getCampusChallenges = async (req: AuthRequest, res: Response) => {
       attemptsCount = await prisma.challengeAttempt.count({ where: { studentId: studentProfileId } });
     }
 
-    const formatted = campusChallenges.map((c) => ({
+    const formatted = campusChallenges.map((c: any) => ({
       id: c.id,
       title: c.title,
       description: c.description,

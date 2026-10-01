@@ -36,12 +36,12 @@ export const getChallenges = async (req: AuthRequest, res: Response) => {
         where: { studentId: studentProfileId },
         select: { challengeId: true },
       });
-      attempts.forEach((a) => {
+      attempts.forEach((a: any) => {
         studentAttemptsMap[a.challengeId] = true;
       });
     }
 
-    const formatted = challenges.map((c) => ({
+    const formatted = challenges.map((c: any) => ({
       ...c,
       isCompleted: !!studentAttemptsMap[c.id],
     }));
@@ -132,7 +132,7 @@ export const submitAttempt = async (req: AuthRequest, res: Response) => {
     if (student) {
       const attempts = await prisma.challengeAttempt.findMany({ where: { studentId: studentProfileId } });
       const avgSpeakingScore = Math.round(
-        attempts.reduce((acc, curr) => acc + curr.overallScore, 0) / attempts.length
+        attempts.reduce((acc: number, curr: any) => acc + curr.overallScore, 0) / attempts.length
       );
       const newStreak = student.currentStreak + 1;
       const newXP = student.totalXP + evaluation.overallScore + 20;
@@ -201,7 +201,7 @@ export const getAttemptHistory = async (req: AuthRequest, res: Response) => {
       orderBy: { completedAt: 'desc' },
     });
 
-    const formatted = attempts.map((a) => ({
+    const formatted = attempts.map((a: any) => ({
       id: a.id,
       challengeName: a.challenge.title,
       category: a.challenge.category,
