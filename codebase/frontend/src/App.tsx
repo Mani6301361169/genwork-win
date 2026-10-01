@@ -14,6 +14,7 @@ import { ForgotPassword } from './pages/auth/ForgotPassword';
 
 // Student Pages
 import { Dashboard } from './pages/student/Dashboard';
+import { DailyQuiz } from './pages/student/DailyQuiz';
 import { SpeakingChallenges } from './pages/student/SpeakingChallenges';
 import { SpeakingPracticeRoom } from './pages/student/SpeakingPracticeRoom';
 import { InterviewPractice } from './pages/student/InterviewPractice';
@@ -53,6 +54,8 @@ export const App: React.FC = () => {
             <Route path="/student" element={<StudentLayout />}>
               <Route index element={<Navigate to="/student/dashboard" replace />} />
               <Route path="dashboard" element={<Dashboard />} />
+              <Route path="daily-quiz" element={<DailyQuiz />} />
+              <Route path="quiz" element={<DailyQuiz />} />
               <Route path="challenges" element={<SpeakingChallenges />} />
               <Route path="challenges/:id" element={<SpeakingPracticeRoom />} />
               <Route path="interviews" element={<InterviewPractice />} />
