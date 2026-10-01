@@ -41,6 +41,10 @@ export interface Challenge {
   durationSeconds: number;
   topicType: string;
   isCompleted?: boolean;
+  isOverdue?: boolean;
+  daysRemaining?: number;
+  statusText?: string;
+  createdAt?: string;
 }
 
 export interface ChallengeAttempt {

@@ -59,14 +59,14 @@ export const SpeakingChallenges: React.FC = () => {
     },
   ];
 
-  const itemsToRender = challenges.length >= 4 ? challenges.map((c, i) => ({
+  const itemsToRender = challenges.length > 0 ? challenges.map((c, i) => ({
     id: c.id,
     title: c.title,
     description: c.description,
-    isActive: i === 0,
-    timeLeft: '4d 08:04:16 left',
-    dateRange: i === 0 ? 'Current Week' : `${14 - i * 7} - ${20 - i * 7} Sep`,
-    isMissed: i > 0,
+    isActive: i === 0 || !c.isOverdue,
+    isOverdue: !!c.isOverdue,
+    timeLeft: c.statusText || (i === 0 ? 'Active 1-week window' : 'Overdue (>1 week)'),
+    dateRange: i === 0 ? 'Current Week' : `Week -${i}`,
   })) : weeklyTimeline;
 
   return (
@@ -99,7 +99,7 @@ export const SpeakingChallenges: React.FC = () => {
 
                   <div className="flex items-center gap-3 pt-1">
                     <span className="px-3 py-1 rounded-full bg-white text-black font-black text-xs border border-white">
-                      Active
+                      Active (Current Week)
                     </span>
                     <span className="px-3 py-1 rounded-full bg-neutral-800 text-white font-bold text-xs border border-neutral-700">
                       {item.timeLeft}
@@ -123,20 +123,20 @@ export const SpeakingChallenges: React.FC = () => {
 
               </div>
             ) : (
-              /* MISSED PAST WEEK CARD */
+              /* OVERDUE PAST WEEK CARD - FULLY COMPLETABLE */
               <div className="bg-white dark:bg-neutral-900 rounded-3xl p-6 sm:p-8 shadow-sm border-2 border-black dark:border-white space-y-4">
                 
                 <h3 className="text-lg font-black text-black dark:text-white tracking-tight">
-                  {item.title}
+                  "{item.title}"
                 </h3>
                 
                 <p className="text-xs font-bold text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-3xl">
                   {item.description}
                 </p>
 
-                {/* Warning Callout Box */}
-                <div className="p-3 rounded-2xl bg-neutral-100 dark:bg-neutral-800 border-2 border-black dark:border-white text-black dark:text-white text-xs font-black leading-relaxed">
-                  You didn't submit this week – practising now won't affect your rank or score.
+                {/* Overdue Warning Callout Box */}
+                <div className="p-3.5 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border-2 border-amber-500 text-amber-900 dark:text-amber-200 text-xs font-black leading-relaxed flex items-center gap-2">
+                  <span>⚠️ <strong>Overdue Notice:</strong> This challenge was posted over 1 week ago. You can still practice, record, and submit to complete it and earn your score!</span>
                 </div>
 
                 {/* Footer Badges & Action */}
@@ -145,17 +145,15 @@ export const SpeakingChallenges: React.FC = () => {
                     {item.dateRange}
                   </span>
                   
-                  {item.isMissed && (
-                    <span className="px-3 py-1 rounded-full bg-black text-white dark:bg-white dark:text-black font-black text-xs border border-black">
-                      Missed
-                    </span>
-                  )}
+                  <span className="px-3 py-1 rounded-full bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100 font-black text-xs border-2 border-amber-500">
+                    Overdue (&gt;1 week)
+                  </span>
 
                   <button
                     onClick={() => navigate(`/student/challenges/${item.id}`)}
-                    className="ml-auto px-5 py-2 rounded-xl bg-black text-white dark:bg-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-200 border-2 border-black font-black text-xs transition-colors"
+                    className="ml-auto px-6 py-2.5 rounded-xl bg-black text-white dark:bg-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-200 border-2 border-black font-black text-xs transition-colors shadow-sm flex items-center gap-1.5"
                   >
-                    Practice
+                    Complete Challenge <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
 

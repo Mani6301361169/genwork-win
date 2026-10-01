@@ -41,10 +41,24 @@ export const getChallenges = async (req: AuthRequest, res: Response) => {
       });
     }
 
-    const formatted = challenges.map((c: any) => ({
-      ...c,
-      isCompleted: !!studentAttemptsMap[c.id],
-    }));
+    const now = new Date();
+    const formatted = challenges.map((c: any) => {
+      const createdAt = new Date(c.createdAt || now);
+      const ageInMs = now.getTime() - createdAt.getTime();
+      const ageInDays = Math.floor(ageInMs / (1000 * 3600 * 24));
+      const isOverdue = ageInDays >= 7;
+      const daysRemaining = Math.max(0, 7 - ageInDays);
+
+      return {
+        ...c,
+        isCompleted: !!studentAttemptsMap[c.id],
+        isOverdue,
+        daysRemaining: isOverdue ? 0 : daysRemaining,
+        statusText: isOverdue
+          ? 'Overdue Notice: Topic posted >1 week ago. Practicing still earns full evaluation score!'
+          : `${daysRemaining}d left in active window`,
+      };
+    });
 
     return res.json({ challenges: formatted });
   } catch (error: any) {
@@ -59,12 +73,25 @@ export const getTodayChallenge = async (req: AuthRequest, res: Response) => {
       orderBy: { createdAt: 'desc' },
     });
 
-    if (!featured) {
-      const fallback = await prisma.challenge.findFirst({ where: { isArchived: false } });
-      return res.json({ challenge: fallback });
-    }
+    const ch = featured || (await prisma.challenge.findFirst({ where: { isArchived: false } }));
+    if (!ch) return res.json({ challenge: null });
 
-    return res.json({ challenge: featured });
+    const now = new Date();
+    const createdAt = new Date(ch.createdAt || now);
+    const ageInDays = Math.floor((now.getTime() - createdAt.getTime()) / (1000 * 3600 * 24));
+    const isOverdue = ageInDays >= 7;
+    const daysRemaining = Math.max(0, 7 - ageInDays);
+
+    return res.json({
+      challenge: {
+        ...ch,
+        isOverdue,
+        daysRemaining: isOverdue ? 0 : daysRemaining,
+        statusText: isOverdue
+          ? 'Overdue Notice: Topic posted >1 week ago. Complete to get evaluated!'
+          : `${daysRemaining}d left in active window`,
+      },
+    });
   } catch (error: any) {
     return res.status(500).json({ message: "Failed to fetch today's challenge." });
   }
