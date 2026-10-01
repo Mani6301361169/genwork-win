@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { apiFetch } from '../../services/api';
 import { Challenge } from '../../types';
-import { Mic, ArrowRight, AlertCircle, Calendar } from 'lucide-react';
+import { Mic, ArrowRight } from 'lucide-react';
 
 export const SpeakingChallenges: React.FC = () => {
   const navigate = useNavigate();
   const [challenges, setChallenges] = useState<Challenge[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchChallenges = async () => {
@@ -23,7 +23,7 @@ export const SpeakingChallenges: React.FC = () => {
     fetchChallenges();
   }, []);
 
-  // Hardcoded past weekly challenges matching Image 2 timeline if API returns empty
+  // Hardcoded past weekly challenges matching timeline if API returns empty
   const weeklyTimeline = [
     {
       id: 'active-1',
@@ -70,38 +70,38 @@ export const SpeakingChallenges: React.FC = () => {
   })) : weeklyTimeline;
 
   return (
-    <div className="space-y-6 max-w-5xl mx-auto font-sans text-slate-900 pb-16">
+    <div className="space-y-6 max-w-5xl mx-auto font-sans text-black dark:text-white pb-16">
       
       {/* TIMELINE CONTAINER */}
-      <div className="relative pl-8 sm:pl-12 space-y-8 border-l-2 border-dashed border-indigo-300 dark:border-indigo-800 ml-4 sm:ml-6">
+      <div className="relative pl-8 sm:pl-12 space-y-8 border-l-2 border-dashed border-black dark:border-white ml-4 sm:ml-6">
         
-        {itemsToRender.map((item, idx) => (
+        {itemsToRender.map((item) => (
           <div key={item.id} className="relative">
             
             {/* Timeline Microphone Node */}
-            <div className={`absolute -left-[45px] sm:-left-[61px] top-4 w-9 h-9 rounded-full flex items-center justify-center border-2 border-white shadow-sm ${
-              item.isActive ? 'bg-[#5338ec] text-white ring-4 ring-purple-100' : 'bg-indigo-100 text-indigo-600'
+            <div className={`absolute -left-[45px] sm:-left-[61px] top-4 w-9 h-9 rounded-full flex items-center justify-center border-2 border-black dark:border-white shadow-sm ${
+              item.isActive ? 'bg-black text-white dark:bg-white dark:text-black' : 'bg-neutral-200 text-black dark:bg-neutral-800 dark:text-white'
             }`}>
               <Mic className="w-4 h-4" />
             </div>
 
             {item.isActive ? (
               /* ACTIVE CURRENT WEEK HERO CARD */
-              <div className="bg-gradient-to-r from-[#5338ec] to-[#6d4df6] text-white rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden border border-purple-400/20">
+              <div className="bg-black text-white rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden border-2 border-black dark:border-white">
                 
                 <div className="space-y-4 max-w-2xl relative z-10">
                   <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
                     "{item.title}"
                   </h2>
-                  <p className="text-xs sm:text-sm font-medium text-purple-100 leading-relaxed">
+                  <p className="text-xs sm:text-sm font-bold text-neutral-300 leading-relaxed">
                     {item.description}
                   </p>
 
                   <div className="flex items-center gap-3 pt-1">
-                    <span className="px-3 py-1 rounded-full bg-[#22c55e] text-white font-extrabold text-xs">
+                    <span className="px-3 py-1 rounded-full bg-white text-black font-black text-xs border border-white">
                       Active
                     </span>
-                    <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white font-bold text-xs">
+                    <span className="px-3 py-1 rounded-full bg-neutral-800 text-white font-bold text-xs border border-neutral-700">
                       {item.timeLeft}
                     </span>
                   </div>
@@ -109,7 +109,7 @@ export const SpeakingChallenges: React.FC = () => {
                   <div className="pt-2">
                     <button
                       onClick={() => navigate(`/student/challenges/${item.id}`)}
-                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white text-slate-900 hover:bg-slate-100 font-extrabold text-xs shadow-md transition-all"
+                      className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white text-black hover:bg-neutral-200 font-black text-xs shadow-md transition-all border-2 border-white"
                     >
                       Start Challenge <ArrowRight className="w-4 h-4" />
                     </button>
@@ -117,43 +117,43 @@ export const SpeakingChallenges: React.FC = () => {
                 </div>
 
                 {/* Microphone Illustration */}
-                <div className="hidden lg:flex absolute right-6 top-1/2 -translate-y-1/2 items-center justify-center w-32 h-32 rounded-full bg-white/10 backdrop-blur-md border-2 border-white/20">
+                <div className="hidden lg:flex absolute right-6 top-1/2 -translate-y-1/2 items-center justify-center w-32 h-32 rounded-full bg-neutral-900 border-2 border-white">
                   <Mic className="w-12 h-12 text-white" />
                 </div>
 
               </div>
             ) : (
               /* MISSED PAST WEEK CARD */
-              <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-100 space-y-4">
+              <div className="bg-white dark:bg-neutral-900 rounded-3xl p-6 sm:p-8 shadow-sm border-2 border-black dark:border-white space-y-4">
                 
-                <h3 className="text-lg font-black text-slate-900 tracking-tight">
+                <h3 className="text-lg font-black text-black dark:text-white tracking-tight">
                   {item.title}
                 </h3>
                 
-                <p className="text-xs font-medium text-slate-600 leading-relaxed max-w-3xl">
+                <p className="text-xs font-bold text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-3xl">
                   {item.description}
                 </p>
 
-                {/* Warning Pink Callout Box */}
-                <div className="p-3 rounded-2xl bg-rose-50/80 border border-rose-100 text-rose-600 text-xs font-semibold leading-relaxed">
+                {/* Warning Callout Box */}
+                <div className="p-3 rounded-2xl bg-neutral-100 dark:bg-neutral-800 border-2 border-black dark:border-white text-black dark:text-white text-xs font-black leading-relaxed">
                   You didn't submit this week – practising now won't affect your rank or score.
                 </div>
 
                 {/* Footer Badges & Action */}
                 <div className="flex flex-wrap items-center gap-3 pt-1">
-                  <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-bold text-xs border border-slate-200">
+                  <span className="px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-black dark:text-white font-black text-xs border-2 border-black dark:border-white">
                     {item.dateRange}
                   </span>
                   
                   {item.isMissed && (
-                    <span className="px-3 py-1 rounded-full bg-rose-500 text-white font-black text-xs">
+                    <span className="px-3 py-1 rounded-full bg-black text-white dark:bg-white dark:text-black font-black text-xs border border-black">
                       Missed
                     </span>
                   )}
 
                   <button
                     onClick={() => navigate(`/student/challenges/${item.id}`)}
-                    className="ml-auto px-5 py-2 rounded-xl bg-indigo-50 text-indigo-700 hover:bg-indigo-100 font-extrabold text-xs transition-colors"
+                    className="ml-auto px-5 py-2 rounded-xl bg-black text-white dark:bg-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-200 border-2 border-black font-black text-xs transition-colors"
                   >
                     Practice
                   </button>
