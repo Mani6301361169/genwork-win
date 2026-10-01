@@ -95,14 +95,14 @@ async function main() {
             departmentId: s.dept.id,
             academicYear: s.year,
             graduationYear: 2026,
-            totalXP: Math.floor(400 + Math.random() * 1200),
-            currentStreak: Math.floor(1 + Math.random() * 14),
-            bestScore: Math.floor(75 + Math.random() * 22),
-            overallScore: Math.floor(65 + Math.random() * 28),
-            speakingScore: Math.floor(68 + Math.random() * 25),
-            interviewScore: Math.floor(62 + Math.random() * 30),
-            technicalScore: Math.floor(65 + Math.random() * 28),
-            confidenceScore: Math.floor(70 + Math.random() * 22),
+            totalXP: 0,
+            currentStreak: 0,
+            bestScore: 0,
+            overallScore: 0,
+            speakingScore: 0,
+            interviewScore: 0,
+            technicalScore: 0,
+            confidenceScore: 0,
           },
         },
       },
@@ -116,106 +116,17 @@ async function main() {
       await prisma.leaderboardEntry.create({
         data: {
           studentId: user.profile.id,
-          overallScore: user.profile.overallScore,
-          speakingScore: user.profile.speakingScore,
-          interviewScore: user.profile.interviewScore,
-          challengesCompleted: Math.floor(5 + Math.random() * 25),
-          streak: user.profile.currentStreak,
+          overallScore: 0,
+          speakingScore: 0,
+          interviewScore: 0,
+          challengesCompleted: 0,
+          streak: 0,
         },
       });
     }
   }
 
-  console.log(`✅ Created 20 Students (Primary login: student@skillsprint.edu / student123).`);
-
-  // 4. Create 30 Speaking Challenges
-  const challengeTopics = [
-    { title: 'Talk About Your Favorite Technology', category: 'Technology', difficulty: 'Beginner', duration: 60, type: 'DAILY', desc: 'Speak for 60 seconds about a technology you use regularly and explain why you like it.' },
-    { title: 'Is Artificial Intelligence Good for Students?', category: 'Opinion', difficulty: 'Intermediate', duration: 60, type: 'TOPICAL', desc: 'Explain your opinion on AI in education and provide at least two supporting reasons.' },
-    { title: 'Describe a Challenge You Overcame', category: 'Personal Experience', difficulty: 'Intermediate', duration: 90, type: 'TOPICAL', desc: 'Talk about a difficult situation in college or personal life and how you solved it.' },
-    { title: 'How to Build Confidence in Public Speaking', category: 'Leadership', difficulty: 'Intermediate', duration: 60, type: 'TOPICAL', desc: 'Share key techniques that help students speak comfortably in front of large audiences.' },
-    { title: 'Remote Work vs Office Work', category: 'Career', difficulty: 'Beginner', duration: 60, type: 'TOPICAL', desc: 'Compare remote and office work environments. Which do you prefer and why?' },
-    { title: 'Importance of Soft Skills for Engineers', category: 'Career', difficulty: 'Intermediate', duration: 60, type: 'TOPICAL', desc: 'Explain why communication skills matter just as much as technical expertise.' },
-    { title: 'Describe Your Dream Job Role', category: 'Career', difficulty: 'Beginner', duration: 60, type: 'TOPICAL', desc: 'Talk about your ideal career path, company culture, and day-to-day responsibilities.' },
-    { title: 'Should College Education Be Entirely Online?', category: 'Education', difficulty: 'Intermediate', duration: 90, type: 'TOPICAL', desc: 'Analyze the pros and cons of online learning vs campus experience.' },
-    { title: 'How Has Social Media Changed Communication?', category: 'Communication', difficulty: 'Beginner', duration: 60, type: 'TOPICAL', desc: 'Discuss both positive and negative impacts of social media platforms.' },
-    { title: 'What Makes an Effective Team Leader?', category: 'Leadership', difficulty: 'Advanced', duration: 90, type: 'TOPICAL', desc: 'Describe key qualities of a leader and how they handle team conflict.' },
-    { title: 'The Role of Renewable Energy in the Future', category: 'Current Topics', difficulty: 'Intermediate', duration: 60, type: 'TOPICAL', desc: 'Explain why solar, wind, and green technology are vital for global sustainability.' },
-    { title: 'Describe Your Favorite Hobby or Passion', category: 'Daily Life', difficulty: 'Beginner', duration: 60, type: 'TOPICAL', desc: 'Share how you got started with your hobby and what you learn from it.' },
-    { title: 'How to Manage Time During Exam Season', category: 'Education', difficulty: 'Beginner', duration: 60, type: 'TOPICAL', desc: 'Give practical tips for balancing study schedules, revision, and sleep.' },
-    { title: 'Is Work-Life Balance Possible for College Freshers?', category: 'Opinion', difficulty: 'Intermediate', duration: 60, type: 'TOPICAL', desc: 'Give your perspective on managing early career demands and personal life.' },
-    { title: 'The Impact of Mobile Phones on Concentration', category: 'Current Topics', difficulty: 'Beginner', duration: 60, type: 'TOPICAL', desc: 'Discuss screen time habits and strategies for reducing digital distraction.' },
-    { title: 'Why Ethical Hacking and Cyber Security Matter', category: 'Technology', difficulty: 'Advanced', duration: 90, type: 'TOPICAL', desc: 'Explain why protecting data and digital infrastructure is essential for organizations.' },
-    { title: 'How to Prepare for College Campus Placements', category: 'Career', difficulty: 'Intermediate', duration: 60, type: 'TOPICAL', desc: 'Outline key steps from resume building to aptitude and interview prep.' },
-    { title: 'Describe a Book or Movie That Inspired You', category: 'Personal Experience', difficulty: 'Beginner', duration: 60, type: 'TOPICAL', desc: 'Summarize the core message of a movie or book and why it resonated with you.' },
-    { title: 'What Is the Most Important Skill in 2026?', category: 'Opinion', difficulty: 'Intermediate', duration: 60, type: 'TOPICAL', desc: 'Identify one critical skill students must master and justify your choice.' },
-    { title: 'How Does Open Source Software Help Beginners?', category: 'Technology', difficulty: 'Intermediate', duration: 60, type: 'TOPICAL', desc: 'Discuss the benefits of contributing to GitHub and open source projects.' },
-    { title: 'The Power of Active Listening', category: 'Communication', difficulty: 'Beginner', duration: 60, type: 'TOPICAL', desc: 'Explain why listening carefully is essential for effective teamwork.' },
-    { title: 'Explain Cloud Computing to a 10-Year-Old', category: 'Technology', difficulty: 'Advanced', duration: 60, type: 'TOPICAL', desc: 'Use simple analogies to explain cloud storage, servers, and scalability.' },
-    { title: 'How to Handle Constructive Feedback', category: 'Personal Experience', difficulty: 'Intermediate', duration: 60, type: 'TOPICAL', desc: 'Talk about a time someone criticized your work and how you improved.' },
-    { title: 'Should Coding Be Taught in Elementary School?', category: 'Education', difficulty: 'Intermediate', duration: 60, type: 'TOPICAL', desc: 'Discuss early digital literacy and logical thinking skills in children.' },
-    { title: 'Describe a Major Technological Breakthrough of the Decade', category: 'Technology', difficulty: 'Advanced', duration: 90, type: 'TOPICAL', desc: 'Highlight a major tech breakthrough and its global societal impact.' },
-    { title: 'Why Emotional Intelligence (EQ) Matters in Industry', category: 'Leadership', difficulty: 'Intermediate', duration: 60, type: 'TOPICAL', desc: 'Explain how empathy and emotional awareness improve workplace dynamics.' },
-    { title: 'How to Prepare a 1-Minute Elevator Pitch', category: 'Communication', difficulty: 'Intermediate', duration: 60, type: 'TOPICAL', desc: 'Demonstrate how to concisely pitch yourself to a recruiter.' },
-    { title: 'The Future of Autonomous Electric Vehicles', category: 'Current Topics', difficulty: 'Intermediate', duration: 60, type: 'TOPICAL', desc: 'Discuss self-driving cars, EV battery tech, and future transportation.' },
-    { title: 'My Favorite College Project So Far', category: 'Personal Experience', difficulty: 'Beginner', duration: 60, type: 'TOPICAL', desc: 'Describe a mini project, its technical architecture, and your learnings.' },
-    { title: 'Why Continuous Learning Is Essential for Software Developers', category: 'Career', difficulty: 'Intermediate', duration: 60, type: 'TOPICAL', desc: 'Explain how fast technology evolves and how to stay updated.' },
-  ];
-
-  const createdChallenges = [];
-  for (const t of challengeTopics) {
-    const ch = await prisma.challenge.create({
-      data: {
-        title: t.title,
-        description: t.desc,
-        category: t.category,
-        difficulty: t.difficulty,
-        durationSeconds: t.duration,
-        topicType: t.type,
-      },
-    });
-    createdChallenges.push(ch);
-  }
-  console.log('✅ Created 30 Speaking Challenges.');
-
-  // Create attempt history for the demo student
-  const demoStudent = studentProfiles[0];
-  if (demoStudent) {
-    for (let j = 0; j < 6; j++) {
-      const ch = createdChallenges[j];
-      await prisma.challengeAttempt.create({
-        data: {
-          studentId: demoStudent.id,
-          challengeId: ch.id,
-          transcript: `I believe ${ch.title} is an important topic because technology and clear communication shape our future career paths. First of all, practicing regularly helps build fluency. Secondly, using proper structure makes our answers convincing. In conclusion, every student should practice daily.`,
-          overallScore: 74 + j * 2,
-          fluencyScore: 70 + j * 2,
-          grammarScore: 78,
-          vocabularyScore: 82,
-          pronunciationScore: 80,
-          relevanceScore: 86,
-          confidenceScore: 72 + j,
-          structureScore: 75,
-          strongestArea: 'Vocabulary',
-          focusArea: 'Fluency',
-          aiFeedbackJson: JSON.stringify({
-            strengths: [
-              'You stayed highly relevant to the topic.',
-              'Good choice of professional vocabulary.',
-              'Your response had a clear introduction and logical summary.',
-            ],
-            improvements: [
-              'Reduce filler words like "um" and "actually".',
-              'Use shorter, punchier sentences.',
-              'Provide a concrete real-world example.',
-            ],
-            nextPracticeRecommendation: 'Try another 60-second challenge focusing on fluency.',
-          }),
-        },
-      });
-    }
-    console.log('✅ Created sample attempt history for demo student.');
-  }
+  console.log(`✅ Created 20 Students with zero baseline scores.`);
 
   // 5. Create Interview Categories & Questions (50 HR + 100 Technical = 150 total)
   const hrCategory = await prisma.interviewCategory.create({

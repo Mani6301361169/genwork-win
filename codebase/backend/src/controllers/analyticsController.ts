@@ -73,13 +73,13 @@ export const getStudentScores = async (req: AuthRequest, res: Response) => {
 
     if (!student) return res.status(404).json({ message: 'Student profile not found.' });
 
-    // Calculate weekly progress graph points dynamically from attempts or baseline
     const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    const hasAttempts = student.challengeAttempts.length > 0;
     const weeklyData = days.map((day, idx) => ({
       day,
-      practiceCompleted: Math.max(1, (idx % 3) + (student.challengeAttempts.length > idx ? 1 : 0)),
-      speakingScore: Math.min(100, student.speakingScore + ((idx % 5) - 2) * 2),
-      interviewScore: Math.min(100, student.interviewScore + ((idx % 4) - 2) * 2),
+      practiceCompleted: hasAttempts ? Math.max(1, (idx % 3) + (student.challengeAttempts.length > idx ? 1 : 0)) : 0,
+      speakingScore: hasAttempts ? Math.min(100, student.speakingScore + ((idx % 5) - 2) * 2) : 0,
+      interviewScore: hasAttempts ? Math.min(100, student.interviewScore + ((idx % 4) - 2) * 2) : 0,
     }));
 
     const skillProgress = [

@@ -4,40 +4,37 @@ import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip } from 'rec
 
 export const MyScores: React.FC = () => {
   const weeklyBreakdown = [
-    { date: '17 – 23 AUG', score: 70, status: 'Rolls off next', isActive: false },
+    { date: '17 – 23 AUG', score: 0, status: 'Missed', isActive: false },
     { date: '24 – 30 AUG', score: 0, status: 'Missed', isActive: false },
     { date: '31 AUG – 6 SEP', score: 0, status: 'Missed', isActive: false },
     { date: '7 – 13 SEP', score: 0, status: 'Missed', isActive: false },
     { date: '14 – 20 SEP', score: 0, status: 'Missed', isActive: false },
-    { date: 'WINSPEAK', score: 14, status: '5-week average', isActive: true },
+    { date: 'WINSPEAK', score: 0, status: '5-week average', isActive: true },
   ];
 
   const trajectoryData = [
-    { date: '13 – 19 Jul', score: 62 },
-    { date: '20 – 26 Jul', score: 64 },
-    { date: '27 Jul – 2 Aug', score: 68 },
-    { date: '3 – 9 Aug', score: 84 },
-    { date: '10 – 16 Aug', score: 76 },
-    { date: '17 – 23 Aug', score: 70 },
-    { date: '24 – 30 Aug', score: 50 },
-    { date: '31 Aug – 6 Sep', score: 35 },
-    { date: '7 – 13 Sep', score: 20 },
-    { date: '14 – 20 Sep', score: 14 },
+    { date: '13 – 19 Jul', score: 0 },
+    { date: '20 – 26 Jul', score: 0 },
+    { date: '27 Jul – 2 Aug', score: 0 },
+    { date: '3 – 9 Aug', score: 0 },
+    { date: '10 – 16 Aug', score: 0 },
+    { date: '17 – 23 Aug', score: 0 },
+    { date: '24 – 30 Aug', score: 0 },
+    { date: '31 Aug – 6 Sep', score: 0 },
+    { date: '7 – 13 Sep', score: 0 },
+    { date: '14 – 20 Sep', score: 0 },
   ];
 
   const dimensions = [
-    { name: '• Clarity', score: 14, delta: '▼-11', stroke: '#0d9488' },
-    { name: '• Fluency', score: 13, delta: '▼-11', stroke: '#7c3aed' },
-    { name: '• Grammar', score: 12, delta: '▼-11', stroke: '#4f46e5' },
-    { name: '• Relevancy', score: 15, delta: '▼-13', stroke: '#e11d48' },
-    { name: '• Structure', score: 13, delta: '▼-11', stroke: '#d97706' },
-    { name: '• Vocabulary', score: 15, delta: '▼-12', stroke: '#16a34a' },
+    { name: '• Clarity', score: 0, delta: '-', stroke: '#0d9488' },
+    { name: '• Fluency', score: 0, delta: '-', stroke: '#7c3aed' },
+    { name: '• Grammar', score: 0, delta: '-', stroke: '#4f46e5' },
+    { name: '• Relevancy', score: 0, delta: '-', stroke: '#e11d48' },
+    { name: '• Structure', score: 0, delta: '-', stroke: '#d97706' },
+    { name: '• Vocabulary', score: 0, delta: '-', stroke: '#16a34a' },
   ];
 
-  const recentChallenges = [
-    { title: 'My Placement Introduction', type: 'Practice – Winnify Global · 21 Aug 2026', score: 33 },
-    { title: 'A Skill I\'d Love to Learn in College', type: 'Winnify Global · 21 Aug 2026 · W2026-W34', score: 70 },
-  ];
+  const recentChallenges: { title: string; type: string; score: number }[] = [];
 
   return (
     <div className="space-y-8 max-w-6xl mx-auto font-sans text-slate-900 pb-16">
@@ -59,16 +56,16 @@ export const MyScores: React.FC = () => {
         </p>
 
         <div className="flex items-baseline gap-2">
-          <span className="text-5xl font-black tracking-tight text-slate-900">14</span>
+          <span className="text-5xl font-black tracking-tight text-slate-900">0</span>
           <span className="text-xl font-bold text-slate-400">/ 100</span>
         </div>
 
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 text-amber-900 text-xs font-black border border-amber-200">
-          <Award className="w-4 h-4 text-amber-600" /> Rank #125 in your Semester
+          <Award className="w-4 h-4 text-amber-600" /> Rank #-- in your Semester
         </div>
 
         <p className="text-xs font-medium text-slate-600">
-          Total Challenges Completed: 6 · based on last 5 weeks · a missed week counts as 0
+          Total Challenges Completed: 0 · based on last 5 weeks · a missed week counts as 0
         </p>
         
         <p className="text-[11px] font-medium text-slate-400">

@@ -30,12 +30,12 @@ export const Dashboard: React.FC = () => {
     fetchDashboardData();
   }, []);
 
-  const overallScore = profile?.overallScore || 74;
+  const overallScore = profile?.overallScore || 0;
 
   const cohortLeaderboard = [
-    { rank: 1, name: 'JASMINE MOHAMMED', score: 78, badgeColor: 'bg-black text-white dark:bg-white dark:text-black' },
-    { rank: 2, name: 'KOWSHIK NAIDU VALISETTY', score: 71, badgeColor: 'bg-neutral-200 text-black dark:bg-neutral-800 dark:text-white' },
-    { rank: 3, name: 'ABHIRAMI PRATIVADA', score: 69, badgeColor: 'bg-neutral-100 text-black dark:bg-neutral-900 dark:text-white' },
+    { rank: 1, name: 'JASMINE MOHAMMED', score: 0, badgeColor: 'bg-black text-white dark:bg-white dark:text-black' },
+    { rank: 2, name: 'KOWSHIK NAIDU VALISETTY', score: 0, badgeColor: 'bg-neutral-200 text-black dark:bg-neutral-800 dark:text-white' },
+    { rank: 3, name: 'ABHIRAMI PRATIVADA', score: 0, badgeColor: 'bg-neutral-100 text-black dark:bg-neutral-900 dark:text-white' },
   ];
 
   return (

@@ -37,11 +37,11 @@ export const getOrCreateStudentProfileId = async (req: AuthRequest): Promise<str
       departmentId: dept.id,
       academicYear: req.user?.role === 'ADMIN' ? 'Faculty Admin' : '4th Year',
       graduationYear: 2026,
-      overallScore: 82,
-      speakingScore: 84,
-      interviewScore: 80,
-      technicalScore: 82,
-      confidenceScore: 85,
+      overallScore: 0,
+      speakingScore: 0,
+      interviewScore: 0,
+      technicalScore: 0,
+      confidenceScore: 0,
     },
   });
 

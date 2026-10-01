@@ -70,19 +70,19 @@ export const Profile: React.FC = () => {
         {/* Stats Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-6 border-t-2 border-black">
           <div className="p-3 bg-zinc-50 border-2 border-black rounded-2xl text-center">
-            <span className="text-2xl font-extrabold text-black">{profile?.overallScore || 72}</span>
+            <span className="text-2xl font-extrabold text-black">{profile?.overallScore || 0}</span>
             <p className="text-[10px] font-extrabold text-black uppercase mt-0.5">Average Score</p>
           </div>
           <div className="p-3 bg-zinc-50 border-2 border-black rounded-2xl text-center">
-            <span className="text-2xl font-extrabold text-black">🔥 {profile?.currentStreak || 1}d</span>
+            <span className="text-2xl font-extrabold text-black">🔥 {profile?.currentStreak || 0}d</span>
             <p className="text-[10px] font-extrabold text-black uppercase mt-0.5">Current Streak</p>
           </div>
           <div className="p-3 bg-zinc-50 border-2 border-black rounded-2xl text-center">
-            <span className="text-2xl font-extrabold text-black">{profile?.totalXP || 450}</span>
+            <span className="text-2xl font-extrabold text-black">{profile?.totalXP || 0}</span>
             <p className="text-[10px] font-extrabold text-black uppercase mt-0.5">Total XP Points</p>
           </div>
           <div className="p-3 bg-zinc-50 border-2 border-black rounded-2xl text-center">
-            <span className="text-2xl font-extrabold text-black">{profile?.bestScore || 88}</span>
+            <span className="text-2xl font-extrabold text-black">{profile?.bestScore || 0}</span>
             <p className="text-[10px] font-extrabold text-black uppercase mt-0.5">Personal Best</p>
           </div>
         </div>

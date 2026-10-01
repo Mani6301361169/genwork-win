@@ -9,9 +9,9 @@ export const Leaderboard: React.FC = () => {
       rank: 2,
       name: 'KOWSHIK NAIDU VALISETTY',
       initials: 'KN',
-      score: 71,
-      delta: '-1',
-      deltaType: 'down',
+      score: 0,
+      delta: '0',
+      deltaType: 'up',
       pedestalStyle: 'bg-gradient-to-b from-emerald-100 to-emerald-200 border-emerald-300 text-emerald-900',
       avatarBg: 'bg-emerald-600',
       wreathColor: 'text-emerald-700',
@@ -20,8 +20,8 @@ export const Leaderboard: React.FC = () => {
       rank: 1,
       name: 'JASMINE MOHAMMED',
       initials: 'JM',
-      score: 78,
-      delta: '+10',
+      score: 0,
+      delta: '0',
       deltaType: 'up',
       pedestalStyle: 'bg-gradient-to-b from-purple-100 to-purple-200 border-purple-300 text-purple-900 h-80',
       avatarBg: 'bg-purple-600',
@@ -31,8 +31,8 @@ export const Leaderboard: React.FC = () => {
       rank: 3,
       name: 'ABHIRAMI PRATIVADA',
       initials: 'AP',
-      score: 69,
-      delta: '+4',
+      score: 0,
+      delta: '0',
       deltaType: 'up',
       pedestalStyle: 'bg-gradient-to-b from-rose-100 to-rose-200 border-rose-300 text-rose-900',
       avatarBg: 'bg-rose-600',
@@ -41,9 +41,9 @@ export const Leaderboard: React.FC = () => {
   ];
 
   const listRows = [
-    { rank: 4, name: 'BASHEERUN SHAIK', initials: 'BS', score: 68, delta: '▲1', deltaUp: true },
-    { rank: 5, name: 'VENKATA SWANAGA LAKSHMI IKKURTHI', initials: 'VS', score: 66, delta: '▲1', deltaUp: true },
-    { rank: 6, name: 'VENKATA SAI KOTHAMASU', initials: 'VS', score: 66, delta: '▼4', deltaUp: false },
+    { rank: 4, name: 'BASHEERUN SHAIK', initials: 'BS', score: 0, delta: '-', deltaUp: true },
+    { rank: 5, name: 'VENKATA SWANAGA LAKSHMI IKKURTHI', initials: 'VS', score: 0, delta: '-', deltaUp: true },
+    { rank: 6, name: 'VENKATA SAI KOTHAMASU', initials: 'VS', score: 0, delta: '-', deltaUp: true },
   ];
 
   return (

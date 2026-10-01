@@ -42,11 +42,11 @@ model StudentProfile {
   totalXP           Int                @default(0)
   currentStreak     Int                @default(0)
   bestScore         Int                @default(0)
-  overallScore      Int                @default(70)
-  speakingScore     Int                @default(72)
-  interviewScore    Int                @default(68)
-  technicalScore    Int                @default(71)
-  confidenceScore   Int                @default(70)
+  overallScore      Int                @default(0)
+  speakingScore     Int                @default(0)
+  interviewScore    Int                @default(0)
+  technicalScore    Int                @default(0)
+  confidenceScore   Int                @default(0)
   avatarUrl         String?
   createdAt         DateTime           @default(now())
   updatedAt         DateTime           @updatedAt
