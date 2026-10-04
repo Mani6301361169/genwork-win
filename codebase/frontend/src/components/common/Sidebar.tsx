@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import {
   Home,
   FileText,
@@ -16,7 +16,8 @@ import {
   Building,
   MoreHorizontal,
   X,
-  ChevronDown
+  ChevronDown,
+  LogOut
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
@@ -26,12 +27,20 @@ interface SidebarProps {
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile, onCloseMobile }) => {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
   const profile = user?.profile;
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isMentoringActive = location.pathname.startsWith('/student/mentoring');
   const [isMentoringOpen, setIsMentoringOpen] = useState(true);
+  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
+
+  const handleSignOut = () => {
+    logout();
+    if (onCloseMobile) onCloseMobile();
+    navigate('/login');
+  };
 
   const getInitials = (name?: string) => {
     if (!name) return 'MR';
@@ -74,21 +83,52 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile, onCloseMobile })
         <Building className="w-4 h-4 text-black dark:text-white shrink-0 ml-1" />
       </div>
 
-      {/* User Profile Badge */}
-      <div className="flex items-center justify-between p-2.5 mb-4 bg-neutral-100 dark:bg-neutral-800/80 rounded-2xl border-2 border-black dark:border-white">
-        <div className="flex items-center gap-2.5 overflow-hidden">
-          <div className="w-9 h-9 rounded-full bg-black text-white dark:bg-white dark:text-black flex items-center justify-center font-black text-xs shrink-0 border border-black">
-            {getInitials(profile?.fullName)}
+      {/* User Profile Badge & Dropdown */}
+      <div className="relative mb-4">
+        <div className="flex items-center justify-between p-2.5 bg-neutral-100 dark:bg-neutral-800/80 rounded-2xl border-2 border-black dark:border-white">
+          <div className="flex items-center gap-2.5 overflow-hidden">
+            <div className="w-9 h-9 rounded-full bg-black text-white dark:bg-white dark:text-black flex items-center justify-center font-black text-xs shrink-0 border border-black">
+              {getInitials(profile?.fullName)}
+            </div>
+            <div className="truncate">
+              <p className="text-xs font-black text-black dark:text-white truncate uppercase">
+                {profile?.fullName || 'MANISHANKAR REDDY'}
+              </p>
+            </div>
           </div>
-          <div className="truncate">
-            <p className="text-xs font-black text-black dark:text-white truncate uppercase">
-              {profile?.fullName || 'MANISHANKAR REDDY'}
-            </p>
-          </div>
+          <button
+            type="button"
+            onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
+            className="text-black dark:text-white hover:bg-neutral-200 dark:hover:bg-neutral-700 p-1.5 rounded-xl shrink-0 transition-colors"
+            title="Account Options"
+          >
+            <MoreHorizontal className="w-4 h-4" />
+          </button>
         </div>
-        <button className="text-black dark:text-white hover:opacity-75 p-1 shrink-0">
-          <MoreHorizontal className="w-4 h-4" />
-        </button>
+
+        {/* Profile Sign Out Popover Dropdown */}
+        {isProfileMenuOpen && (
+          <div className="absolute left-0 right-0 mt-1 bg-white dark:bg-neutral-900 border-2 border-black dark:border-white rounded-2xl shadow-xl z-50 p-2 space-y-1">
+            <button
+              type="button"
+              onClick={() => {
+                setIsProfileMenuOpen(false);
+                if (onCloseMobile) onCloseMobile();
+                navigate('/student/profile');
+              }}
+              className="w-full text-left px-3 py-2 rounded-xl text-xs font-black hover:bg-neutral-100 dark:hover:bg-neutral-800 text-black dark:text-white"
+            >
+              Student Profile
+            </button>
+            <button
+              type="button"
+              onClick={handleSignOut}
+              className="w-full flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-black text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 transition-colors"
+            >
+              <LogOut className="w-4 h-4" /> Sign Out
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Workspace Subtitle Badge */}
@@ -206,10 +246,22 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile, onCloseMobile })
             <span className="truncate">My Subscription</span>
           </div>
         </NavLink>
+
+        {/* Prominent Sign Out Button */}
+        <button
+          type="button"
+          onClick={handleSignOut}
+          className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-xs font-black text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 border-2 border-rose-200 dark:border-rose-900 transition-all mt-2"
+        >
+          <div className="flex items-center gap-3 truncate">
+            <LogOut className="w-4 h-4 shrink-0 text-rose-600 dark:text-rose-400" />
+            <span className="truncate font-black">Sign Out</span>
+          </div>
+        </button>
       </nav>
 
       {/* Bottom Winnify Black Logo */}
-      <div className="pt-4 border-t-2 border-black dark:border-white mt-2 px-3 text-left">
+      <div className="pt-3 border-t-2 border-black dark:border-white mt-2 px-3 text-left">
         <span className="text-xl font-black text-black dark:text-white tracking-wider uppercase">
           WINNIFY
         </span>

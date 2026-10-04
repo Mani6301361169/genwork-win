@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
-import { Outlet, Navigate, useLocation } from 'react-router-dom';
+import { Outlet, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { Sidebar } from '../components/common/Sidebar';
-import { Menu, ChevronRight, Bell, BarChart3 } from 'lucide-react';
+import { Menu, ChevronRight, Bell, BarChart3, LogOut } from 'lucide-react';
 
 export const StudentLayout: React.FC = () => {
-  const { user, isLoading } = useAuth();
+  const { user, isLoading, logout } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    logout();
+    navigate('/login');
+  };
 
   if (isLoading) {
     return (
@@ -104,8 +110,17 @@ export const StudentLayout: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Header Controls: Notification Bell Icon */}
+          {/* Right Header Controls: Notification Bell Icon & Sign Out */}
           <div className="flex items-center gap-3">
+            <button
+              onClick={handleSignOut}
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white dark:bg-neutral-900 text-rose-600 dark:text-rose-400 border border-neutral-300 dark:border-neutral-700 hover:bg-rose-50 dark:hover:bg-rose-950/40 font-black text-xs transition-all shadow-2xs"
+              title="Sign Out"
+            >
+              <LogOut className="w-3.5 h-3.5 text-rose-600 dark:text-rose-400" />
+              <span>Sign Out</span>
+            </button>
+
             <div className="relative">
               <button
                 onClick={() => setIsNotificationsOpen(!isNotificationsOpen)}
