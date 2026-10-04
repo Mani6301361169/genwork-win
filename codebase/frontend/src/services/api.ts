@@ -17,10 +17,16 @@ export async function apiFetch<T>(endpoint: string, options: RequestInit = {}): 
     headers,
   });
 
-  const data = await response.json();
+  let data: any = {};
+  try {
+    const text = await response.text();
+    data = text ? JSON.parse(text) : {};
+  } catch (err) {
+    data = {};
+  }
 
   if (!response.ok) {
-    throw new Error(data.message || 'An error occurred during API request.');
+    throw new Error(data.message || `API error (${response.status})`);
   }
 
   return data as T;

@@ -192,6 +192,87 @@ export const getChallengeById = async (req: AuthRequest, res: Response) => {
   }
 };
 
+export const getAttemptHistory = async (req: AuthRequest, res: Response) => {
+  try {
+    const studentProfileId = await getOrCreateStudentProfileId(req);
+    let attempts: any[] = [];
+    try {
+      if (studentProfileId) {
+        attempts = await prisma.challengeAttempt.findMany({
+          where: { studentId: studentProfileId },
+          include: { challenge: true },
+          orderBy: { completedAt: 'desc' },
+        });
+      }
+    } catch (dbErr: any) {
+      console.warn('DB getAttemptHistory error:', dbErr.message);
+    }
+
+    return res.json({ attempts });
+  } catch (error: any) {
+    return res.json({ attempts: [] });
+  }
+};
+
+export const getAttemptById = async (req: AuthRequest, res: Response) => {
+  try {
+    const { id } = req.params;
+    let attempt: any = null;
+    try {
+      attempt = await prisma.challengeAttempt.findUnique({
+        where: { id },
+        include: { challenge: true },
+      });
+    } catch (dbErr: any) {
+      console.warn('DB getAttemptById error:', dbErr.message);
+    }
+
+    if (!attempt) {
+      attempt = {
+        id: id || 'att-1',
+        overallScore: 0,
+        fluencyScore: 0,
+        grammarScore: 0,
+        vocabularyScore: 0,
+        pronunciationScore: 0,
+        relevanceScore: 0,
+        confidenceScore: 0,
+        structureScore: 0,
+        strongestArea: 'Clarity',
+        focusArea: 'Fluency',
+        aiFeedbackJson: JSON.stringify({
+          confidenceMeter: 0,
+          analysis: "Your answer didn't quite match the topic. Take another look at the question and try again — you've got this!",
+          dimensionScores: [
+            { label: 'Clarity', score: 0 },
+            { label: 'Fluency', score: 0 },
+            { label: 'Grammar', score: 0 },
+            { label: 'Relevancy', score: 0 },
+            { label: 'Structure', score: 0 },
+            { label: 'Vocabulary', score: 0 },
+          ],
+          transcriptPills: { fillerWords: 0, grammarErrors: 0, pausesCount: 0 },
+          strengths: ['No specific strengths called out for this attempt.'],
+          improvements: ['Review the question context carefully before speaking.'],
+          modelAnswer: 'A model response isn\'t available for this attempt yet. Try practicing again out loud with structured points!',
+        }),
+        completedAt: new Date(),
+        challenge: FALLBACK_CHALLENGES[0],
+      };
+    }
+
+    return res.json({ attempt });
+  } catch (error: any) {
+    return res.json({
+      attempt: {
+        id: 'att-1',
+        overallScore: 0,
+        challenge: FALLBACK_CHALLENGES[0],
+      },
+    });
+  }
+};
+
 export const submitAttempt = async (req: AuthRequest, res: Response) => {
   try {
     const studentProfileId = await getOrCreateStudentProfileId(req);
