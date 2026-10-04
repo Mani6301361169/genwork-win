@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { apiFetch } from '../../services/api';
 import { CampusChallenge } from '../../types';
-import { BookOpen, Monitor, ShieldAlert, Award, FileCode, CheckCircle, Info } from 'lucide-react';
+import { BookOpen, Info } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 export const CampusChallenges: React.FC = () => {
@@ -23,7 +23,6 @@ export const CampusChallenges: React.FC = () => {
     fetchCampus();
   }, []);
 
-  // Hardcoded sets matching Image 3 if API returns empty
   const campusCuratedSets = [
     {
       id: 'cse-1',
@@ -128,7 +127,7 @@ export const CampusChallenges: React.FC = () => {
         {setsToDisplay.map((item) => (
           <div
             key={item.id}
-            onClick={() => navigate('/student/challenges')}
+            onClick={() => navigate('/student/challenges/1')}
             className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col justify-between space-y-4 hover:shadow-md transition-all cursor-pointer group"
           >
             <div className="space-y-3">

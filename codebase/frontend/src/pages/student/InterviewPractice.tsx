@@ -71,8 +71,8 @@ export const InterviewPractice: React.FC = () => {
 
           <div className="pt-2">
             <button
-              onClick={() => navigate('/student/challenges')}
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white text-slate-900 hover:bg-slate-100 font-extrabold text-xs shadow-md transition-all"
+              onClick={() => navigate('/student/challenges/1')}
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white text-slate-900 hover:bg-slate-100 font-extrabold text-xs shadow-md transition-all cursor-pointer"
             >
               Start Practice <ArrowRight className="w-4 h-4" />
             </button>
@@ -93,7 +93,8 @@ export const InterviewPractice: React.FC = () => {
           return (
             <div
               key={card.id}
-              className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col justify-between space-y-4 hover:shadow-md transition-all"
+              onClick={() => navigate('/student/challenges/1')}
+              className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 flex flex-col justify-between space-y-4 hover:shadow-md transition-all cursor-pointer group"
             >
               <div className="space-y-3">
                 <div className={`w-10 h-10 rounded-2xl flex items-center justify-center font-bold shadow-sm ${card.iconBg}`}>
@@ -101,7 +102,7 @@ export const InterviewPractice: React.FC = () => {
                 </div>
 
                 <div>
-                  <h3 className="text-base font-black text-slate-900">
+                  <h3 className="text-base font-black text-slate-900 group-hover:text-indigo-600 transition-colors">
                     {card.title}
                   </h3>
                   <p className="text-xs font-medium text-slate-500 leading-relaxed mt-1">
@@ -112,8 +113,11 @@ export const InterviewPractice: React.FC = () => {
 
               <div>
                 <button
-                  onClick={() => navigate('/student/challenges')}
-                  className="px-5 py-2.5 rounded-full bg-indigo-50 text-indigo-700 hover:bg-indigo-100 font-extrabold text-xs transition-colors"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate('/student/challenges/1');
+                  }}
+                  className="px-5 py-2.5 rounded-full bg-indigo-50 text-indigo-700 hover:bg-indigo-600 hover:text-white font-extrabold text-xs transition-colors cursor-pointer"
                 >
                   Start Practice
                 </button>
