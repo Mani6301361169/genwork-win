@@ -41,14 +41,14 @@ export const Login: React.FC = () => {
 
   const fillDemoStudent = () => {
     setActiveTab('STUDENT');
-    setEmail('arun.v@college.edu');
-    setPassword('Student123!');
+    setEmail('123@com');
+    setPassword('1234');
   };
 
   const fillDemoAdmin = () => {
     setActiveTab('ADMIN');
-    setEmail('admin@skillsprint.edu');
-    setPassword('Admin123!');
+    setEmail('1234@com');
+    setPassword('123');
   };
 
   const handleSSOClick = (provider: string) => {

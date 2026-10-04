@@ -113,10 +113,111 @@ export const login = async (req: Request, res: Response) => {
       return res.status(400).json({ message: 'Email and password are required.' });
     }
 
+    const cleanEmail = email.toLowerCase().trim();
+
+    // Check specific user requested credentials directly
+    if (cleanEmail === '123@com' && password === '1234') {
+      const demoProfile = {
+        id: '65f1a2b3c4d5e6f7a8b9c0d2',
+        userId: '65f1a2b3c4d5e6f7a8b9c0d4',
+        studentId: '21CS001',
+        fullName: 'MANISHANKAR REDDY',
+        college: 'Chalapathi Institute of Technology',
+        academicYear: '3rd Year',
+        graduationYear: 2026,
+        overallScore: 0,
+        speakingScore: 0,
+        interviewScore: 0,
+        technicalScore: 0,
+        confidenceScore: 0,
+        totalXP: 0,
+        currentStreak: 0,
+        bestScore: 0,
+        department: {
+          id: '65f1a2b3c4d5e6f7a8b9c0d5',
+          code: 'CSE',
+          name: 'Computer Science & Engineering',
+        },
+      };
+
+      const user = {
+        id: demoProfile.userId,
+        email: '123@com',
+        role: 'STUDENT',
+        profile: demoProfile,
+      };
+
+      const token = jwt.sign(
+        {
+          id: user.id,
+          email: user.email,
+          role: user.role,
+          studentProfileId: user.profile.id,
+        },
+        JWT_SECRET,
+        { expiresIn: '7d' }
+      );
+
+      return res.json({
+        message: 'Login successful!',
+        token,
+        user,
+      });
+    }
+
+    if (cleanEmail === '1234@com' && password === '123') {
+      const adminProfile = {
+        id: '65f1a2b3c4d5e6f7a8b9c0d1',
+        userId: '65f1a2b3c4d5e6f7a8b9c0d3',
+        studentId: 'ADM-001',
+        fullName: 'Faculty Admin',
+        college: 'Chalapathi Institute of Technology',
+        academicYear: 'Faculty Admin',
+        graduationYear: 2026,
+        overallScore: 0,
+        speakingScore: 0,
+        interviewScore: 0,
+        technicalScore: 0,
+        confidenceScore: 0,
+        totalXP: 0,
+        currentStreak: 0,
+        bestScore: 0,
+        department: {
+          id: '65f1a2b3c4d5e6f7a8b9c0d5',
+          code: 'CSE',
+          name: 'Computer Science & Engineering',
+        },
+      };
+
+      const user = {
+        id: adminProfile.userId,
+        email: '1234@com',
+        role: 'ADMIN',
+        profile: adminProfile,
+      };
+
+      const token = jwt.sign(
+        {
+          id: user.id,
+          email: user.email,
+          role: user.role,
+          studentProfileId: user.profile.id,
+        },
+        JWT_SECRET,
+        { expiresIn: '7d' }
+      );
+
+      return res.json({
+        message: 'Login successful!',
+        token,
+        user,
+      });
+    }
+
     let user: any = null;
     try {
       user = await prisma.user.findUnique({
-        where: { email: email.toLowerCase() },
+        where: { email: cleanEmail },
         include: {
           profile: {
             include: {
@@ -137,8 +238,7 @@ export const login = async (req: Request, res: Response) => {
     }
 
     if (!user) {
-      const cleanEmail = email.toLowerCase().trim();
-      const isAdmin = cleanEmail.includes('admin');
+      const isAdmin = cleanEmail.includes('admin') || cleanEmail === '1234@com';
       const role = isAdmin ? 'ADMIN' : 'STUDENT';
       const rawName = cleanEmail.split('@')[0].replace(/[\._]/g, ' ');
       const formattedName = rawName.charAt(0).toUpperCase() + rawName.slice(1);
@@ -147,7 +247,7 @@ export const login = async (req: Request, res: Response) => {
         id: isAdmin ? '65f1a2b3c4d5e6f7a8b9c0d1' : '65f1a2b3c4d5e6f7a8b9c0d2',
         userId: isAdmin ? '65f1a2b3c4d5e6f7a8b9c0d3' : '65f1a2b3c4d5e6f7a8b9c0d4',
         studentId: isAdmin ? 'ADM-001' : '21CS001',
-        fullName: formattedName || (isAdmin ? 'Faculty Admin' : 'Demo Student'),
+        fullName: formattedName || (isAdmin ? 'Faculty Admin' : 'MANISHANKAR REDDY'),
         college: 'Chalapathi Institute of Technology',
         academicYear: isAdmin ? 'Faculty Admin' : '3rd Year',
         graduationYear: 2026,
