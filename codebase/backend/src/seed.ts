@@ -28,15 +28,16 @@ async function main() {
 
   console.log('🧹 Cleaned existing database records.');
 
-  // 1. Create 5 Departments
+  // 1. Create 6 Departments
   const departments = await Promise.all([
-    prisma.department.create({ data: { code: 'CSE', name: 'Computer Science & Engineering' } }),
-    prisma.department.create({ data: { code: 'ECE', name: 'Electronics & Communication' } }),
-    prisma.department.create({ data: { code: 'IT', name: 'Information Technology' } }),
-    prisma.department.create({ data: { code: 'MECH', name: 'Mechanical Engineering' } }),
-    prisma.department.create({ data: { code: 'EEE', name: 'Electrical & Electronics' } }),
+    prisma.department.create({ data: { code: 'CSE-GEN', name: 'Computer Science & Engineering (General)' } }),
+    prisma.department.create({ data: { code: 'CSE-AI', name: 'Computer Science & Engineering (AI)' } }),
+    prisma.department.create({ data: { code: 'CSE-CS', name: 'Computer Science & Engineering (Cyber Security)' } }),
+    prisma.department.create({ data: { code: 'ECE', name: 'Electronics & Communication Engineering' } }),
+    prisma.department.create({ data: { code: 'AIML', name: 'Artificial Intelligence & Machine Learning' } }),
+    prisma.department.create({ data: { code: 'CIVIL', name: 'Civil Engineering' } }),
   ]);
-  console.log('✅ Created 5 college departments.');
+  console.log('✅ Created 6 college departments.');
 
   // 2. Create Admin Account
   const adminPasswordHash = await bcrypt.hash('admin123', 10);

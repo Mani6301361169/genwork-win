@@ -424,13 +424,26 @@ export const changePassword = async (req: AuthRequest, res: Response) => {
   }
 };
 
+const DEFAULT_DEPARTMENTS_LIST = [
+  { id: 'dept-cse-gen', code: 'CSE-GEN', name: 'Computer Science & Engineering (General)' },
+  { id: 'dept-cse-ai', code: 'CSE-AI', name: 'Computer Science & Engineering (AI)' },
+  { id: 'dept-cse-cs', code: 'CSE-CS', name: 'Computer Science & Engineering (Cyber Security)' },
+  { id: 'dept-ece', code: 'ECE', name: 'Electronics & Communication Engineering' },
+  { id: 'dept-aiml', code: 'AIML', name: 'Artificial Intelligence & Machine Learning' },
+  { id: 'dept-civil', code: 'CIVIL', name: 'Civil Engineering' },
+];
+
 export const getDepartments = async (req: Request, res: Response) => {
   try {
     const departments = await prisma.department.findMany({
-      orderBy: { name: 'asc' },
+      orderBy: { code: 'asc' },
     });
-    return res.json({ departments });
+    if (departments && departments.length > 0) {
+      return res.json({ departments });
+    }
+    return res.json({ departments: DEFAULT_DEPARTMENTS_LIST });
   } catch (error: any) {
-    return res.status(500).json({ message: 'Failed to fetch departments.' });
+    console.warn('DB error fetching departments, returning default department list:', error.message);
+    return res.json({ departments: DEFAULT_DEPARTMENTS_LIST });
   }
 };

@@ -5,15 +5,24 @@ import { apiFetch } from '../../services/api';
 import { Department } from '../../types';
 import { UserPlus } from 'lucide-react';
 
+const DEFAULT_DEPARTMENTS: Department[] = [
+  { id: 'dept-cse-gen', code: 'CSE-GEN', name: 'Computer Science & Engineering (General)' },
+  { id: 'dept-cse-ai', code: 'CSE-AI', name: 'Computer Science & Engineering (AI)' },
+  { id: 'dept-cse-cs', code: 'CSE-CS', name: 'Computer Science & Engineering (Cyber Security)' },
+  { id: 'dept-ece', code: 'ECE', name: 'Electronics & Communication Engineering' },
+  { id: 'dept-aiml', code: 'AIML', name: 'Artificial Intelligence & Machine Learning' },
+  { id: 'dept-civil', code: 'CIVIL', name: 'Civil Engineering' },
+];
+
 export const Register: React.FC = () => {
-  const [departments, setDepartments] = useState<Department[]>([]);
+  const [departments, setDepartments] = useState<Department[]>(DEFAULT_DEPARTMENTS);
   const [formData, setFormData] = useState({
     studentId: '',
     fullName: '',
     email: '',
     phone: '',
-    college: 'SkillSprint Institute of Technology',
-    departmentId: '',
+    college: 'CHALAPATHI INSTITUTE OF TECHNOLOGY',
+    departmentId: DEFAULT_DEPARTMENTS[0].id,
     academicYear: '3rd Year',
     graduationYear: '2026',
     password: '',
@@ -30,8 +39,8 @@ export const Register: React.FC = () => {
     const fetchDepartments = async () => {
       try {
         const res = await apiFetch<{ departments: Department[] }>('/auth/departments');
-        setDepartments(res.departments);
-        if (res.departments.length > 0) {
+        if (res.departments && res.departments.length > 0) {
+          setDepartments(res.departments);
           setFormData((prev) => ({ ...prev, departmentId: res.departments[0].id }));
         }
       } catch (err) {
@@ -187,7 +196,7 @@ export const Register: React.FC = () => {
               >
                 {departments.map((d) => (
                   <option key={d.id} value={d.id}>
-                    {d.name} ({d.code})
+                    {d.code} – {d.name}
                   </option>
                 ))}
               </select>
